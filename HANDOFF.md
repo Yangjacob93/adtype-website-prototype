@@ -2,6 +2,9 @@
 
 이 문서는 다른 PC에서 애드타입 홈페이지 작업을 이어받기 위한 핸드오프 문서입니다.
 
+전략, IA, 제품 이해, 카피 방향, 디자인 의사결정 맥락은 `PROJECT_CONTEXT.md`에 따로 정리되어 있습니다.  
+다른 PC에서 작업을 시작할 때는 `HANDOFF.md`와 `PROJECT_CONTEXT.md`를 함께 읽는 것을 권장합니다.
+
 ## 1. 저장소 받기
 
 ```bash
@@ -173,4 +176,3 @@ git push
 ```bash
 git pull
 ```
-
