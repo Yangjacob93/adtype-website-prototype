@@ -1,0 +1,15 @@
+[1] © 2026, Draftype Inc. All rights reserved. 01 Mental Market 네이버 검색 데이터와 LLM으로 구축한 소비자 시장 맵, 카테고리 분류가 담아내지 못하는 구조를 드러냅니다. DRAFTYPE INC.
+[2] © 2026, Draftype Inc. All rights reserved. 02 CORE CONCEPT 01 — MENTAL MARKET 하나의 카테고리 안에도 서로 다른 소비자 시장이 겹쳐 있습니다.
+[3] © 2026, Draftype Inc. All rights reserved. 03 CORE CONCEPT 02 — CEP(CATEGORY ENTRY POINTS) 같은 시장에서도 소비자가 진입하는 맥락은 서로 다릅니다. 연관 키워드를 소비자의 검색 맥락 기준으로 분석해, WHY / WHEN / WHO / HOW 네 가지 축으로 자동 분류합니다. WHY 구매 목적 소비자가 이 시장에 진입하는 목적과 동기 WHEN 구매 시점·계기 소비자가 이 시장을 찾게 되는 시점과 계기 WHO 구매 주체 특성 이 시장을 탐색하는 소비자의 특성 HOW 현재 고민 상태 소비자가 현재 겪고 있는 고민과 상태 * Category Entry Points(CEPs). Ehrenberg-Bass Institute의 Byron Sharp, Jenni Romaniuk이 정립한 개념으로, 소비자가 특정 카테고리를 떠올리는 구매 상황·맥락을 의미합니다. 원전의 7W 프레임워크를 기반으로, 멘탈마켓은 검색 데이터 분석에 유효한 4축을 재구성해 적용합니다.
+[4] “ © 2026, Draftype Inc. All rights reserved. 05 DATA SCALE 뷰티부터 리빙까지, 2,300개 이상의 소비재 시장 데이터가 이미 준비되어 있습니다.
+[5] © 2026, Draftype Inc. All rights reserved. 04 HOW — TECHNICAL PIPELINE 검색 데이터의 실질적 의미와 맥락을 읽어 시장 구조를 소비자 관점으로 재구성합니다. 01 Data Collection 데이터 수집 카테고리 관련 검색어 및 관련 트렌드 데이터를 수집합니다. 02 Keyword Extraction 연관 키워드 도출 단순 유사도가 아닌 실제 연관 검색 패턴으로 연관 키워드를 추출합니다. 03 Data Enrichment 데이터 결합·가공 검색추이·성별·연령 등 관련 메타 데이터를 추출한 연관 키워드 구조에 맞춰 가공·결합합니다. 04 LLM Clustering 맥락 기반 재구성 파인튜닝된 LLM 엔진으로 연관 키워드와 가공된 메타 데이터를 맥락 기반으로 분석해 멘탈마켓 구조를 클러스터화합니다. * 분석 결과는 네이버 트렌드 API를 기반으로 매월 갱신됩니다.
+[6] © 2026, Draftype Inc. All rights reserved. 14 USE CASE 소비자가 인식하는 시장 지형을 거시적으로 알고 싶을 때, 멘탈마켓은 방향을 가리키는 나침반이 됩니다. * 멘탈마켓의 분석 결과는 네이버 검색 데이터를 기반으로 하며, 세부 실행 전략 수립 시에는 별도의 1차 데이터·리서치와 병행하는 것을 권장합니다. 신규 카테고리 진입 전 시장 지형 탐색 낯선 카테고리에서 소비자가 어떤 시장으로 나뉘어 있는지 거시 구조부터 파악합니다. 캠페인·제품 기획 이전 방향성 점검 어떤 맥락(CEP)이 시장의 주요 진입 경로인지 확인해 기획의 출발점을 잡습니다. 브랜드 포지셔닝 거시 점검 자사·경쟁사가 어느 멘탈마켓에 몰려 있는지 정기적으로 지형을 재확인합니다.
+[7] © 2026, Draftype Inc. All rights reserved. 15 BEYOND KEYWORDS 검색을 맥락으로, 맥락을 시장으로. 소비자가 인식하는 시장 구조를 데이터로 읽고, 방향성 수립의 출발점을 함께 만듭니다.
+[8] © 2026, Draftype Inc. All rights reserved. 06 PRODUCT — STRUCTURE 시장 카테고리, 멘탈마켓, CEP, 브랜드까지 모두 하나의 데이터 구조로 이어져 있습니다. IN PRODUCT [ 대시보드 홈 스크린샷 ] 대시보드 홈 키워드 검색으로 시장을 탐색하고, 월간 검색량·멘탈마켓·CEP·브랜드 수 등의 요약 정보를 확인할 수 있습니다. [ 멘탈마켓 상세(CEP 분석) 스크린샷 ] 멘탈마켓 상세 페이지 하나의 멘탈마켓 안에서 연관 키워드부터 소비자 진입 맥락, 경쟁 브랜드까지 다면적으로 살펴볼 수 있습니다.
+[9] © 2026, Draftype Inc. All rights reserved. 07 HOW TO USE - STEP 01 1) 궁금한 시장 카테고리를 키워드로 검색합니다.
+[10] © 2026, Draftype Inc. All rights reserved. 08 HOW TO USE - STEP 02 2) 소비자가 실제 인식하는 시장 구조를 읽어냅니다.
+[11] © 2026, Draftype Inc. All rights reserved. 09 HOW TO USE - STEP 03 3) 각 시장의 핵심 지표를 한눈에 파악합니다.
+[12] © 2026, Draftype Inc. All rights reserved. 10 HOW TO USE - STEP 04 4) 시장을 구성하는 소비자와 진입 맥락을 함께 살펴봅니다.
+[13] © 2026, Draftype Inc. All rights reserved. 11 HOW TO USE - STEP 05 5) 출현 브랜드와 연관 제품 구성까지 들여다봅니다.
+[14] © 2026, Draftype Inc. All rights reserved. 12 HOW TO USE - STEP 06 6) 구매 맥락 단위로도 시장을 드릴다운합니다.
+[15] © 2026, Draftype Inc. All rights reserved. 13 HOW TO USE - STEP 07 7) 브랜드 레이어로 전환해 경쟁 지형을 조망합니다.

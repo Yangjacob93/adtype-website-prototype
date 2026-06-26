@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adtype for Brands</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+
+    #adtype-page {
+      --ad: #EB4200;
+      --ad-soft: #fff3ee;
+      --ink: #101010;
+      --ink-2: #2f3135;
+      --muted: #6f747b;
+      --faint: #a4abb4;
+      --line: #e4e7eb;
+      --line-strong: #cdd2d8;
+      --paper: #ffffff;
+      --soft: #f7f8fa;
+      --soft-2: #fbfbfc;
+      --dark: #121212;
+      --max: 1280px;
+      --pad: 32px;
+      --r: 6px;
+    }
+
+    #adtype-page * { box-sizing: border-box; }
+    #adtype-page { scroll-behavior: smooth; }
+    #adtype-page {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    #adtype-page a { color: inherit; text-decoration: none; }
+    #adtype-page button { font: inherit; color: inherit; }
+    #adtype-page h1, #adtype-page h2, #adtype-page h3, #adtype-page p { margin: 0; }
+
+    #adtype-page .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    #adtype-page .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background .22s ease, border-color .22s ease, backdrop-filter .22s ease;
+    }
+    #adtype-page .nav.scrolled {
+      background: rgba(255,255,255,.94);
+      border-bottom-color: var(--line);
+      backdrop-filter: blur(16px);
+    }
+    #adtype-page .nav__inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    #adtype-page .brand {
+      display: inline-flex;
+      align-items: center;
+      width: 104px;
+      height: 30px;
+      position: relative;
+    }
+    #adtype-page .brand img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity .22s ease;
+    }
+    #adtype-page .brand__orange { opacity: 0; }
+    #adtype-page .brand__white { opacity: 1; }
+    #adtype-page .nav.scrolled .brand__orange { opacity: 1; }
+    #adtype-page .nav.scrolled .brand__white { opacity: 0; }
+    #adtype-page .nav.scrolled .nav__links {
+      color: var(--muted);
+    }
+    #adtype-page .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 650;
+      color: rgba(255,255,255,.78);
+      transition: color .22s ease;
+    }
+    #adtype-page .nav__links a:hover { color: white; }
+    #adtype-page .nav.scrolled .nav__links a:hover { color: var(--ink); }
+    #adtype-page .nav__cta {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: var(--r);
+      padding: 0 14px;
+      color: white;
+      background: rgba(255,255,255,.08);
+      transition: color .22s ease, background .22s ease, border-color .22s ease;
+    }
+    #adtype-page .nav.scrolled .nav__cta {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    #adtype-page .section {
+      padding: 112px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    #adtype-page .section--soft { background: var(--soft); }
+    #adtype-page #stack.section--soft { background: #fff; }
+    #adtype-page .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--ad);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: none;
+    }
+    #adtype-page .display {
+      font-size: clamp(46px, 6.2vw, 84px);
+      line-height: 1.03;
+      font-weight: 760;
+      letter-spacing: -.035em;
+      word-break: keep-all;
+    }
+    #adtype-page .headline {
+      font-size: clamp(32px, 4.1vw, 58px);
+      line-height: 1.08;
+      font-weight: 740;
+      letter-spacing: -.028em;
+      word-break: keep-all;
+    }
+    #adtype-page .subhead {
+      font-size: 20px;
+      line-height: 1.64;
+      color: var(--ink-2);
+      word-break: keep-all;
+    }
+    #adtype-page .body {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.76;
+      word-break: keep-all;
+    }
+    #adtype-page .ad { color: var(--ad); }
+
+    #adtype-page .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #050505;
+      color: white;
+      border-bottom: 0;
+    }
+    #adtype-page .hero__video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      filter: brightness(1) saturate(.96) contrast(1.03);
+    }
+    #adtype-page .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(rgba(0,0,0,.66), rgba(0,0,0,.66));
+      pointer-events: none;
+    }
+    #adtype-page .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: 86px;
+      padding-bottom: 94px;
+    }
+    #adtype-page .hero__content {
+      width: min(1320px, calc(100vw - 64px));
+      text-align: center;
+    }
+    #adtype-page .hero .display {
+      max-width: none;
+      color: white;
+      font-size: clamp(64px, 6.2vw, 104px);
+      line-height: 1.12;
+      font-weight: 850;
+      letter-spacing: -.015em;
+      text-shadow: 0 20px 60px rgba(0,0,0,.52);
+    }
+    #adtype-page .hero .display span {
+      display: block;
+      white-space: nowrap;
+    }
+    #adtype-page .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ink);
+      border-radius: var(--r);
+      padding: 0 18px;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 760;
+      font-size: 15px;
+    }
+    #adtype-page .btn--primary {
+      border-color: var(--ad);
+      background: var(--ad);
+      color: white;
+    }
+    #adtype-page .hero .btn {
+      border-color: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.08);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    #adtype-page .hero .btn--primary {
+      border-color: var(--ad);
+      background: var(--ad);
+      color: white;
+    }
+    #adtype-page .brand-intro {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    #adtype-page .brand-intro__body {
+      display: grid;
+      grid-template-columns: minmax(360px, .9fr) minmax(560px, 1.1fr);
+      gap: clamp(64px, 8vw, 120px);
+      align-items: start;
+      padding-top: 106px;
+      padding-bottom: 126px;
+    }
+    #adtype-page .brand-intro__headline {
+      color: #20282d;
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1.42;
+      font-weight: 700;
+      letter-spacing: -.018em;
+      word-break: keep-all;
+    }
+    #adtype-page .brand-intro__copy {
+      max-width: 760px;
+      padding-top: 4px;
+    }
+    #adtype-page .brand-intro__copy p {
+      margin: 0 !important;
+      color: #333333 !important;
+      font-size: clamp(17px, 1.2vw, 20px) !important;
+      line-height: 1.82 !important;
+      font-weight: 500 !important;
+      letter-spacing: -.012em !important;
+      word-break: keep-all;
+    }
+    #adtype-page .brand-intro__copy p + p {
+      margin-top: 30px !important;
+    }
+    #adtype-page .brand-intro__copy .brand-intro__philosophy {
+      margin: 0 0 34px !important;
+      color: var(--ink) !important;
+      font-size: clamp(22px, 1.55vw, 28px) !important;
+      line-height: 1.48 !important;
+      font-weight: 720 !important;
+      letter-spacing: -.018em !important;
+    }
+    #adtype-page .brand-intro__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 42px;
+    }
+    #adtype-page .brand-intro__btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 0 24px;
+      color: var(--ink);
+      background: #fff;
+      font-size: 16px;
+      font-weight: 760;
+    }
+    #adtype-page .brand-intro__btn--primary {
+      border-color: var(--ad);
+      background: var(--ad);
+      color: #fff;
+    }
+    #adtype-page .contact-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    #adtype-page .contact-modal.is-open {
+      display: flex;
+    }
+    #adtype-page .contact-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: rgba(0,0,0,.62);
+      cursor: pointer;
+    }
+    #adtype-page .contact-modal__panel {
+      position: relative;
+      width: min(100%, 520px);
+      border-radius: 18px;
+      background: #fff;
+      color: var(--ink);
+      padding: 38px;
+      box-shadow: 0 34px 90px rgba(0,0,0,.28);
+    }
+    #adtype-page .contact-modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    #adtype-page .contact-modal__label {
+      display: block;
+      color: var(--ad);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .02em;
+      text-transform: none;
+      margin-bottom: 14px;
+    }
+    #adtype-page .contact-modal h2 {
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.24;
+      font-weight: 760;
+      letter-spacing: -.025em;
+      word-break: keep-all;
+    }
+    #adtype-page .contact-modal p {
+      margin-top: 18px !important;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 500;
+      word-break: keep-all;
+    }
+    #adtype-page .contact-modal__actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    #adtype-page .contact-modal__actions a {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      font-size: 15px;
+      font-weight: 760;
+    }
+    #adtype-page .contact-modal__actions a:first-child {
+      border-color: var(--ad);
+      background: var(--ad);
+      color: #fff !important;
+    }
+    #adtype-page .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .72s ease, transform .72s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+    #adtype-page .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #adtype-page .reveal[data-reveal-delay="1"] { transition-delay: .12s; }
+    #adtype-page .reveal[data-reveal-delay="2"] { transition-delay: .22s; }
+    @media (prefers-reduced-motion: reduce) {
+      #adtype-page .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    #adtype-page .partners {
+      position: relative;
+      padding: 112px 0;
+      background: #050511;
+      border-bottom: 1px solid #23232e;
+      overflow: hidden;
+    }
+    #adtype-page .partners__head {
+      text-align: center;
+      margin-bottom: 72px;
+      width: 100%;
+    }
+    #adtype-page .partners__label {
+      display: block;
+      margin-bottom: 18px;
+      color: #eb4200;
+      font-size: 12px;
+      font-weight: 820;
+      letter-spacing: .02em;
+      text-transform: none;
+    }
+    #adtype-page .partners__title {
+      max-width: 760px;
+      margin: 0 auto !important;
+      color: #f7f8f8;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.28;
+      font-weight: 660;
+      letter-spacing: -.024em;
+      word-break: keep-all;
+      text-align: center;
+    }
+    #adtype-page .partners__marquees {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    #adtype-page .marquee {
+      position: relative;
+      overflow: hidden;
+      --fade-edge: max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad)));
+      mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-edge), #000 calc(100% - var(--fade-edge)), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--fade-edge), #000 calc(100% - var(--fade-edge)), transparent 100%);
+    }
+    #adtype-page .marquee__track {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      width: max-content;
+      animation: adtype-marquee-left 52s linear infinite;
+    }
+    #adtype-page .marquee--reverse .marquee__track {
+      animation-name: adtype-marquee-right;
+    }
+    @keyframes adtype-marquee-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @keyframes adtype-marquee-right {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+    #adtype-page .marquee:hover .marquee__track {
+      animation-play-state: paused;
+    }
+    #adtype-page .partner-logo {
+      flex: 0 0 auto;
+      width: 154px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .82;
+      filter: grayscale(1) brightness(0) invert(1);
+      transition: opacity .18s ease, filter .18s ease;
+    }
+    #adtype-page .partner-logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    #adtype-page .partner-logo:hover {
+      opacity: 1;
+      filter: grayscale(1) brightness(0) invert(1);
+    }
+    #adtype-page .partner-logo--lg img {
+      transform: scale(1.08);
+      transform-origin: center;
+    }
+    #adtype-page .partner-logo--sm img {
+      transform: scale(.86);
+      transform-origin: center;
+    }
+
+    #adtype-page .video-expand {
+      position: relative;
+      height: 245vh;
+      min-height: 1800px;
+      background: #050505;
+      overflow: visible;
+    }
+    #adtype-page .video-expand__sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #050505;
+    }
+    #adtype-page .video-expand__frame {
+      position: relative;
+      width: min(760px, 54vw);
+      aspect-ratio: 16 / 9;
+      border-radius: var(--creative-radius, 24px);
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 28px 90px rgba(0,0,0,var(--creative-shadow, .34));
+      transform: translate3d(0, var(--creative-y, 0px), 0) scale(var(--creative-scale, .74));
+      transform-origin: center;
+      will-change: transform, border-radius, box-shadow;
+    }
+    #adtype-page .video-expand__frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: rgba(0,0,0,var(--creative-dim, .04));
+    }
+    #adtype-page .video-expand__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #adtype-page .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 54px;
+    }
+
+    #adtype-page .stack {
+      border-top: 1px solid var(--line-strong);
+    }
+    #adtype-page .stack-item {
+      display: grid;
+      grid-template-columns: 108px minmax(0, .9fr) minmax(340px, 1fr);
+      gap: 28px;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+    #adtype-page .stack-num {
+      color: var(--ad);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.015em;
+    }
+    #adtype-page .stack-copy h3 {
+      font-size: 27px;
+      line-height: 1.18;
+      font-weight: 760;
+      letter-spacing: -.024em;
+    }
+    #adtype-page .stack-copy p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    #adtype-page .stack-copy .lead {
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.62;
+      font-weight: 720;
+    }
+    #adtype-page .stack-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
+      margin-top: 18px;
+      padding: 0;
+      list-style: none;
+    }
+    #adtype-page .stack-points li {
+      position: relative;
+      padding-left: 13px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.56;
+      word-break: keep-all;
+    }
+    #adtype-page .stack-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .74em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--ad);
+    }
+    #adtype-page .stack-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    #adtype-page .stack-meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink-2);
+      font-size: 12px;
+      font-weight: 760;
+    }
+    #adtype-page .viz {
+      min-height: 180px;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: white;
+      position: relative;
+      overflow: hidden;
+      padding: 22px;
+    }
+    #adtype-page .viz-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+    #adtype-page .viz-label b {
+      color: var(--ad);
+      font-weight: 850;
+    }
+    #adtype-page .viz--grid {
+      background:
+        linear-gradient(90deg, rgba(16,16,16,.055) 1px, transparent 1px),
+        linear-gradient(rgba(16,16,16,.055) 1px, transparent 1px),
+        white;
+      background-size: 24px 24px;
+    }
+    #adtype-page .viz--grid::after {
+      content: "";
+      position: absolute;
+      inset: 34px 82px;
+      border: 2px solid var(--ad);
+      border-radius: 50%;
+    }
+    #adtype-page .bars {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    #adtype-page .bar {
+      height: 10px;
+      width: var(--w);
+      border-radius: 999px;
+      background: var(--ink);
+    }
+    #adtype-page .bar:nth-child(even) { background: var(--ad); }
+    #adtype-page .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    #adtype-page .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 760;
+    }
+    #adtype-page .chip.hot {
+      color: var(--ad);
+      background: var(--ad-soft);
+      border-color: #ffd9cb;
+    }
+    #adtype-page .media-table {
+      display: grid;
+      gap: 8px;
+    }
+    #adtype-page .media-row {
+      display: grid;
+      grid-template-columns: 1fr 72px 56px;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    #adtype-page .media-row b { color: var(--ad); }
+    #adtype-page .mini-chart {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      height: 116px;
+      display: flex;
+      align-items: end;
+      gap: 10px;
+    }
+    #adtype-page .mini-chart i {
+      flex: 1;
+      height: var(--h);
+      border-radius: 4px 4px 0 0;
+      background: var(--ink);
+    }
+    #adtype-page .mini-chart i:nth-child(even) { background: var(--ad); }
+    #adtype-page .radar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    #adtype-page .radar-box {
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 12px;
+      background: #fff;
+    }
+    #adtype-page .radar-box small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+    #adtype-page .radar-box strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.1;
+      font-weight: 820;
+    }
+
+    #adtype-page .tech-hero {
+      max-width: 960px;
+      margin: 0 auto 78px;
+      text-align: center;
+    }
+    #adtype-page .tech-hero .section-kicker {
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    #adtype-page .tech-hero h2 {
+      font-size: clamp(36px, 5.2vw, 62px);
+      line-height: 1.16;
+      font-weight: 760;
+      letter-spacing: -.028em;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-hero p {
+      width: 100%;
+      max-width: 900px;
+      margin: 48px auto 0 !important;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.74;
+      word-break: keep-all;
+      text-align: center;
+    }
+    #adtype-page .tech-hero p span {
+      display: block;
+      text-align: center;
+    }
+    #adtype-page #stack > .wrap {
+      max-width: 1560px !important;
+    }
+    #adtype-page .tech-stage {
+      position: relative;
+      min-height: 560vh;
+      margin-top: 0;
+    }
+    #adtype-page .tech-shell {
+      position: sticky;
+      top: clamp(78px, 9vh, 112px);
+      display: grid;
+      grid-template-columns: 292px minmax(0, 1fr);
+      gap: 46px;
+      align-items: start;
+      z-index: 2;
+    }
+    #adtype-page .tech-menu {
+      display: grid;
+      gap: 18px;
+      position: relative;
+      top: auto;
+    }
+    #adtype-page .tech-tab {
+      width: 100%;
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      align-items: center;
+      border: 0;
+      border-radius: var(--r);
+      padding: 14px 18px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    #adtype-page .tech-tab__main {
+      display: block;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.34;
+      font-weight: 760;
+      letter-spacing: -.012em;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-tab__product {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 650;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-tab::before {
+      display: none;
+    }
+    #adtype-page .tech-tab[aria-selected="true"] {
+      background: #fff1eb;
+      box-shadow: inset 0 0 0 1px #ffd9cb;
+      color: var(--ink);
+      transform: translateX(4px);
+    }
+    #adtype-page .tech-tab[aria-selected="true"] .tech-tab__main {
+      color: var(--ink);
+      font-weight: 820;
+    }
+    #adtype-page .tech-tab[aria-selected="true"] .tech-tab__product {
+      color: var(--ad);
+    }
+    #adtype-page .tech-tab[aria-selected="true"]::before {
+      display: none;
+    }
+    #adtype-page .tech-scroll-steps {
+      display: none;
+    }
+    #adtype-page .tech-panels {
+      position: relative;
+      min-height: 660px;
+    }
+    #adtype-page .tech-panel {
+      display: none;
+      position: absolute;
+      inset: 0;
+      min-height: 660px;
+      grid-template-columns: minmax(290px, 340px) minmax(760px, 1fr);
+      gap: 38px;
+      align-items: center;
+      border-radius: 24px;
+      background: #f4f5f6;
+      border: 1px solid #eceff2;
+      padding: 52px 0 52px 48px;
+      margin-bottom: 0;
+      overflow: hidden;
+      box-shadow: 0 18px 54px rgba(16,16,16,.035);
+      opacity: 0;
+      transform: translateY(18px);
+      pointer-events: none;
+      transition: opacity .24s ease, transform .24s ease;
+    }
+    #adtype-page .tech-panel.active {
+      display: grid;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #adtype-page .tech-copy small {
+      display: block;
+      color: var(--ad);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      margin-bottom: 22px;
+    }
+    #adtype-page .tech-copy h3 {
+      max-width: 340px;
+      font-size: clamp(27px, 2.25vw, 34px);
+      line-height: 1.34;
+      font-weight: 760;
+      letter-spacing: -.018em;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-copy p {
+      max-width: 336px;
+      margin-top: 26px !important;
+      color: var(--ink-2) !important;
+      font-size: 16px;
+      line-height: 1.68;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-list {
+      display: grid;
+      gap: 8px;
+      margin: 28px 0 0 !important;
+      padding: 0;
+      list-style: none;
+    }
+    #adtype-page .tech-list li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.58;
+      word-break: keep-all;
+    }
+    #adtype-page .tech-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ad);
+    }
+    #adtype-page .tech-visual {
+      position: relative;
+      min-height: 560px;
+      align-self: stretch;
+    }
+    #adtype-page .tech-window {
+      position: absolute;
+      right: -48px;
+      top: 50%;
+      bottom: auto;
+      width: min(1080px, calc(100% + 48px));
+      aspect-ratio: 16 / 10;
+      min-height: 0;
+      border: 1px solid var(--line);
+      border-radius: 12px 12px 0 0;
+      background: white;
+      box-shadow: 0 28px 70px rgba(16,16,16,.16);
+      overflow: hidden;
+      transform: translateY(-50%);
+    }
+    #adtype-page .tech-map {
+      height: 100%;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background:
+        radial-gradient(circle at 66% 38%, rgba(235,66,0,.20), transparent 16%),
+        radial-gradient(circle at 28% 72%, rgba(235,66,0,.14), transparent 18%),
+        linear-gradient(90deg, rgba(16,16,16,.055) 1px, transparent 1px),
+        linear-gradient(rgba(16,16,16,.055) 1px, transparent 1px),
+        white;
+      background-size: auto, auto, 26px 26px, 26px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    #adtype-page .tech-map::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      right: 28px;
+      top: 58px;
+      border-top: 3px dashed var(--ad);
+      transform: rotate(-8deg);
+    }
+    #adtype-page .product-screen {
+      height: calc(100% - 34px);
+      padding: 24px;
+      background: #fff;
+    }
+    #adtype-page .product-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+      background: #fff;
+    }
+    #adtype-page .product-video-frame {
+      height: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(16,16,16,.055) 1px, transparent 1px),
+        linear-gradient(rgba(16,16,16,.055) 1px, transparent 1px),
+        #fff;
+      background-size: 34px 34px;
+      position: relative;
+    }
+    #adtype-page .product-video-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 28% 62%, rgba(235,66,0,.16), transparent 18%),
+        radial-gradient(circle at 72% 32%, rgba(235,66,0,.14), transparent 16%),
+        linear-gradient(110deg, transparent 0 34%, rgba(235,66,0,.95) 34.2% 34.7%, transparent 35% 100%);
+      opacity: .9;
+    }
+    #adtype-page .product-video-frame::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: var(--r);
+      padding: 0 12px;
+      background: var(--ink);
+      color: white;
+      font-size: 12px;
+      font-weight: 820;
+      letter-spacing: .02em;
+    }
+    #adtype-page .product-video-frame--video::before {
+      display: none;
+    }
+    #adtype-page .product-video-frame--video {
+      border: 0;
+      border-radius: 0;
+    }
+    #adtype-page .product-video-frame--video .product-video {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #adtype-page .tech-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    #adtype-page .tech-metric {
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 10px;
+    }
+    #adtype-page .tech-metric small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    #adtype-page .tech-metric b {
+      display: block;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 850;
+    }
+    #adtype-page .tech-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 132px;
+      margin-top: 32px !important;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff !important;
+      font-size: 14px;
+      font-weight: 820;
+      line-height: 1;
+    }
+
+    #adtype-page .solution-hero {
+      max-width: 880px;
+      margin: 0 auto 82px;
+      text-align: center;
+    }
+    #adtype-page .solution-hero .section-kicker {
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    #adtype-page .solution-hero h2 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.18;
+      font-weight: 820;
+      letter-spacing: -.038em;
+      word-break: keep-all;
+    }
+    #adtype-page .solution-hero p {
+      max-width: 680px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    #adtype-page .solution-shell {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 66px;
+      align-items: center;
+    }
+    #adtype-page .solution-menu {
+      display: grid;
+      gap: 18px;
+    }
+    #adtype-page .solution-tab {
+      width: 100%;
+      min-height: 58px;
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      border: 0;
+      border-radius: var(--r);
+      padding: 0 18px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      font-size: 16px;
+      font-weight: 760;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    #adtype-page .solution-tab::before {
+      content: "";
+      width: 13px;
+      height: 9px;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      box-sizing: border-box;
+      opacity: .72;
+    }
+    #adtype-page .solution-tab[aria-selected="true"] {
+      background: #fff0ea;
+      color: var(--ink);
+      transform: translateX(4px);
+    }
+    #adtype-page .solution-tab[aria-selected="true"]::before {
+      border-color: var(--ad);
+      box-shadow: inset 4px 0 0 var(--ad);
+      opacity: 1;
+    }
+    #adtype-page .solution-panel {
+      display: none;
+      min-height: 430px;
+      grid-template-columns: minmax(0, .84fr) minmax(360px, 1fr);
+      gap: 34px;
+      align-items: center;
+      border-radius: 24px;
+      background: var(--soft);
+      padding: 42px 44px;
+      overflow: hidden;
+    }
+    #adtype-page .solution-panel.active {
+      display: grid;
+    }
+    #adtype-page .solution-copy small {
+      display: block;
+      color: var(--ad);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      margin-bottom: 18px;
+    }
+    #adtype-page .solution-copy h3 {
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.18;
+      font-weight: 820;
+      letter-spacing: -.034em;
+      word-break: keep-all;
+    }
+    #adtype-page .solution-copy p {
+      margin-top: 20px;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.76;
+      word-break: keep-all;
+    }
+    #adtype-page .solution-list {
+      display: grid;
+      gap: 8px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    #adtype-page .solution-list li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.58;
+      word-break: keep-all;
+    }
+    #adtype-page .solution-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ad);
+    }
+    #adtype-page .solution-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      margin-top: 28px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-size: 15px;
+      font-weight: 820;
+    }
+    #adtype-page .solution-visual {
+      position: relative;
+      min-height: 300px;
+      align-self: stretch;
+    }
+    #adtype-page .solution-window {
+      position: absolute;
+      right: -10px;
+      bottom: -8px;
+      width: min(100%, 430px);
+      min-height: 292px;
+      border: 1px solid var(--line);
+      border-radius: 12px 12px 0 0;
+      background: white;
+      box-shadow: 0 22px 52px rgba(16,16,16,.12);
+      overflow: hidden;
+    }
+    #adtype-page .window-bar {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfbfb;
+    }
+    #adtype-page .window-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ad);
+    }
+    #adtype-page .window-dot:nth-child(2) { background: #f0c04a; }
+    #adtype-page .window-dot:nth-child(3) { background: #4eb46a; }
+    #adtype-page .window-body {
+      padding: 20px;
+    }
+    #adtype-page .tech-panel .window-body {
+      padding: 24px;
+    }
+    #adtype-page .tech-panel .window-body:has(.product-video-frame--video) {
+      padding: 0;
+    }
+    #adtype-page .window-title {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 820;
+      margin-bottom: 16px;
+    }
+    #adtype-page .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    #adtype-page .metric-card {
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 10px;
+    }
+    #adtype-page .metric-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    #adtype-page .metric-card b {
+      display: block;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 850;
+    }
+    #adtype-page .solution-chart {
+      height: 92px;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background:
+        linear-gradient(180deg, rgba(235,66,0,.12), transparent 70%),
+        linear-gradient(90deg, rgba(16,16,16,.055) 1px, transparent 1px),
+        linear-gradient(rgba(16,16,16,.055) 1px, transparent 1px),
+        white;
+      background-size: auto, 36px 24px, 36px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    #adtype-page .tech-panel .solution-chart {
+      height: 194px;
+    }
+    #adtype-page .solution-chart::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 18px;
+      height: 42px;
+      border-bottom: 3px solid var(--ad);
+      border-right: 3px solid var(--ad);
+      transform: skewX(-24deg);
+      border-radius: 0 0 18px 0;
+    }
+    #adtype-page .keyword-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 16px;
+    }
+    #adtype-page .keyword-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 7px;
+      background: #fff0ea;
+      color: var(--ad);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* === Solution catalog (3-axis) === */
+    #adtype-page .sol-axes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 0;
+    }
+    #adtype-page .sol-axis {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+      min-height: 70px;
+      padding: 14px 26px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--ink-2);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    #adtype-page .sol-axis:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-2px);
+    }
+    #adtype-page .sol-axis__name {
+      font-size: 16px;
+      font-weight: 820;
+      letter-spacing: -.015em;
+      color: var(--ink);
+    }
+    #adtype-page .sol-axis__desc {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: -.005em;
+      color: var(--faint);
+    }
+    #adtype-page .sol-axis[aria-selected="true"] {
+      border-color: var(--ad);
+      background: var(--ad-soft);
+      box-shadow: 0 10px 30px rgba(235,66,0,.10);
+    }
+    #adtype-page .sol-axis[aria-selected="true"] .sol-axis__name { color: var(--ad); }
+    #adtype-page .sol-axis[aria-selected="true"] .sol-axis__desc { color: var(--ad); opacity: .78; }
+
+    #adtype-page .sol-groups { margin-top: 40px; }
+    #adtype-page .sol-group { display: none; }
+    #adtype-page .sol-group.active {
+      display: block;
+      animation: adtype-sol-fade .45s cubic-bezier(.22, 1, .36, 1);
+    }
+    @keyframes adtype-sol-fade {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #adtype-page .sol-group.active { animation: none; }
+    }
+    #adtype-page .sol-lead {
+      margin: 0 auto 30px;
+      max-width: 720px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    #adtype-page .sol-grid--concern {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    #adtype-page .sol-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      padding: 26px 28px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    #adtype-page .sol-card:hover {
+      border-color: var(--ad);
+      box-shadow: 0 16px 44px rgba(16,16,16,.08);
+      transform: translateY(-3px);
+    }
+    #adtype-page .sol-card__no {
+      font-size: 13px;
+      font-weight: 850;
+      color: var(--ad);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em;
+    }
+    #adtype-page .sol-card__copy { min-width: 0; }
+    #adtype-page .sol-card__title {
+      display: block;
+      font-size: 19px;
+      line-height: 1.3;
+      font-weight: 780;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    #adtype-page .sol-card__desc {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.62;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+    #adtype-page .sol-card__go {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--ink-2);
+      font-size: 17px;
+      transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    }
+    #adtype-page .sol-card:hover .sol-card__go {
+      background: var(--ad);
+      border-color: var(--ad);
+      color: #fff;
+      transform: translateX(3px);
+    }
+
+    #adtype-page .sol-grid--stage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    #adtype-page .sol-stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 248px;
+      padding: 30px 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    #adtype-page .sol-stage:hover {
+      border-color: var(--ad);
+      box-shadow: 0 16px 44px rgba(16,16,16,.08);
+      transform: translateY(-3px);
+    }
+    #adtype-page .sol-stage__step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--ad);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+    #adtype-page .sol-stage__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ad);
+    }
+    #adtype-page .sol-stage__line {
+      flex: 1;
+      height: 1px;
+      background: repeating-linear-gradient(90deg, var(--line-strong) 0 6px, transparent 6px 12px);
+    }
+    #adtype-page .sol-stage__title {
+      font-size: 25px;
+      font-weight: 820;
+      letter-spacing: -.025em;
+      color: var(--ink);
+    }
+    #adtype-page .sol-stage__desc {
+      flex: 1;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.64;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+    #adtype-page .sol-stage__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    #adtype-page .sol-stage__tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--ad-soft);
+      color: var(--ad);
+      font-size: 11.5px;
+      font-weight: 760;
+    }
+    #adtype-page .sol-stage__go {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 20px;
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 820;
+      transition: gap .2s ease, color .2s ease;
+    }
+    #adtype-page .sol-stage:hover .sol-stage__go {
+      color: var(--ad);
+      gap: 11px;
+    }
+
+    #adtype-page .sol-grid--industry {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    #adtype-page .sol-ind {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 22px 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    #adtype-page .sol-ind:hover {
+      border-color: var(--ad);
+      box-shadow: 0 14px 38px rgba(16,16,16,.07);
+      transform: translateY(-3px);
+    }
+    #adtype-page .sol-ind__icon {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: var(--ad-soft);
+      font-size: 20px;
+      line-height: 1;
+    }
+    #adtype-page .sol-ind__name {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.015em;
+      color: var(--ink);
+    }
+    #adtype-page .sol-ind__desc {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    #adtype-page .faq-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: 56px;
+    }
+    #adtype-page .faq-list { border-top: 1px solid var(--line-strong); }
+    #adtype-page .faq-item { border-bottom: 1px solid var(--line); }
+    #adtype-page .faq-q {
+      width: 100%;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 760;
+    }
+    #adtype-page .faq-q span:last-child {
+      color: var(--ad);
+      font-size: 24px;
+    }
+    #adtype-page .faq-a {
+      display: none;
+      padding: 0 52px 24px 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+    #adtype-page .faq-item.open .faq-a { display: block; }
+
+    #adtype-page .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 38px;
+    }
+    #adtype-page .insight-card {
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: white;
+    }
+    #adtype-page .thumb {
+      height: 170px;
+      background:
+        linear-gradient(90deg, rgba(16,16,16,.055) 1px, transparent 1px),
+        linear-gradient(rgba(16,16,16,.055) 1px, transparent 1px),
+        var(--soft);
+      background-size: 24px 24px;
+      position: relative;
+    }
+    #adtype-page .thumb::after {
+      content: "";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      height: 62px;
+      background: linear-gradient(90deg, var(--ad) 0 24%, var(--ink) 24% 48%, #aeb5bf 48% 70%, var(--ad) 70%);
+      border-radius: var(--r);
+    }
+    #adtype-page .insight-body { padding: 22px; }
+    #adtype-page .insight-type {
+      color: var(--ad);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 11px;
+    }
+    #adtype-page .insight-body h3 {
+      font-size: 21px;
+      line-height: 1.28;
+      font-weight: 760;
+      letter-spacing: -.02em;
+      word-break: keep-all;
+    }
+
+    #adtype-page .closing {
+      padding: 112px 0;
+      background: var(--ad);
+      color: white;
+    }
+    #adtype-page .closing-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 42px;
+      align-items: end;
+    }
+    #adtype-page .closing p {
+      max-width: 680px;
+      margin-top: 22px;
+      color: rgba(255,255,255,.86);
+      font-size: 18px;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+    #adtype-page .closing .btn {
+      color: var(--ink);
+      background: white;
+      border-color: white;
+    }
+
+    @media (max-width: 960px) {
+      #adtype-page .nav__links { display: none; }
+      #adtype-page .hero__inner, #adtype-page .section-head, #adtype-page .brand-intro__body, #adtype-page .stack-item, #adtype-page .tech-shell, #adtype-page .tech-panel, #adtype-page .solution-shell, #adtype-page .solution-panel, #adtype-page .faq-layout, #adtype-page .closing-inner {
+        grid-template-columns: 1fr;
+      }
+      #adtype-page .hero { min-height: 720px; }
+      #adtype-page .hero__inner {
+        min-height: 720px;
+        padding-top: 96px;
+        padding-bottom: 96px;
+      }
+      #adtype-page .hero .display {
+        font-size: clamp(44px, 11vw, 68px);
+        line-height: 1.14;
+        letter-spacing: -.01em;
+      }
+      #adtype-page .hero .display span {
+        white-space: normal;
+      }
+      #adtype-page .brand-intro__body {
+        gap: 34px;
+        padding-top: 54px;
+        padding-bottom: 78px;
+      }
+      #adtype-page .brand-intro__copy p {
+        font-size: 17px;
+      }
+      #adtype-page .brand-intro__copy br {
+        display: none;
+      }
+      #adtype-page .partners {
+        padding: 78px 0;
+      }
+      #adtype-page .partners__head {
+        margin-bottom: 44px;
+      }
+      #adtype-page .partners__marquees {
+        gap: 22px;
+      }
+      #adtype-page .video-expand {
+        min-height: 1500px;
+      }
+      #adtype-page .video-expand__frame {
+        width: 84vw;
+      }
+      #adtype-page .marquee__track {
+        gap: 46px;
+      }
+      #adtype-page .partner-logo {
+        width: 156px;
+        height: 58px;
+        font-size: 17px;
+      }
+      #adtype-page .stack-num { font-size: 18px; }
+      #adtype-page .stack-points { grid-template-columns: 1fr; }
+      #adtype-page .viz { min-height: 170px; }
+      #adtype-page .tech-hero { margin-bottom: 44px; }
+      #adtype-page .tech-stage {
+        min-height: 560vh;
+      }
+      #adtype-page .tech-shell {
+        position: sticky;
+        top: 72px;
+        gap: 26px;
+      }
+      #adtype-page .tech-menu {
+        display: flex;
+        position: relative;
+        top: auto;
+        z-index: 4;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 8px;
+        background: #fff;
+      }
+      #adtype-page .tech-tab {
+        flex: 0 0 auto;
+        min-height: 48px;
+        padding: 0 14px;
+        white-space: nowrap;
+      }
+      #adtype-page .tech-tab[aria-selected="true"] { transform: none; }
+      #adtype-page .tech-panels {
+        min-height: calc(100vh - 170px);
+      }
+      #adtype-page .tech-panel {
+        min-height: calc(100vh - 170px);
+        position: absolute;
+        inset: 0;
+        margin-bottom: 0;
+        padding: 28px 22px;
+        border-radius: 18px;
+      }
+      #adtype-page .tech-panel:last-child {
+        margin-bottom: 0;
+      }
+      #adtype-page .tech-visual { min-height: 276px; }
+      #adtype-page .tech-window {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        transform: none;
+      }
+      #adtype-page .tech-metrics { grid-template-columns: 1fr; }
+      #adtype-page .solution-hero { margin-bottom: 44px; }
+      #adtype-page .sol-axes { gap: 8px; }
+      #adtype-page .sol-axis {
+        flex: 1 1 160px;
+        min-height: 58px;
+        padding: 12px 16px;
+      }
+      #adtype-page .sol-groups { margin-top: 30px; }
+      #adtype-page .sol-grid--concern { grid-template-columns: 1fr; }
+      #adtype-page .sol-grid--stage { grid-template-columns: 1fr; }
+      #adtype-page .sol-grid--industry { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #adtype-page .sol-card { padding: 22px 22px; }
+      #adtype-page .sol-stage { min-height: auto; }
+      #adtype-page .insight-grid { grid-template-columns: 1fr; }
+    }
+  
+</style>
+<style id="adtype-imweb-hardening">
+  /* Imweb embedding hardening */
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: visible !important;
+  }
+  .doz_svs .section_wrap:has(#adtype-page),
+  .doz_svs .pc_section:has(#adtype-page),
+  .doz_svs .section_first:has(#adtype-page),
+  .doz_svs .section_basic:has(#adtype-page),
+  .doz_svs [doz_type="section"]:has(#adtype-page),
+  .doz_svs [doz_type="widget"]:has(#adtype-page),
+  .doz_svs .widget:has(#adtype-page),
+  .doz_svs .widget_box:has(#adtype-page),
+  .doz_svs .widget_inner:has(#adtype-page),
+  .doz_svs .widget_html:has(#adtype-page),
+  .doz_svs .row:has(#adtype-page),
+  .doz_svs .col:has(#adtype-page) {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  #adtype-page {
+    --ad: #EB4200;
+    --ad-soft: #fff3ee;
+    --ink: #101010;
+    --ink-2: #2f3135;
+    --muted: #6f747b;
+    --faint: #a4abb4;
+    --line: #e4e7eb;
+    --line-strong: #cdd2d8;
+    --paper: #ffffff;
+    --soft: #f7f8fa;
+    --soft-2: #fbfbfc;
+    --dark: #121212;
+    --max: 1280px;
+    --pad: 32px;
+    --r: 6px;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: var(--paper) !important;
+    color: var(--ink) !important;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 16px !important;
+    letter-spacing: 0 !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  #adtype-page, #adtype-page *, #adtype-page *::before, #adtype-page *::after { box-sizing: border-box !important; }
+  #adtype-page a { color: inherit !important; text-decoration: none !important; }
+  #adtype-page button { font: inherit !important; color: inherit; }
+  #adtype-page img, #adtype-page video, #adtype-page svg { display: block; max-width: 100%; }
+  #adtype-page h1, #adtype-page h2, #adtype-page h3, #adtype-page p { margin: 0 !important; }
+  #adtype-page .wrap { max-width: var(--max) !important; margin-left: auto !important; margin-right: auto !important; padding-left: var(--pad) !important; padding-right: var(--pad) !important; width: 100% !important; }
+  #adtype-page .hero { min-height: 100vh !important; }
+  #adtype-page .hero__inner { min-height: 100vh !important; }
+  #adtype-page .nav { position: fixed !important; width: 100% !important; }
+  #adtype-page .hero__video, #adtype-page .product-video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+</style>
+</head>
+<body>
+  <div id="adtype-page" data-adtype-page>
+  <nav class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#" aria-label="Adtype">
+        <img class="brand__orange" src="./assets/adtype-logo-orange-crop.png" alt="Adtype" />
+        <img class="brand__white" src="./assets/adtype-logo-white-crop.png" alt="" aria-hidden="true" />
+      </a>
+      <div class="nav__links">
+        <a href="#stack">Intelligence</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#faq">FAQ</a>
+        <a href="#insights">Insights</a>
+        <a class="nav__cta" href="#contact" data-contact-open>문의하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+            <section class="hero">
+      <video class="hero__video" src="./assets/adtype-hero2.mp4" autoplay muted loop playsinline></video>
+      <div class="wrap hero__inner">
+        <div class="hero__content">
+          <h1 class="display"><span>데이터 기반</span><span>OOH 마케팅 에이전시</span></h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-intro">
+      <div class="wrap brand-intro__body">
+        <h2 class="brand-intro__headline reveal">현실 세계의 소비자 데이터와<br />오프라인 마케팅 전문성으로<br />브랜드의 성장을 돕습니다.</h2>
+        <div class="brand-intro__copy reveal" data-reveal-delay="1">
+          <p class="brand-intro__philosophy">광고의 본질은 '소비자'입니다.</p>
+          <p>애드타입은 소비자의 실제 거주·이동·체류 데이터와<br />브랜드에 대한 인식, 검색, 리뷰 데이터를 함께 읽는 것에서 출발합니다.</p>
+          <p>이를 바탕으로 브랜드의 성장 과제를 OOH 마케팅 전략으로 재정의하고,<br />오디언스 플래닝부터 매체 설계, 캠페인 실행, 성과 분석까지 함께합니다.</p>
+          <div class="brand-intro__actions reveal" data-reveal-delay="2">
+            <a class="brand-intro__btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기 →</a>
+            <a class="brand-intro__btn brand-intro__btn--primary" href="#contact" data-contact-open>캠페인 문의하기 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section class="partners" id="partners" aria-label="고객사 및 파트너사">
+      <div class="wrap">
+        <div class="partners__head reveal">
+          <span class="partners__label">Partners & Clients</span>
+          <h2 class="partners__title">시장을 선도하는 브랜드들과 함께합니다.</h2>
+        </div>
+      </div>
+      <div class="partners__marquees reveal" data-reveal-delay="1">
+        <div class="marquee marquee--reverse" aria-hidden="false">
+          <div class="marquee__track">
+            <div class="partner-logo partner-logo--lg"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/01.%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%A1%9C%EA%B3%A0.png" alt="올리브영" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/02.%EB%A9%94%EB%94%94%ED%9E%90%EB%A1%9C%EA%B3%A0.png" alt="메디힐" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/03.%EC%8B%A0%EC%84%B8%EA%B3%84%EB%A9%B4%EC%84%B8%EC%A0%90%20%EB%A1%9C%EA%B3%A0.png" alt="신세계면세점" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/04.%EB%8F%84%EB%A3%A8%EC%BD%94%20%EB%A1%9C%EA%B3%A0.png" alt="도루코" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/05.%EB%8B%A5%ED%84%B0%EC%97%98%EC%8B%9C%EC%95%84%EB%A1%9C%EA%B3%A0.png" alt="닥터엘시아" /></div>
+            <div class="partner-logo partner-logo--lg"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/06.%EB%B0%94%EB%8B%90%EB%9D%BC%EC%BD%94%20%EB%A1%9C%EA%B3%A0.png" alt="바닐라코" /></div>
+            <div class="partner-logo partner-logo--lg" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/01.%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/02.%EB%A9%94%EB%94%94%ED%9E%90%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/03.%EC%8B%A0%EC%84%B8%EA%B3%84%EB%A9%B4%EC%84%B8%EC%A0%90%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/04.%EB%8F%84%EB%A3%A8%EC%BD%94%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/05.%EB%8B%A5%ED%84%B0%EC%97%98%EC%8B%9C%EC%95%84%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo partner-logo--lg" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/06.%EB%B0%94%EB%8B%90%EB%9D%BC%EC%BD%94%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+          </div>
+        </div>
+        <div class="marquee" aria-hidden="false">
+          <div class="marquee__track">
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/07.%EB%B2%A0%EC%8A%ACAI%EB%A1%9C%EA%B3%A0.png" alt="베슬AI" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/08.%EC%9D%B4%EB%85%B8%EC%85%98%20%EB%A1%9C%EA%B3%A0.png" alt="이노션" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/09.%ED%8B%B0%EB%A7%B5%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0%20%EB%A1%9C%EA%B3%A0.png" alt="티맵모빌리티" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/10.%EC%9D%B4%EB%85%B8%EB%A0%88%EB%93%9C%20%EB%A1%9C%EA%B3%A0.png" alt="이노레드" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/11.%EB%AF%B8%ED%95%91%EA%B8%B0%ED%9A%8D%20%EB%A1%9C%EA%B3%A0.png" alt="미핑기획" /></div>
+            <div class="partner-logo partner-logo--sm"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/12.%EC%99%80%EC%9D%BC%EB%A6%AC%EB%A1%9C%EA%B3%A0.png" alt="와일리" /></div>
+            <div class="partner-logo"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/%EC%A7%80%EC%98%A4%EB%8B%A4%EB%85%B8%20%EB%A1%9C%EA%B3%A0.png" alt="지오다노" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/07.%EB%B2%A0%EC%8A%ACAI%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/08.%EC%9D%B4%EB%85%B8%EC%85%98%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/09.%ED%8B%B0%EB%A7%B5%EB%AA%A8%EB%B9%8C%EB%A6%AC%ED%8B%B0%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/10.%EC%9D%B4%EB%85%B8%EB%A0%88%EB%93%9C%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/11.%EB%AF%B8%ED%95%91%EA%B8%B0%ED%9A%8D%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo partner-logo--sm" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/12.%EC%99%80%EC%9D%BC%EB%A6%AC%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+            <div class="partner-logo" aria-hidden="true"><img src="https://storage.googleapis.com/video_resource/드래프타입%20인텔리전스%20홈페이지%20제작_260504/파트너사%20로고%20파일%20모음/%EC%A7%80%EC%98%A4%EB%8B%A4%EB%85%B8%20%EB%A1%9C%EA%B3%A0.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-expand" id="video-expand" aria-label="Adtype campaign preview">
+      <div class="video-expand__sticky">
+        <div class="video-expand__frame">
+          <video class="video-expand__video" src="./assets/hongdae-sync-creative.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+      </div>
+    </section>
+
+<section class="section section--soft" id="stack">
+      <div class="wrap">
+        <div class="tech-hero">
+          <span class="section-kicker">Adtype OOH Technology</span>
+          <h2>브랜드의 성장 과제를 읽고,<br />오프라인 캠페인으로 설계하는 기술</h2>
+          <p><span>애드타입은 옥외광고 실행사가 아니라, 오프라인에 특화된 마케팅 에이전시입니다.</span><span>브랜드의 성장 전략을 소비자·시장 데이터로 읽고, OOH 캠페인 과제로 재정의해 성과까지 관리합니다.</span></p>
+        </div>
+
+        <div class="tech-stage">
+          <div class="tech-shell">
+          <div class="tech-menu" role="tablist" aria-label="Adtype OOH Technology">
+            <button class="tech-tab" aria-selected="true" data-tech="mental"><span><span class="tech-tab__main">01. 시장 지형과 기억 구조 분석</span><span class="tech-tab__product">Mental Market</span></span></button>
+            <button class="tech-tab" aria-selected="false" data-tech="radar"><span><span class="tech-tab__main">02. 브랜드 전략 → OOH 캠페인 도출</span><span class="tech-tab__product">Survey / Review Radar</span></span></button>
+            <button class="tech-tab" aria-selected="false" data-tech="map"><span><span class="tech-tab__main">03. 타겟 생활권과 동선 분석</span><span class="tech-tab__product">Adtype Map / Simulator</span></span></button>
+            <button class="tech-tab" aria-selected="false" data-tech="mms"><span><span class="tech-tab__main">04. 공간 접점과 미디어 플래닝</span><span class="tech-tab__product">Media Planning System</span></span></button>
+            <button class="tech-tab" aria-selected="false" data-tech="performance"><span><span class="tech-tab__main">05. 캠페인 성과와 전략 분석</span><span class="tech-tab__product">OOH Performance System</span></span></button>
+          </div>
+
+          <div class="tech-panels">
+            <article class="tech-panel active" data-tech-panel="mental">
+              <div class="tech-copy">
+                <small>SEARCH CONTEXT INTELLIGENCE</small>
+                <h3>브랜드가 들어갈 시장의 지형도를 읽습니다</h3>
+                <p>Mental Market은 검색 키워드와 LLM 기반 클러스터링으로 소비자가 시장을 어떤 문제, 상황, 욕구로 탐색하는지 분석합니다. 이를 통해 브랜드가 공략해야 할 기억 구조와 캠페인 메시지의 진입 맥락을 찾습니다.</p>
+                <ul class="tech-list">
+                  <li>검색 키워드 기반 시장 구조와 경쟁 인식권 분석</li>
+                  <li>소비자의 Why, When, Who, How 맥락 탐색</li>
+                  <li>OOH 크리에이티브와 위치 전략의 언어 기준 제공</li>
+                </ul>
+                <a class="tech-link" href="#contact">더 알아보기 →</a>
+              </div>
+              <div class="tech-visual"><div class="tech-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="window-body"><div class="product-video-frame product-video-frame--video" data-label="MENTAL MARKET CLUSTER"><video class="product-video" src="./assets/mental-market-clip.mp4" autoplay muted loop playsinline></video></div></div></div></div>
+            </article>
+            <article class="tech-panel" data-tech-panel="radar">
+              <div class="tech-copy">
+                <small>CONSUMER EXPERIENCE DATA</small>
+                <h3>브랜드 전략을 OOH 캠페인 과제로 바꿉니다</h3>
+                <p>Survey Radar와 Review Radar는 브랜드의 현재 인식, 경험, 만족·불만, 구매 맥락을 정량·정성 데이터로 진단합니다. 브랜드가 개선해야 할 지표와 소비자 접점을 찾아, OOH가 해결할 수 있는 캠페인 과제로 재정의합니다.</p>
+                <ul class="tech-list">
+                  <li>브랜드 인지도·상기도·고려도·구매의향 지표 분석</li>
+                  <li>리뷰 기반 만족·불만 요인 및 구매 결정 요인 추출</li>
+                  <li>브랜드 지표 개선을 위한 OOH 캠페인 과제 도출</li>
+                </ul>
+                <a class="tech-link" href="#contact">더 알아보기 →</a>
+              </div>
+              <div class="tech-visual"><div class="tech-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="window-body"><div class="product-video-frame product-video-frame--video" data-label="SURVEY / REVIEW RADAR"><video class="product-video" src="./assets/survey-review-radar.mp4" autoplay muted loop playsinline></video></div></div></div></div>
+            </article>
+            <article class="tech-panel" data-tech-panel="map">
+              <div class="tech-copy">
+                <small>SPATIAL INTELLIGENCE</small>
+                <h3>캠페인이 작동할 타겟의 생활권을 찾습니다</h3>
+                <p>Adtype Map과 Simulator는 캠페인 과제가 작동해야 할 타겟의 실제 거주·이동·체류 공간을 분석합니다. 생활이동 데이터와 이동 경로 DB를 결합해 캠페인이 집중해야 할 생활권과 동선을 찾습니다.</p>
+                <ul class="tech-list">
+                  <li>성별·연령·시간대·이동 목적별 생활이동 데이터 조회</li>
+                  <li>출발지·도착지 기반 경로 매칭 및 환승/동선 분석</li>
+                  <li>동선 단위로 검토 가능한 OOH 접점 도출</li>
+                </ul>
+                <a class="tech-link" href="#contact">더 알아보기 →</a>
+              </div>
+              <div class="tech-visual">
+                <div class="tech-window">
+                  <div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div>
+                  <div class="window-body"><div class="product-video-frame product-video-frame--video" data-label="ADTYPE ROUTE SIMULATOR"><video class="product-video" src="./assets/adtype-map-simulator.mp4" autoplay muted loop playsinline></video></div></div>
+                </div>
+              </div>
+            </article>
+            <article class="tech-panel" data-tech-panel="mms">
+              <div class="tech-copy">
+                <small>MEDIA MIX & BUYING</small>
+                <h3>캠페인 과제를 공간과 매체 조합으로 설계합니다</h3>
+                <p>Adtype MMS는 타겟 생활권, 이동 동선, 가시권 POI, 체류 인구 데이터와 OOH 매체 DB를 연결합니다. 도출된 캠페인 과제를 기준으로 어떤 공간에서, 어떤 매체 조합으로 노출을 설계할지 검토합니다.</p>
+                <ul class="tech-list">
+                  <li>거래 가능한 OOH 매체 8,100개 이상 DB화</li>
+                  <li>버스, 지하철, 빌보드, 리테일 등 매체 유형별 검토</li>
+                  <li>미디어 믹스, 제안서 생성, 구좌 예약 현황 관리</li>
+                </ul>
+                <a class="tech-link" href="#contact">더 알아보기 →</a>
+              </div>
+              <div class="tech-visual"><div class="tech-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="window-body"><div class="product-video-frame product-video-frame--video" data-label="MEDIA MIX SYSTEM"><video class="product-video" src="./assets/media-planning-system.mp4" autoplay muted loop playsinline></video></div></div></div></div>
+            </article>
+            <article class="tech-panel" data-tech-panel="performance">
+              <div class="tech-copy">
+                <small>PERFORMANCE & INSIGHT LOOP</small>
+                <h3>성과를 종합적으로 분석하고 성장 인사이트를 발굴합니다</h3>
+                <p>OOH Performance System은 캠페인별 노출, 도달, 빈도와 성별·연령별 도달 구조를 대시보드로 확인합니다. 캠페인 성과를 브랜드 지표와 함께 해석해 다음 타겟, 지역, 매체 조합 개선과 후속 성장 전략에 반영합니다.</p>
+                <ul class="tech-list">
+                  <li>Impression, Reach, Frequency 캠페인 대시보드</li>
+                  <li>일별·기간별 성과와 성별·연령별 도달 구조 확인</li>
+                  <li>브랜드 지표와 연계한 성장 인사이트 발굴</li>
+                </ul>
+                <a class="tech-link" href="#contact">더 알아보기 →</a>
+              </div>
+              <div class="tech-visual"><div class="tech-window"><div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i class="window-dot"></i></div><div class="window-body"><div class="product-video-frame product-video-frame--video" data-label="PERFORMANCE DASHBOARD"><video class="product-video" src="./assets/ad-effect-clip.mp4" autoplay muted loop playsinline></video></div></div></div></div>
+            </article>
+          </div>          </div>
+        </div>
+        <div class="tech-scroll-steps" aria-hidden="true">
+          <div class="tech-scroll-step" data-tech-step="mental"></div>
+          <div class="tech-scroll-step" data-tech-step="radar"></div>
+          <div class="tech-scroll-step" data-tech-step="map"></div>
+          <div class="tech-scroll-step" data-tech-step="mms"></div>
+          <div class="tech-scroll-step" data-tech-step="performance"></div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section" id="solutions">
+      <div class="wrap">
+        <div class="solution-hero">
+          <span class="section-kicker">Solution</span>
+          <h2>브랜드가 풀어야 할 과제에서<br />OOH 전략이 시작됩니다</h2>
+          <p>애드타입은 매체를 먼저 고르지 않습니다. 우리 브랜드의 상황 — 지금의 고민, 성장 단계, 산업 — 에서 출발해 가장 맞는 솔루션으로 연결합니다.</p>
+        </div>
+
+        <div class="sol-axes" role="tablist" aria-label="솔루션 분류 기준">
+          <button class="sol-axis" type="button" role="tab" aria-selected="true" data-axis="concern">
+            <span class="sol-axis__name">고민 유형별</span>
+            <span class="sol-axis__desc">풀어야 할 마케팅 과제에서</span>
+          </button>
+          <button class="sol-axis" type="button" role="tab" aria-selected="false" data-axis="stage">
+            <span class="sol-axis__name">성장 단계별</span>
+            <span class="sol-axis__desc">브랜드의 라이프사이클에서</span>
+          </button>
+          <button class="sol-axis" type="button" role="tab" aria-selected="false" data-axis="industry">
+            <span class="sol-axis__name">산업·카테고리별</span>
+            <span class="sol-axis__desc">업종 특성과 소비 맥락에서</span>
+          </button>
+        </div>
+
+        <div class="sol-groups">
+          <div class="sol-group active" data-axis-group="concern">
+            <p class="sol-lead">지금 브랜드가 마주한 과제를 고르면, 그에 맞는 OOH 솔루션으로 연결됩니다.</p>
+            <div class="sol-grid sol-grid--concern">
+              <a class="sol-card" href="solutions/branding">
+                <span class="sol-card__no">01</span>
+                <span class="sol-card__copy"><span class="sol-card__title">브랜딩 · 커뮤니케이션</span><span class="sol-card__desc">브랜드가 전하려는 메시지를 도시 공간의 경험으로 번역합니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/brand-metrics">
+                <span class="sol-card__no">02</span>
+                <span class="sol-card__copy"><span class="sol-card__title">브랜드 지표 개선</span><span class="sol-card__desc">인지·상기·고려도를 측정 가능한 목표로 바꿔 끌어올립니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/awareness">
+                <span class="sol-card__no">03</span>
+                <span class="sol-card__copy"><span class="sol-card__title">시장 인지도 확대</span><span class="sol-card__desc">타겟 생활권 안에서 브랜드를 반복적으로 기억시킵니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/market-entry">
+                <span class="sol-card__no">04</span>
+                <span class="sol-card__copy"><span class="sol-card__title">시장 침투 · 신제품 출시</span><span class="sol-card__desc">신제품이 처음 기억될 시장 진입 지점을 찾습니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/acquisition">
+                <span class="sol-card__no">05</span>
+                <span class="sol-card__copy"><span class="sol-card__title">유저 획득 · 점유율 확대</span><span class="sol-card__desc">전환 가능성이 높은 지역과 동선을 우선 공략합니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/purchase-moment">
+                <span class="sol-card__no">06</span>
+                <span class="sol-card__copy"><span class="sol-card__title">구매 순간 상기도 개선</span><span class="sol-card__desc">고객이 고려하고 구매하는 순간 가까이에 브랜드를 둡니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+              <a class="sol-card" href="solutions/imc">
+                <span class="sol-card__no">07</span>
+                <span class="sol-card__copy"><span class="sol-card__title">IMC 캠페인 추진</span><span class="sol-card__desc">온라인 메시지와 오프라인 접점을 하나의 캠페인 경험으로 연결합니다.</span></span>
+                <span class="sol-card__go" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="sol-group" data-axis-group="stage">
+            <p class="sol-lead">브랜드의 성장 단계에 따라 풀어야 할 과제와 매체 전략의 우선순위가 달라집니다.</p>
+            <div class="sol-grid sol-grid--stage">
+              <a class="sol-stage" href="solutions/stage/launch">
+                <span class="sol-stage__step"><i class="sol-stage__dot"></i>STAGE 01 · LAUNCH<i class="sol-stage__line"></i></span>
+                <span class="sol-stage__title">출시 단계</span>
+                <span class="sol-stage__desc">처음 시장에 진입하며 존재를 알려야 할 때. 핵심 타겟과 진입 상권을 좁혀 ‘첫 기억’을 만듭니다.</span>
+                <span class="sol-stage__tags"><span>시장 침투</span><span>인지도</span><span>브랜딩</span></span>
+                <span class="sol-stage__go">자세히 보기 →</span>
+              </a>
+              <a class="sol-stage" href="solutions/stage/growth">
+                <span class="sol-stage__step"><i class="sol-stage__dot"></i>STAGE 02 · GROWTH<i class="sol-stage__line"></i></span>
+                <span class="sol-stage__title">성장 단계</span>
+                <span class="sol-stage__desc">인지를 점유로 키우며 빠르게 확장할 때. 생활권과 동선을 넓혀 획득 효율을 끌어올립니다.</span>
+                <span class="sol-stage__tags"><span>유저 획득</span><span>지표 개선</span><span>IMC</span></span>
+                <span class="sol-stage__go">자세히 보기 →</span>
+              </a>
+              <a class="sol-stage" href="solutions/stage/maturity">
+                <span class="sol-stage__step"><i class="sol-stage__dot"></i>STAGE 03 · MATURITY<i class="sol-stage__line"></i></span>
+                <span class="sol-stage__title">성숙 단계</span>
+                <span class="sol-stage__desc">점유율을 지키고 재구매를 방어할 때. 구매 순간 상기도와 브랜드 충성을 강화합니다.</span>
+                <span class="sol-stage__tags"><span>구매 순간</span><span>지표 방어</span><span>브랜딩</span></span>
+                <span class="sol-stage__go">자세히 보기 →</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="sol-group" data-axis-group="industry">
+            <p class="sol-lead">업종마다 소비자의 구매 여정과 OOH의 역할이 다릅니다. 카테고리 맥락에 맞춰 설계합니다.</p>
+            <div class="sol-grid sol-grid--industry">
+              <a class="sol-ind" href="solutions/industry/beauty">
+                <span class="sol-ind__icon">💄</span>
+                <span class="sol-ind__name">뷰티</span>
+                <span class="sol-ind__desc">트렌드와 체험 중심의 뷰티 소비 맥락에 맞춘 공간 전략</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/finance">
+                <span class="sol-ind__icon">🏦</span>
+                <span class="sol-ind__name">금융</span>
+                <span class="sol-ind__desc">신뢰와 전환이 핵심인 금융 서비스의 인지·고려 설계</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/fnb">
+                <span class="sol-ind__icon">🍽️</span>
+                <span class="sol-ind__name">F&amp;B · 외식</span>
+                <span class="sol-ind__desc">상권과 시간대 기반으로 방문과 구매를 유도</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/mobility">
+                <span class="sol-ind__icon">🚗</span>
+                <span class="sol-ind__name">모빌리티 · 자동차</span>
+                <span class="sol-ind__desc">이동 동선과 생활 반경을 활용한 접점 설계</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/retail">
+                <span class="sol-ind__icon">🛍️</span>
+                <span class="sol-ind__name">리테일 · 커머스</span>
+                <span class="sol-ind__desc">매장과 온라인을 잇는 구매 여정 설계</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/tech">
+                <span class="sol-ind__icon">📱</span>
+                <span class="sol-ind__name">테크 · 앱서비스</span>
+                <span class="sol-ind__desc">신규 유저 획득과 리텐션 중심의 노출 전략</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/healthcare">
+                <span class="sol-ind__icon">🩺</span>
+                <span class="sol-ind__name">헬스케어</span>
+                <span class="sol-ind__desc">신뢰 기반의 정보 전달과 상기도 설계</span>
+              </a>
+              <a class="sol-ind" href="solutions/industry/fashion">
+                <span class="sol-ind__icon">👗</span>
+                <span class="sol-ind__name">패션 · 라이프스타일</span>
+                <span class="sol-ind__desc">감도와 화제성을 키우는 타이밍·공간 전략</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section section--soft" id="faq">
+      <div class="wrap faq-layout">
+        <div>
+          <span class="section-kicker">FAQ</span>
+          <h2 class="headline">브랜드 담당자가<br />자주 묻는 질문</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item open"><button class="faq-q"><span>OOH 캠페인의 성과를 어떻게 측정하나요?</span><span>+</span></button><div class="faq-a">노출, 도달, 빈도 데이터를 기본으로 보고, 필요 시 서베이 기반 브랜드 인지도·상기도·구매 고려도 변화를 함께 분석합니다.</div></div>
+          <div class="faq-item"><button class="faq-q"><span>일반 옥외광고 대행사와 무엇이 다른가요?</span><span>+</span></button><div class="faq-a">애드타입은 매체 구매 이전에 소비자 인식, 검색 맥락, 리뷰, 공간·동선 데이터를 함께 분석해 OOH 전략을 설계합니다.</div></div>
+          <div class="faq-item"><button class="faq-q"><span>예산이 크지 않아도 캠페인 설계가 가능한가요?</span><span>+</span></button><div class="faq-a">가능합니다. 지역, 타깃, 성장 과제에 따라 작은 예산에서도 검증 가능한 접점 중심의 플랜을 설계할 수 있습니다.</div></div>
+          <div class="faq-item"><button class="faq-q"><span>온라인 캠페인이나 IMC 캠페인과 함께 설계할 수 있나요?</span><span>+</span></button><div class="faq-a">가능합니다. 온라인 메시지, 리테일 접점, 오프라인 동선을 연결해 브랜드가 기억되는 맥락을 함께 설계합니다.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="insights">
+      <div class="wrap">
+        <span class="section-kicker">Insights</span>
+        <h2 class="headline">OOH와 브랜드 성장을 위한 인사이트</h2>
+        <div class="insight-grid">
+          <a class="insight-card" href="#"><div class="thumb"></div><div class="insight-body"><div class="insight-type">OOH TREND</div><h3>OOH 캠페인에서 유동인구보다 중요한 지표</h3></div></a>
+          <a class="insight-card" href="#"><div class="thumb"></div><div class="insight-body"><div class="insight-type">STRATEGY NOTE</div><h3>브랜드 상기도를 높이는 오프라인 접점 설계법</h3></div></a>
+          <a class="insight-card" href="#"><div class="thumb"></div><div class="insight-body"><div class="insight-type">CATEGORY INSIGHT</div><h3>뷰티 브랜드가 올리브영 주변 OOH를 다르게 봐야 하는 이유</h3></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="wrap closing-inner">
+        <div>
+          <h2 class="headline">우리 브랜드의 성장 과제,<br />OOH로 어떻게 풀 수 있을까요?</h2>
+          <p>애드타입이 소비자 데이터, 공간정보기술, 오프라인 광고 전문성을 바탕으로 브랜드에 맞는 OOH 캠페인 전략을 제안합니다.</p>
+        </div>
+        <a class="btn" href="#contact" data-contact-open>캠페인 문의하기</a>
+      </div>
+    </section>
+  </main>
+  <div class="contact-modal" id="adtype-contact-modal" aria-hidden="true">
+    <button class="contact-modal__backdrop" type="button" aria-label="문의 모달 닫기" data-contact-close></button>
+    <div class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="adtype-contact-title">
+      <button class="contact-modal__close" type="button" aria-label="닫기" data-contact-close>&times;</button>
+      <span class="contact-modal__label">Contact</span>
+      <h2 id="adtype-contact-title">OOH 캠페인을<br />함께 설계해볼까요?</h2>
+      <p>브랜드의 목표, 타겟, 집행 시점, 예산 범위를 알려주시면 애드타입이 데이터 기반 OOH 캠페인 방향을 제안드립니다.</p>
+      <div class="contact-modal__actions">
+        <a href="mailto:hello@adtype.work?subject=Adtype%20OOH%20Campaign%20Inquiry">메일로 문의하기</a>
+        <a href="./assets/adtype-company-profile.pdf" download>회사소개서 다운로드</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    (function () {
+    const pages = document.querySelectorAll('#adtype-page');
+    pages.forEach((item, index) => {
+      if (index > 0) item.remove();
+    });
+    const page = pages[0];
+    if (!page) return;
+    const nav = page.querySelector('.nav');
+    const syncNav = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    syncNav();
+    window.addEventListener('scroll', syncNav, { passive: true });
+
+    const revealItems = page.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.22, rootMargin: '0px 0px -8% 0px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const videoExpand = page.querySelector('.video-expand');
+    const videoExpandFrame = page.querySelector('.video-expand__frame');
+    let videoExpandTicking = false;
+    const syncVideoExpand = () => {
+      if (!videoExpand || !videoExpandFrame) return;
+      const start = videoExpand.offsetTop;
+      const end = start + videoExpand.offsetHeight - window.innerHeight;
+      const range = Math.max(1, end - start);
+      const progress = Math.min(1, Math.max(0, (window.scrollY - start) / range));
+      const eased = progress < .5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      const scale = 0.74 + eased * 1.74;
+      const y = Math.round(eased * 12 * window.innerHeight / 100);
+      const radius = Math.max(0, Math.round(24 - eased * 24));
+      const shadow = Math.max(.08, .34 - eased * .24).toFixed(2);
+      const dim = Math.max(0, .04 - eased * .04).toFixed(2);
+      videoExpandFrame.style.setProperty('--creative-scale', scale.toFixed(3));
+      videoExpandFrame.style.setProperty('--creative-y', y + 'px');
+      videoExpandFrame.style.setProperty('--creative-radius', radius + 'px');
+      videoExpandFrame.style.setProperty('--creative-shadow', shadow);
+      videoExpandFrame.style.setProperty('--creative-dim', dim);
+    };
+    const requestVideoExpandSync = () => {
+      if (videoExpandTicking) return;
+      videoExpandTicking = true;
+      window.requestAnimationFrame(() => {
+        syncVideoExpand();
+        videoExpandTicking = false;
+      });
+    };
+    syncVideoExpand();
+    window.addEventListener('scroll', requestVideoExpandSync, { passive: true });
+    window.addEventListener('resize', requestVideoExpandSync);
+
+    const techKeys = ['mental', 'radar', 'map', 'mms', 'performance'];
+    let activeTechKey = 'map';
+    const techStage = page.querySelector('.tech-stage');
+    const activateTech = (key, force) => {
+      if (!key || (!force && key === activeTechKey)) return;
+      activeTechKey = key;
+      page.querySelectorAll('.tech-tab').forEach((item) => item.setAttribute('aria-selected', String(item.dataset.tech === key)));
+      page.querySelectorAll('.tech-panel').forEach((panel) => panel.classList.toggle('active', panel.dataset.techPanel === key));
+    };
+    page.querySelectorAll('.tech-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (!techStage) return;
+        const index = Math.max(0, techKeys.indexOf(tab.dataset.tech));
+        const scrollable = Math.max(1, techStage.offsetHeight - window.innerHeight);
+        const target = techStage.offsetTop + (scrollable * (index / techKeys.length)) + 2;
+        window.scrollTo({ top: target, behavior: 'smooth' });
+      });
+    });
+    let techScrollTicking = false;
+    const syncTechByScrollProgress = () => {
+      if (!techStage) return;
+      const start = techStage.offsetTop;
+      const end = start + techStage.offsetHeight - window.innerHeight;
+      const range = Math.max(1, end - start);
+      const progress = Math.min(1, Math.max(0, (window.scrollY - start) / range));
+      const index = Math.min(techKeys.length - 1, Math.floor(progress * techKeys.length));
+      activateTech(techKeys[index]);
+    };
+    const requestTechSync = () => {
+      if (techScrollTicking) return;
+      techScrollTicking = true;
+      window.requestAnimationFrame(() => {
+        syncTechByScrollProgress();
+        techScrollTicking = false;
+      });
+    };
+    activateTech(activeTechKey, true);
+    syncTechByScrollProgress();
+    window.addEventListener('scroll', requestTechSync, { passive: true });
+    window.addEventListener('resize', requestTechSync);
+
+    page.querySelectorAll('.sol-axis').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.axis;
+        page.querySelectorAll('.sol-axis').forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
+        page.querySelectorAll('.sol-group').forEach((group) => group.classList.toggle('active', group.dataset.axisGroup === key));
+      });
+    });
+
+    page.querySelectorAll('.faq-q').forEach((button) => {
+      button.addEventListener('click', () => button.closest('.faq-item').classList.toggle('open'));
+    });
+
+    const contactModal = page.querySelector('#adtype-contact-modal');
+    const openContact = () => {
+      if (!contactModal) return;
+      contactModal.classList.add('is-open');
+      contactModal.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+    };
+    const closeContact = () => {
+      if (!contactModal) return;
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+      document.documentElement.style.overflow = '';
+    };
+    page.querySelectorAll('[data-contact-open]').forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openContact();
+      });
+    });
+    page.querySelectorAll('[data-contact-close]').forEach((trigger) => {
+      trigger.addEventListener('click', closeContact);
+    });
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeContact();
+    });
+    })();
+  </script>
+</body>
+</html>

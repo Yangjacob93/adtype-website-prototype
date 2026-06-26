@@ -1,0 +1,10 @@
+[1] © 2026, Draftype Inc. All rights reserved. 01 [ KEYVISUAL — 헤일리 직접 삽입 ] DRAFTYPE INC. Marketype Snapshot 1차원의 응답에서 다차원의 시장 구조를 읽어, 우리 브랜드의 현재 좌표를 진단합니다.
+[2] © 2026, Draftype Inc. All rights reserved. 02 PROBLEM 같은 응답 데이터, 다른 해상도. 서베이 데이터 활용도가 제한되는 세 가지 지점이 있습니다. Marketype Snapshot은 이 간극을 넘어 시장의 구조를 드러내기 위해 설계되었습니다.
+[3] © 2026, Draftype Inc. All rights reserved. 09 USE CASE 의사결정이 필요한 순간, Marketype Snapshot을 활용하는 방법. A 시장 내 현재 좌표 진단 WHEN 신규 마케팅 전략 수립 착수 시 / 연간 플랜 세우기 전 WHAT YOU GET 보조 인지부터 최초상기까지, 우리 브랜드의 인식 자산을 경쟁 구도 속에서 진단합니다. 전략을 세우기 전에 시장 안 현재 위치부터 확인합니다. B 퍼널의 병목 지점 발견 WHEN 캠페인 효과가 정체됐을 때 / 리소스 투입 지점을 고민할 때 WHAT YOU GET 브랜드 인지부터 주이용까지, 단계별 전환의 누수 지점을 들여다봅니다. 인지·고려·선호·경험 중 어디에 투자해야 전환율을 높일 수 있을지 데이터 근거로 판단할 수 있습니다. C CEP 점유 진단 WHEN 마케팅 메시지 기획 착수 시 / 브랜드 포지셔닝 재정의 시 WHAT YOU GET WHY·WHEN·WHO·HOW 4축으로 우리 브랜드가 어떤 구매 맥락에 연결되어 있는지, 경쟁사가 어떤 맥락을 점유하고 있는지를 살펴봅니다. 비어있는 CEP를 발견하고 새 진입점을 잡습니다.
+[4] © 2026, Draftype Inc. All rights reserved. 10 BEYOND METRICS 소비자 인식을 구조로, 구조를 전략의 좌표로. 시장의 구조 속 우리 브랜드는 어디에 위치하는가. 물음의 답이, 다음 의사결정의 출발점입니다.
+[5] © 2026, Draftype Inc. All rights reserved. 04 HOW TO USE - MARKET REPORT(마켓 리포트) 시장 데이터 - 브랜드 인지부터 구매 맥락까지, 시장의 경쟁 구조를 보여줍니다. [ 화면 스크린샷 — 헤일리 직접 삽입 ]
+[6] © 2026, Draftype Inc. All rights reserved. 03 APPROACH Marketype Snapshot의 마켓 리포트에서는 시장과 소비자를 두 레이어로 펼칩니다. 시장 레이어는 시장 전체의 구조를, 소비자 레이어는 그 시장을 구성하는 소비자 집단의 특성과 행동을 다룹니다.
+[7] © 2026, Draftype Inc. All rights reserved. 05 HOW TO USE - MARKET REPORT(마켓 리포트) [ 화면 스크린샷 — 헤일리 직접 삽입 ] 소비자 데이터 - 시장을 구성하는 소비자 집단의 특성을 여러 각도로 분해합니다.
+[8] © 2026, Draftype Inc. All rights reserved. 06 HOW TO USE - DATA EXPLORATION(데이터 탐색) 원하는 필터 조건을 상세하게 지정해, 해당 데이터만 골라 탐색합니다. [ 화면 스크린샷 — 헤일리 직접 삽입 ]
+[9] © 2026, Draftype Inc. All rights reserved. 07 HOW TO USE - COMPARISON ANALYSIS(비교 분석) 다양한 변수를 조합하여 평균과 다르게 반응하는 집단을 발견할 수 있습니다. [ 화면 스크린샷 — 헤일리 직접 삽입 ]
+[10] © 2026, Draftype Inc. All rights reserved. 08 HOW TO USE - DEEP ANALYSIS(심층 분석) 원하는 데이터를 골라 조합하면 심층 분석 인사이트가 담긴 리포트가 생성됩니다. STEP 1 — 분석 섹션 선택 STEP 2 — AI 생성 리포트

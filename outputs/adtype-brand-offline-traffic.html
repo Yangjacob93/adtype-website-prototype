@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오프라인 접점 기반 유입 확대 | Adtype</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    html,
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff !important;
+    }
+
+    #adtype-traffic,
+    #adtype-traffic * {
+      box-sizing: border-box !important;
+    }
+
+    #adtype-traffic {
+      --ad: #eb4200;
+      --ink: #171719;
+      --sub: #333;
+      --muted: #6b7684;
+      --soft: #f7f8fa;
+      --soft2: #f2f4f6;
+      --line: #e5e8eb;
+      --dark: #111214;
+      --green: #00a36c;
+      width: 100% !important;
+      min-height: 100vh !important;
+      overflow-x: hidden !important;
+      background: #fff !important;
+      color: var(--ink) !important;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+      word-break: keep-all !important;
+      letter-spacing: 0 !important;
+      scroll-padding-top: 84px !important;
+    }
+
+    #adtype-traffic a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    #adtype-traffic h1,
+    #adtype-traffic h2,
+    #adtype-traffic h3,
+    #adtype-traffic h4,
+    #adtype-traffic p,
+    #adtype-traffic ul,
+    #adtype-traffic li,
+    #adtype-traffic figure {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #adtype-traffic li {
+      list-style: none !important;
+    }
+
+    #adtype-traffic .wrap {
+      width: min(1180px, calc(100% - 48px)) !important;
+      margin: 0 auto !important;
+    }
+
+    #adtype-traffic .nav {
+      position: fixed !important;
+      inset: 0 0 auto 0 !important;
+      z-index: 50 !important;
+      height: 72px !important;
+      background: rgba(255, 255, 255, .94) !important;
+      backdrop-filter: blur(18px) !important;
+      border-bottom: 1px solid rgba(23, 23, 25, .08) !important;
+    }
+
+    #adtype-traffic .nav__inner {
+      width: min(1180px, calc(100% - 48px)) !important;
+      height: 100% !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    #adtype-traffic .brand img {
+      width: 92px !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    #adtype-traffic .nav__links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 30px !important;
+      font-size: 14px !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+      color: #4e5968 !important;
+    }
+
+    #adtype-traffic .nav__cta {
+      padding: 12px 18px !important;
+      border: 1px solid rgba(23, 23, 25, .2) !important;
+      border-radius: 999px !important;
+      color: #171719 !important;
+    }
+
+    #adtype-traffic .hero {
+      position: relative !important;
+      min-height: 760px !important;
+      height: 100vh !important;
+      display: flex !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background: #050505 !important;
+    }
+
+    #adtype-traffic .hero__video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      opacity: .42 !important;
+      transform: scale(1.02) !important;
+    }
+
+    #adtype-traffic .hero::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(0, 0, 0, .12), rgba(0, 0, 0, .74) 62%, rgba(0, 0, 0, .88) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .62), rgba(0, 0, 0, .82)) !important;
+    }
+
+    #adtype-traffic .hero__inner {
+      position: relative !important;
+      z-index: 2 !important;
+      width: min(1180px, calc(100% - 48px)) !important;
+      margin: 0 auto !important;
+      padding-top: 72px !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .eyebrow,
+    #adtype-traffic .kicker {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 14px !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      margin-bottom: 22px !important;
+      letter-spacing: 0 !important;
+      text-transform: none !important;
+    }
+
+    #adtype-traffic .hero h1 {
+      max-width: 920px !important;
+      font-size: clamp(52px, 5.8vw, 92px) !important;
+      line-height: 1.08 !important;
+      font-weight: 780 !important;
+      letter-spacing: 0 !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .hero__copy {
+      max-width: 640px !important;
+      margin-top: 32px !important;
+      font-size: 22px !important;
+      line-height: 1.72 !important;
+      font-weight: 500 !important;
+      color: rgba(255, 255, 255, .82) !important;
+    }
+
+    #adtype-traffic .hero__actions {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-traffic .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 54px !important;
+      padding: 0 24px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(23, 23, 25, .18) !important;
+      background: #fff !important;
+      color: #171719 !important;
+      font-size: 16px !important;
+      line-height: 1 !important;
+      font-weight: 800 !important;
+      white-space: nowrap !important;
+      transition: transform .18s ease, background .18s ease, color .18s ease !important;
+    }
+
+    #adtype-traffic .btn:hover {
+      transform: translateY(-2px) !important;
+    }
+
+    #adtype-traffic .btn--ad {
+      background: var(--ad) !important;
+      border-color: var(--ad) !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .btn--dark {
+      background: #050505 !important;
+      border-color: #050505 !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .btn--ghost {
+      background: transparent !important;
+      border-color: rgba(255, 255, 255, .48) !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .section {
+      padding: 150px 0 !important;
+      background: #fff !important;
+    }
+
+    #adtype-traffic .section--soft {
+      background: var(--soft) !important;
+    }
+
+    #adtype-traffic .section--dark {
+      background: #08090c !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .section-head {
+      max-width: 920px !important;
+      margin: 0 auto 72px !important;
+      text-align: center !important;
+    }
+
+    #adtype-traffic .section-head--left {
+      margin-left: 0 !important;
+      text-align: left !important;
+    }
+
+    #adtype-traffic h2 {
+      color: var(--ink) !important;
+      font-size: clamp(42px, 4.1vw, 66px) !important;
+      line-height: 1.16 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-traffic .section--dark h2 {
+      color: #fff !important;
+    }
+
+    #adtype-traffic .section-desc {
+      max-width: 780px !important;
+      margin: 30px auto 0 !important;
+      color: var(--muted) !important;
+      font-size: 21px !important;
+      line-height: 1.86 !important;
+      font-weight: 500 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-traffic .section-head--left .section-desc {
+      margin-left: 0 !important;
+    }
+
+    #adtype-traffic .section--dark .section-desc {
+      color: rgba(255, 255, 255, .66) !important;
+    }
+
+    #adtype-traffic .question-list {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 16px !important;
+    }
+
+    #adtype-traffic .question {
+      min-height: 180px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      border: 1px solid var(--line) !important;
+      background: #fff !important;
+    }
+
+    #adtype-traffic .question span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      margin-bottom: 22px !important;
+    }
+
+    #adtype-traffic .question strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 24px !important;
+      line-height: 1.42 !important;
+      font-weight: 720 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-traffic .action-lab {
+      display: grid !important;
+      grid-template-columns: 1.03fr .97fr !important;
+      gap: 28px !important;
+      align-items: stretch !important;
+    }
+
+    #adtype-traffic .action-map {
+      position: relative !important;
+      min-height: 610px !important;
+      padding: 34px !important;
+      overflow: hidden !important;
+      border-radius: 34px !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      background:
+        linear-gradient(rgba(229, 232, 235, .58) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229, 232, 235, .58) 1px, transparent 1px),
+        radial-gradient(circle at 24% 26%, rgba(235, 66, 0, .16), transparent 26%),
+        radial-gradient(circle at 76% 68%, rgba(0, 163, 108, .12), transparent 28%),
+        #fff !important;
+      background-size: 34px 34px, 34px 34px, auto, auto, auto !important;
+      box-shadow: 0 28px 90px rgba(15, 23, 42, .08) !important;
+    }
+
+    #adtype-traffic .action-map::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 11% !important;
+      right: 10% !important;
+      top: 48% !important;
+      height: 2px !important;
+      background: linear-gradient(90deg, transparent, rgba(235, 66, 0, .8), rgba(0, 163, 108, .7), transparent) !important;
+      transform: rotate(-8deg) !important;
+    }
+
+    #adtype-traffic .action-map__label {
+      display: inline-flex !important;
+      align-items: center !important;
+      height: 34px !important;
+      padding: 0 14px !important;
+      border-radius: 999px !important;
+      background: rgba(235, 66, 0, .08) !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-traffic .flow-node {
+      position: absolute !important;
+      width: 178px !important;
+      padding: 20px !important;
+      border-radius: 24px !important;
+      background: rgba(255, 255, 255, .94) !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, .1) !important;
+    }
+
+    #adtype-traffic .flow-node--life { left: 9% !important; top: 24% !important; }
+    #adtype-traffic .flow-node--contact { left: 39% !important; top: 44% !important; }
+    #adtype-traffic .flow-node--action { right: 8% !important; bottom: 18% !important; }
+
+    #adtype-traffic .flow-node em {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 32px !important;
+      height: 32px !important;
+      margin-bottom: 16px !important;
+      border-radius: 50% !important;
+      background: var(--ad) !important;
+      color: #fff !important;
+      font-size: 13px !important;
+      font-style: normal !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-traffic .flow-node strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 21px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .flow-node p {
+      margin-top: 10px !important;
+      color: #6b7684 !important;
+      font-size: 14px !important;
+      line-height: 1.55 !important;
+      font-weight: 550 !important;
+    }
+
+    #adtype-traffic .signal-panel {
+      position: absolute !important;
+      left: 34px !important;
+      right: 34px !important;
+      bottom: 34px !important;
+      padding: 28px !important;
+      border-radius: 26px !important;
+      background: #111214 !important;
+      color: #fff !important;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .18) !important;
+    }
+
+    #adtype-traffic .signal-panel span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-traffic .signal-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+    }
+
+    #adtype-traffic .signal {
+      padding: 18px 16px !important;
+      border-radius: 18px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border: 1px solid rgba(255, 255, 255, .08) !important;
+    }
+
+    #adtype-traffic .signal b {
+      display: block !important;
+      color: #fff !important;
+      font-size: 28px !important;
+      line-height: 1 !important;
+      font-weight: 820 !important;
+    }
+
+    #adtype-traffic .signal small {
+      display: block !important;
+      margin-top: 10px !important;
+      color: rgba(255, 255, 255, .54) !important;
+      font-size: 12px !important;
+      line-height: 1.3 !important;
+      font-weight: 700 !important;
+    }
+
+    #adtype-traffic .action-steps {
+      display: grid !important;
+      gap: 16px !important;
+    }
+
+    #adtype-traffic .action-step {
+      width: 100% !important;
+      min-height: 186px !important;
+      padding: 28px !important;
+      text-align: left !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      border-radius: 28px !important;
+      background: #fff !important;
+      cursor: pointer !important;
+      box-shadow: 0 18px 60px rgba(15, 23, 42, .05) !important;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+      font-family: inherit !important;
+    }
+
+    #adtype-traffic .action-step:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(235, 66, 0, .3) !important;
+      box-shadow: 0 26px 70px rgba(235, 66, 0, .09) !important;
+    }
+
+    #adtype-traffic .action-step span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-traffic .action-step strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 27px !important;
+      line-height: 1.28 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-traffic .action-step p {
+      margin-top: 16px !important;
+      color: #4e5968 !important;
+      font-size: 16px !important;
+      line-height: 1.62 !important;
+      font-weight: 520 !important;
+    }
+
+    #adtype-traffic .action-step em {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 22px !important;
+      color: #171719 !important;
+      font-size: 15px !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-traffic .action-step em::after {
+      content: "→" !important;
+    }
+
+    #adtype-traffic .translation {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      overflow: hidden !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 30px !important;
+      background: #fff !important;
+    }
+
+    #adtype-traffic .translation__box {
+      min-height: 310px !important;
+      padding: 34px !important;
+      border-right: 1px solid var(--line) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+
+    #adtype-traffic .translation__box:last-child {
+      border-right: 0 !important;
+    }
+
+    #adtype-traffic .translation__box--after {
+      background: #111214 !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .translation__label {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 20px !important;
+    }
+
+    #adtype-traffic .translation__text {
+      color: #171719 !important;
+      font-size: 28px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .translation__box--after .translation__text {
+      color: #fff !important;
+    }
+
+    #adtype-traffic .translation__desc {
+      margin-top: 28px !important;
+      color: #6b7684 !important;
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+      font-weight: 520 !important;
+    }
+
+    #adtype-traffic .translation__box--after .translation__desc {
+      color: rgba(255, 255, 255, .64) !important;
+    }
+
+    #adtype-traffic .data-layout {
+      display: grid !important;
+      grid-template-columns: .86fr 1.14fr !important;
+      gap: 56px !important;
+      align-items: center !important;
+    }
+
+    #adtype-traffic .data-list {
+      margin-top: 42px !important;
+      display: grid !important;
+      gap: 14px !important;
+    }
+
+    #adtype-traffic .data-list li {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 14px !important;
+      color: #4e5968 !important;
+      font-size: 17px !important;
+      line-height: 1.6 !important;
+      font-weight: 580 !important;
+    }
+
+    #adtype-traffic .data-list b {
+      flex: 0 0 auto !important;
+      color: var(--ad) !important;
+      font-size: 15px !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-traffic .browser {
+      overflow: hidden !important;
+      border-radius: 28px !important;
+      border: 1px solid var(--line) !important;
+      background: #fff !important;
+      box-shadow: 0 32px 90px rgba(15, 23, 42, .12) !important;
+    }
+
+    #adtype-traffic .browser__bar {
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 0 18px !important;
+      border-bottom: 1px solid var(--line) !important;
+      background: #fff !important;
+    }
+
+    #adtype-traffic .browser__dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      display: block !important;
+    }
+
+    #adtype-traffic .browser__dot:nth-child(1) { background: #ff5b22 !important; }
+    #adtype-traffic .browser__dot:nth-child(2) { background: #f3ba43 !important; }
+    #adtype-traffic .browser__dot:nth-child(3) { background: #4bb76b !important; }
+
+    #adtype-traffic .browser video,
+    #adtype-traffic .browser img {
+      display: block !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      object-fit: cover !important;
+      background: #f2f4f6 !important;
+    }
+
+    #adtype-traffic .loop {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+      margin-top: 70px !important;
+    }
+
+    #adtype-traffic .loop__item {
+      min-height: 250px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border: 1px solid rgba(255, 255, 255, .1) !important;
+    }
+
+    #adtype-traffic .loop__item span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 15px !important;
+      font-weight: 850 !important;
+      margin-bottom: 28px !important;
+    }
+
+    #adtype-traffic .loop__item strong {
+      display: block !important;
+      color: #fff !important;
+      font-size: 24px !important;
+      line-height: 1.34 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .loop__item p {
+      margin-top: 18px !important;
+      color: rgba(255, 255, 255, .62) !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-traffic .proof-grid {
+      display: grid !important;
+      grid-template-columns: 1.15fr .85fr !important;
+      gap: 18px !important;
+      align-items: stretch !important;
+    }
+
+    #adtype-traffic .proof-card {
+      position: relative !important;
+      min-height: 520px !important;
+      overflow: hidden !important;
+      border-radius: 30px !important;
+      background: #111 !important;
+    }
+
+    #adtype-traffic .proof-card img,
+    #adtype-traffic .proof-card video {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: inherit !important;
+      display: block !important;
+      object-fit: cover !important;
+      transition: transform .45s ease !important;
+    }
+
+    #adtype-traffic .proof-card:hover img,
+    #adtype-traffic .proof-card:hover video {
+      transform: scale(1.035) !important;
+    }
+
+    #adtype-traffic .proof-card::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, .72)) !important;
+    }
+
+    #adtype-traffic .proof-card__caption {
+      position: absolute !important;
+      left: 28px !important;
+      right: 28px !important;
+      bottom: 28px !important;
+      z-index: 2 !important;
+      color: #fff !important;
+    }
+
+    #adtype-traffic .proof-card__caption small {
+      display: inline-flex !important;
+      height: 34px !important;
+      align-items: center !important;
+      padding: 0 13px !important;
+      border-radius: 999px !important;
+      background: rgba(255, 255, 255, .16) !important;
+      color: #fff !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-traffic .proof-card__caption strong {
+      display: block !important;
+      max-width: 620px !important;
+      color: #fff !important;
+      font-size: 28px !important;
+      line-height: 1.36 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .metrics {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+    }
+
+    #adtype-traffic .metric {
+      min-height: 250px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      background: #fff !important;
+      border: 1px solid var(--line) !important;
+    }
+
+    #adtype-traffic .metric span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 28px !important;
+    }
+
+    #adtype-traffic .metric strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 25px !important;
+      line-height: 1.34 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .metric p {
+      margin-top: 18px !important;
+      color: #6b7684 !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-traffic .closing {
+      padding: 150px 0 !important;
+      background: #111214 !important;
+      color: #fff !important;
+      text-align: center !important;
+    }
+
+    #adtype-traffic .closing h2 {
+      max-width: 860px !important;
+      margin: 0 auto !important;
+      color: #fff !important;
+      font-size: clamp(42px, 4vw, 66px) !important;
+      line-height: 1.18 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-traffic .closing p {
+      max-width: 720px !important;
+      margin: 30px auto 0 !important;
+      color: rgba(255, 255, 255, .66) !important;
+      font-size: 20px !important;
+      line-height: 1.78 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-traffic .closing__actions {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-traffic .modal {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 100 !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 28px !important;
+    }
+
+    #adtype-traffic .modal.is-open {
+      display: flex !important;
+    }
+
+    #adtype-traffic .modal__backdrop {
+      position: absolute !important;
+      inset: 0 !important;
+      background: rgba(0, 0, 0, .58) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    #adtype-traffic .modal__panel {
+      position: relative !important;
+      width: min(920px, 100%) !important;
+      max-height: min(780px, calc(100vh - 56px)) !important;
+      overflow: auto !important;
+      border-radius: 32px !important;
+      background: #fff !important;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, .28) !important;
+      outline: 0 !important;
+    }
+
+    #adtype-traffic .modal__close {
+      position: absolute !important;
+      right: 22px !important;
+      top: 22px !important;
+      width: 44px !important;
+      height: 44px !important;
+      border: 0 !important;
+      border-radius: 50% !important;
+      background: #f2f4f6 !important;
+      color: #171719 !important;
+      font-size: 24px !important;
+      line-height: 1 !important;
+      font-weight: 500 !important;
+      cursor: pointer !important;
+      font-family: inherit !important;
+    }
+
+    #adtype-traffic .modal__body {
+      padding: 62px !important;
+    }
+
+    #adtype-traffic .modal__eyebrow {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 14px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 20px !important;
+    }
+
+    #adtype-traffic .modal__title {
+      color: #171719 !important;
+      font-size: 46px !important;
+      line-height: 1.18 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-traffic .modal__lead {
+      max-width: 720px !important;
+      margin-top: 24px !important;
+      color: #4e5968 !important;
+      font-size: 20px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-traffic .modal__grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 18px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-traffic .modal__block {
+      padding: 28px !important;
+      border-radius: 24px !important;
+      background: #f7f8fa !important;
+    }
+
+    #adtype-traffic .modal__block h4 {
+      color: #171719 !important;
+      font-size: 20px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-traffic .modal__block p,
+    #adtype-traffic .modal__block li {
+      color: #4e5968 !important;
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-traffic .modal__block li {
+      position: relative !important;
+      padding-left: 14px !important;
+      margin-top: 10px !important;
+    }
+
+    #adtype-traffic .modal__block li::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 12px !important;
+      width: 5px !important;
+      height: 5px !important;
+      border-radius: 50% !important;
+      background: var(--ad) !important;
+    }
+
+    #adtype-traffic .modal__chips {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      margin-top: 24px !important;
+    }
+
+    #adtype-traffic .modal__chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      min-height: 34px !important;
+      padding: 0 12px !important;
+      border-radius: 999px !important;
+      background: rgba(235, 66, 0, .09) !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      font-weight: 800 !important;
+    }
+
+    #adtype-traffic .modal__actions {
+      display: flex !important;
+      gap: 10px !important;
+      margin-top: 38px !important;
+    }
+
+    #adtype-traffic .reveal {
+      opacity: 0 !important;
+      transform: translateY(26px) !important;
+      transition: opacity .7s ease, transform .7s ease !important;
+    }
+
+    #adtype-traffic .reveal.is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    @media (max-width: 960px) {
+      #adtype-traffic .nav__links {
+        display: none !important;
+      }
+
+      #adtype-traffic .hero {
+        min-height: 680px !important;
+      }
+
+      #adtype-traffic .hero h1 {
+        font-size: clamp(42px, 11vw, 68px) !important;
+      }
+
+      #adtype-traffic .hero__copy {
+        font-size: 18px !important;
+      }
+
+      #adtype-traffic .section,
+      #adtype-traffic .closing {
+        padding: 96px 0 !important;
+      }
+
+      #adtype-traffic .section-head {
+        margin-bottom: 46px !important;
+      }
+
+      #adtype-traffic h2 {
+        font-size: clamp(34px, 8.4vw, 48px) !important;
+      }
+
+      #adtype-traffic .section-desc {
+        font-size: 18px !important;
+        line-height: 1.78 !important;
+      }
+
+      #adtype-traffic .question-list,
+      #adtype-traffic .action-lab,
+      #adtype-traffic .translation,
+      #adtype-traffic .data-layout,
+      #adtype-traffic .proof-grid,
+      #adtype-traffic .loop,
+      #adtype-traffic .metrics,
+      #adtype-traffic .modal__grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      #adtype-traffic .action-map {
+        min-height: 760px !important;
+        padding: 22px !important;
+        border-radius: 28px !important;
+      }
+
+      #adtype-traffic .flow-node {
+        width: calc(100% - 44px) !important;
+        left: 22px !important;
+        right: 22px !important;
+      }
+
+      #adtype-traffic .flow-node--life { top: 88px !important; }
+      #adtype-traffic .flow-node--contact { top: 272px !important; }
+      #adtype-traffic .flow-node--action { top: 456px !important; bottom: auto !important; }
+
+      #adtype-traffic .signal-panel {
+        left: 22px !important;
+        right: 22px !important;
+        bottom: 22px !important;
+      }
+
+      #adtype-traffic .signal-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      #adtype-traffic .translation__box,
+      #adtype-traffic .translation__box:last-child {
+        min-height: auto !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--line) !important;
+      }
+
+      #adtype-traffic .proof-card {
+        min-height: 440px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #adtype-traffic .wrap,
+      #adtype-traffic .nav__inner,
+      #adtype-traffic .hero__inner {
+        width: min(100% - 36px, 1180px) !important;
+      }
+
+      #adtype-traffic .nav {
+        height: 64px !important;
+      }
+
+      #adtype-traffic .brand img {
+        width: 82px !important;
+      }
+
+      #adtype-traffic .hero {
+        min-height: 640px !important;
+      }
+
+      #adtype-traffic .hero h1 {
+        font-size: 40px !important;
+      }
+
+      #adtype-traffic .hero__copy {
+        margin-top: 24px !important;
+        font-size: 17px !important;
+        line-height: 1.72 !important;
+      }
+
+      #adtype-traffic .hero__actions,
+      #adtype-traffic .closing__actions,
+      #adtype-traffic .modal__actions {
+        flex-direction: column !important;
+      }
+
+      #adtype-traffic .btn {
+        width: 100% !important;
+        min-height: 52px !important;
+      }
+
+      #adtype-traffic .section,
+      #adtype-traffic .closing {
+        padding: 84px 0 !important;
+      }
+
+      #adtype-traffic .eyebrow,
+      #adtype-traffic .kicker {
+        font-size: 13px !important;
+        margin-bottom: 16px !important;
+      }
+
+      #adtype-traffic h2,
+      #adtype-traffic .closing h2 {
+        font-size: 34px !important;
+        line-height: 1.22 !important;
+      }
+
+      #adtype-traffic .section-desc,
+      #adtype-traffic .closing p {
+        font-size: 17px !important;
+      }
+
+      #adtype-traffic .question {
+        min-height: auto !important;
+        padding: 24px !important;
+        border-radius: 22px !important;
+      }
+
+      #adtype-traffic .question strong {
+        font-size: 21px !important;
+      }
+
+      #adtype-traffic .action-step {
+        min-height: auto !important;
+        padding: 24px !important;
+        border-radius: 24px !important;
+      }
+
+      #adtype-traffic .action-step strong {
+        font-size: 23px !important;
+      }
+
+      #adtype-traffic .signal b {
+        font-size: 23px !important;
+      }
+
+      #adtype-traffic .translation__box {
+        padding: 26px !important;
+      }
+
+      #adtype-traffic .translation__text {
+        font-size: 24px !important;
+      }
+
+      #adtype-traffic .data-list li,
+      #adtype-traffic .metric p,
+      #adtype-traffic .loop__item p {
+        font-size: 15px !important;
+      }
+
+      #adtype-traffic .browser {
+        border-radius: 20px !important;
+      }
+
+      #adtype-traffic .browser video,
+      #adtype-traffic .browser img {
+        aspect-ratio: 4 / 3 !important;
+      }
+
+      #adtype-traffic .proof-card {
+        min-height: 390px !important;
+        border-radius: 24px !important;
+      }
+
+      #adtype-traffic .proof-card__caption {
+        left: 22px !important;
+        right: 22px !important;
+        bottom: 22px !important;
+      }
+
+      #adtype-traffic .proof-card__caption strong {
+        font-size: 22px !important;
+      }
+
+      #adtype-traffic .modal {
+        padding: 14px !important;
+      }
+
+      #adtype-traffic .modal__panel {
+        border-radius: 24px !important;
+      }
+
+      #adtype-traffic .modal__body {
+        padding: 54px 24px 28px !important;
+      }
+
+      #adtype-traffic .modal__title {
+        font-size: 34px !important;
+      }
+
+      #adtype-traffic .modal__lead {
+        font-size: 17px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="adtype-traffic">
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="./adtype-for-brands.html" aria-label="Adtype home">
+          <img src="./assets/adtype-logo-orange-crop.png" alt="Adtype" />
+        </a>
+        <div class="nav__links">
+          <a href="#problem">Problem</a>
+          <a href="#strategies">Strategies</a>
+          <a href="#data">Data</a>
+          <a href="#loop">Loop</a>
+          <a class="nav__cta" href="#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <video class="hero__video" src="./assets/media-planning-system.mp4" autoplay muted loop playsinline></video>
+      <div class="hero__inner">
+        <span class="eyebrow">브랜드 과제 05 · 오프라인 접점 기반 유입 확대</span>
+        <h1>오프라인 접점을<br>행동 신호로 연결합니다.</h1>
+        <p class="hero__copy">
+          타겟의 생활 동선과 구매 접점을 연결해 검색, 방문, 앱, 자사몰, 리테일 유입으로 이어지는 OOH 캠페인을 설계합니다.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--ad" href="#contact">캠페인 문의하기</a>
+          <a class="btn btn--ghost" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="problem">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Brand Challenge</span>
+          <h2>노출은 행동으로 연결될 때 더 강해집니다.</h2>
+          <p class="section-desc">
+            OOH가 단순 브랜딩 채널로 끝나지 않으려면 타겟이 이동하고 머무르고 구매를 고민하는 접점과 연결되어야 합니다.<br>
+            검색, 방문, 앱 실행, 매장 유입 같은 행동 신호를 만들 수 있도록 생활권과 전환 접점을 함께 설계해야 합니다.
+          </p>
+        </div>
+        <div class="question-list reveal">
+          <div class="question">
+            <span>Question 01</span>
+            <strong>타겟은 어디에서 검색하고 방문을 결심하는가?</strong>
+          </div>
+          <div class="question">
+            <span>Question 02</span>
+            <strong>매장, 앱, 자사몰, 리테일 접점과 어떤 생활 동선을 연결해야 하는가?</strong>
+          </div>
+          <div class="question">
+            <span>Question 03</span>
+            <strong>캠페인 이후 어떤 행동 신호를 성과로 확인할 것인가?</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="strategies">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Offline Action Strategy</span>
+          <h2>오프라인 접점을 유입으로 바꾸는 3가지 방식</h2>
+          <p class="section-desc">
+            OOH의 역할은 보이는 것에서 끝나지 않습니다.<br>
+            타겟이 지나가는 공간과 브랜드의 전환 접점을 연결해 행동이 일어날 가능성을 높입니다.
+          </p>
+        </div>
+
+        <div class="action-lab reveal" aria-label="오프라인 접점 기반 유입 확대 대표 전략">
+          <div class="action-map">
+            <span class="action-map__label">Action Flow</span>
+            <article class="flow-node flow-node--life">
+              <em>01</em>
+              <strong>생활 동선</strong>
+              <p>타겟이 반복적으로 지나가고 머무르는 이동·체류 공간</p>
+            </article>
+            <article class="flow-node flow-node--contact">
+              <em>02</em>
+              <strong>OOH 접점</strong>
+              <p>검색, 방문, 앱 실행을 떠올리게 만드는 메시지와 매체</p>
+            </article>
+            <article class="flow-node flow-node--action">
+              <em>03</em>
+              <strong>행동 신호</strong>
+              <p>검색량, 방문, 앱·자사몰 유입, 리테일 반응</p>
+            </article>
+            <div class="signal-panel">
+              <span>Response Signals</span>
+              <div class="signal-grid">
+                <div class="signal">
+                  <b>+38%</b>
+                  <small>Search Lift</small>
+                </div>
+                <div class="signal">
+                  <b>+22%</b>
+                  <small>Store Signal</small>
+                </div>
+                <div class="signal">
+                  <b>+17%</b>
+                  <small>App/Web</small>
+                </div>
+                <div class="signal">
+                  <b>3.4x</b>
+                  <small>Area Response</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-steps">
+            <button class="action-step" type="button" data-modal-target="search">
+              <span>01 Search Activation</span>
+              <strong>검색 유입 설계</strong>
+              <p>OOH를 본 타겟이 브랜드명, 제품명, 카테고리 키워드를 검색하도록 메시지와 접점을 설계합니다.</p>
+              <em>자세히 보기</em>
+            </button>
+            <button class="action-step" type="button" data-modal-target="visit">
+              <span>02 Retail Visit</span>
+              <strong>매장·리테일 방문 유도</strong>
+              <p>생활 동선과 매장·리테일 접점을 연결해 실제 방문과 구매 고려가 일어날 가능성을 높입니다.</p>
+              <em>자세히 보기</em>
+            </button>
+            <button class="action-step" type="button" data-modal-target="conversion">
+              <span>03 App & Owned Channel</span>
+              <strong>앱·자사몰 행동 전환</strong>
+              <p>오프라인 노출 이후 앱 실행, 회원가입, 자사몰 유입, 쿠폰 반응으로 이어지는 경로를 설계합니다.</p>
+              <em>자세히 보기</em>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Strategy Translation</span>
+          <h2>오프라인 노출을 행동 과제로 다시 씁니다.</h2>
+          <p class="section-desc">
+            애드타입은 OOH를 단순 노출 채널로만 보지 않습니다.<br>
+            타겟이 이동하는 생활권과 브랜드의 전환 접점을 연결해 검색, 방문, 앱, 자사몰 유입으로 이어질 수 있는 캠페인 구조를 설계합니다.
+          </p>
+        </div>
+        <div class="translation reveal">
+          <div class="translation__box">
+            <div>
+              <span class="translation__label">01 Brand Challenge</span>
+              <p class="translation__text">캠페인이 실제 행동으로 이어져야 한다</p>
+            </div>
+            <p class="translation__desc">
+              브랜드사의 목표는 매장 방문, 앱 설치, 자사몰 유입, 검색량 증가 같은 행동 신호로 시작됩니다.
+            </p>
+          </div>
+          <div class="translation__box">
+            <div>
+              <span class="translation__label">02 Data Question</span>
+              <p class="translation__text">타겟은 어디서 행동을 결심하는가</p>
+            </div>
+            <p class="translation__desc">
+              생활권, 이동 동선, 리테일 접점, 검색 맥락을 기준으로 행동 가능성이 높은 순간을 찾습니다.
+            </p>
+          </div>
+          <div class="translation__box translation__box--after">
+            <div>
+              <span class="translation__label">03 OOH Strategy</span>
+              <p class="translation__text">접점과 행동 경로를 연결한다</p>
+            </div>
+            <p class="translation__desc">
+              OOH 메시지, 매체 위치, CTA, 리테일·앱·자사몰 경로를 하나의 행동 설계로 연결합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="wrap">
+        <div class="data-layout">
+          <div class="reveal">
+            <span class="kicker">Data Diagnosis</span>
+            <h2>생활 동선과 전환 접점을 함께 읽습니다.</h2>
+            <p class="section-desc">
+              타겟의 거주·이동·체류 데이터, 매장·리테일 위치, 검색·방문 신호를 함께 봅니다.
+              어디에서 노출되어야 행동 가능성이 높아지는지 판단합니다.
+            </p>
+            <ul class="data-list">
+              <li><b>01</b>타겟 생활권과 이동 동선</li>
+              <li><b>02</b>매장·리테일·POI 접점</li>
+              <li><b>03</b>검색·앱·자사몰 유입 경로</li>
+              <li><b>04</b>지역별 행동 신호와 반응</li>
+            </ul>
+          </div>
+          <div class="browser reveal">
+            <div class="browser__bar">
+              <i class="browser__dot"></i>
+              <i class="browser__dot"></i>
+              <i class="browser__dot"></i>
+            </div>
+            <video src="./assets/media-planning-system.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="loop">
+      <div class="wrap">
+        <div class="section-head section-head--left reveal">
+          <span class="kicker">Campaign Loop</span>
+          <h2>노출, 접점, 행동 신호를 하나의 루프로 연결합니다.</h2>
+          <p class="section-desc">
+            검색 유입, 방문 유도, 앱·자사몰 행동 전환 중 어떤 전략이 필요한지 정의하고,
+            캠페인 이후 행동 신호를 다음 접점 설계로 연결합니다.
+          </p>
+        </div>
+        <div class="loop reveal">
+          <article class="loop__item">
+            <span>01</span>
+            <strong>행동 목표 정의</strong>
+            <p>검색, 방문, 앱, 자사몰 중 우선 전환 목표를 정합니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>02</span>
+            <strong>생활권·접점 매칭</strong>
+            <p>타겟 동선과 브랜드 전환 접점을 연결합니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>03</span>
+            <strong>메시지·CTA 설계</strong>
+            <p>행동을 유도할 메시지와 OOH 접점 구조를 만듭니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>04</span>
+            <strong>행동 신호 분석</strong>
+            <p>지역별 검색, 방문, 유입 반응을 다음 캠페인으로 연결합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Execution Proof</span>
+          <h2>행동이 일어날 접점 가까이에 배치합니다.</h2>
+          <p class="section-desc">
+            OOH는 행동이 일어나는 생활 장면과 가까울수록 강해집니다.
+            타겟이 지나가고, 머물고, 구매를 고민하는 공간에 맞춰 소재와 매체를 배치합니다.
+          </p>
+        </div>
+        <div class="proof-grid reveal">
+          <figure class="proof-card">
+            <img src="./assets/creative-bus-wrap.jpg" alt="버스 외부 광고 집행 사례" />
+            <figcaption class="proof-card__caption">
+              <small>Moving Media</small>
+              <strong>이동 동선 안에서 검색과 방문을 유도하는 반복 접점을 만듭니다.</strong>
+            </figcaption>
+          </figure>
+          <figure class="proof-card">
+            <img src="./assets/creative-dooh-columns.jpg" alt="DOOH 광고 집행 사례" />
+            <figcaption class="proof-card__caption">
+              <small>Retail Contact</small>
+              <strong>체류 공간과 리테일 접점 주변에서 행동 신호를 만듭니다.</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Performance Management</span>
+          <h2>노출 이후 어떤 행동 신호가 만들어졌는지 봅니다.</h2>
+          <p class="section-desc">
+            오프라인 접점 기반 유입 캠페인은 노출량만으로 판단하지 않습니다.
+            검색량, 방문 신호, 앱·자사몰 유입, 지역별 반응을 함께 보며 다음 접점 설계를 개선합니다.
+          </p>
+        </div>
+        <div class="metrics reveal">
+          <article class="metric">
+            <span>Measure 01</span>
+            <strong>검색량·직접 유입</strong>
+            <p>브랜드명, 제품명, 캠페인 키워드 검색과 직접 유입 변화를 확인합니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 02</span>
+            <strong>매장·지역 반응</strong>
+            <p>상권, 매장, 지역 단위의 방문 가능 신호와 반응 차이를 분석합니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 03</span>
+            <strong>앱·자사몰 유입</strong>
+            <p>앱 실행, 설치, 자사몰 방문, 이벤트 참여 같은 행동 신호를 봅니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 04</span>
+            <strong>다음 접점 개선안</strong>
+            <p>성과가 좋았던 지역, 매체, 메시지를 다음 캠페인 설계에 반영합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="wrap reveal">
+        <h2>우리 브랜드의 오프라인 접점을 행동으로 연결해보세요.</h2>
+        <p>
+          애드타입은 브랜드의 성장 과제를 데이터 기반 OOH 캠페인 전략으로 치환하고,
+          실행과 성과 매니지먼트, 다음 캠페인을 위한 인사이트까지 연결합니다.
+        </p>
+        <div class="closing__actions">
+          <a class="btn btn--ad" href="mailto:contact@draftype.co.kr">캠페인 문의하기</a>
+          <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" data-modal="search" role="dialog" aria-modal="true" aria-labelledby="modal-search-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">01 Search Activation</span>
+          <h3 class="modal__title" id="modal-search-title">검색 유입 설계</h3>
+          <p class="modal__lead">
+            OOH를 본 타겟이 브랜드명, 제품명, 카테고리 키워드를 검색하도록 메시지와 접점을 설계합니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>캠페인 이후 검색량이나 직접 유입을 만들어야 하는 경우</li>
+                <li>브랜드명은 알려졌지만 제품·서비스 탐색으로 이어지지 않는 경우</li>
+                <li>오프라인 광고와 온라인 유입 경로를 함께 설명해야 하는 경우</li>
+                <li>지역별 검색 반응을 다음 캠페인 판단 근거로 남겨야 하는 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                타겟의 이동 맥락과 검색 의도를 함께 보고, 검색을 유도할 수 있는 키워드와 메시지를 정리합니다.
+                이후 반복 노출이 가능한 생활 동선에 배치하고 기간·지역별 검색 반응을 함께 확인합니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">검색량</span>
+                <span class="modal__chip">직접 유입</span>
+                <span class="modal__chip">키워드 반응</span>
+                <span class="modal__chip">지역별 신호</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="visit" role="dialog" aria-modal="true" aria-labelledby="modal-visit-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">02 Retail Visit</span>
+          <h3 class="modal__title" id="modal-visit-title">매장·리테일 방문 유도</h3>
+          <p class="modal__lead">
+            타겟의 생활 동선과 매장·리테일 접점을 연결해 실제 방문과 구매 고려가 일어날 가능성을 높입니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>특정 매장, 상권, 리테일 채널의 유입을 늘려야 하는 경우</li>
+                <li>신제품 입점이나 오프라인 판매 채널을 빠르게 알려야 하는 경우</li>
+                <li>캠페인이 매장 주변 반응으로 이어졌는지 설명해야 하는 경우</li>
+                <li>상권별로 서로 다른 매체와 메시지 조합을 테스트해야 하는 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                매장 반경, 주요 이동 동선, 리테일 POI, 체류 인구 데이터를 함께 검토합니다.
+                타겟이 방문을 결심할 수 있는 거리와 맥락에 맞춰 매체 조합과 소재 베리에이션을 설계합니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">매장 방문</span>
+                <span class="modal__chip">상권 반응</span>
+                <span class="modal__chip">리테일 접점</span>
+                <span class="modal__chip">지역별 성과</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="conversion" role="dialog" aria-modal="true" aria-labelledby="modal-conversion-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">03 App & Owned Channel</span>
+          <h3 class="modal__title" id="modal-conversion-title">앱·자사몰 행동 전환</h3>
+          <p class="modal__lead">
+            오프라인 노출 이후 앱 실행, 회원가입, 자사몰 유입, 쿠폰 반응으로 이어지는 경로를 설계합니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>앱 설치, 회원가입, 이벤트 참여를 캠페인 목표로 가져가야 하는 경우</li>
+                <li>자사몰 유입이나 특정 랜딩 페이지 방문을 늘려야 하는 경우</li>
+                <li>쿠폰, QR, 검색 CTA 같은 행동 장치를 함께 설계해야 하는 경우</li>
+                <li>오프라인 캠페인을 퍼포먼스 관점으로 설명해야 하는 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                행동 의도가 높아질 수 있는 시간대와 생활권을 찾고, CTA가 잘 작동할 수 있는 매체 환경을 검토합니다.
+                캠페인 이후 앱·웹·쿠폰·검색 반응을 함께 보며 다음 전환 경로를 개선합니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">앱 실행</span>
+                <span class="modal__chip">자사몰 유입</span>
+                <span class="modal__chip">쿠폰 반응</span>
+                <span class="modal__chip">전환 신호</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById('adtype-traffic');
+      if (!root) return;
+
+      var items = root.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.14 });
+      items.forEach(function (item) { observer.observe(item); });
+
+      var modalTriggers = root.querySelectorAll('[data-modal-target]');
+      var modalCloseButtons = root.querySelectorAll('[data-modal-close]');
+      var activeModal = null;
+
+      function openModal(name) {
+        var modal = root.querySelector('[data-modal="' + name + '"]');
+        if (!modal) return;
+        activeModal = modal;
+        modal.classList.add('is-open');
+        document.documentElement.style.overflow = 'hidden';
+        var panel = modal.querySelector('.modal__panel');
+        if (panel) panel.focus();
+      }
+
+      function closeModal() {
+        if (!activeModal) return;
+        activeModal.classList.remove('is-open');
+        activeModal = null;
+        document.documentElement.style.overflow = '';
+      }
+
+      modalTriggers.forEach(function (button) {
+        button.addEventListener('click', function () {
+          openModal(button.getAttribute('data-modal-target'));
+        });
+      });
+
+      modalCloseButtons.forEach(function (button) {
+        button.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Generated packages / heavy duplicates
+outputs/adtype-for-brands-imweb-package.zip
+outputs/adtype-for-brands-imweb-package/
+
+# Visual QA screenshots and temporary render outputs
+outputs/qa-*.png
+outputs/ref-*.png
+work/qa-*.png
+work/video-frames/
+work/video-browser-frames/
+
+# Local/system noise
+.DS_Store
+Thumbs.db
+*.log
+
