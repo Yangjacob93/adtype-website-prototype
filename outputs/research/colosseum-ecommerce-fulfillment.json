@@ -1,0 +1,782 @@
+{
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "이커머스 풀필먼트"
+    },
+    {
+      "tag": "H2",
+      "text": "스마트하게 최적화된 이커머스 풀필먼트"
+    },
+    {
+      "tag": "H2",
+      "text": "제약 없는 맞춤형 풀필먼트로 만족도 높게"
+    },
+    {
+      "tag": "H2",
+      "text": "모든 판매 채널을 시스템을 통해 한곳에서 관리"
+    },
+    {
+      "tag": "H2",
+      "text": "물류 자동화 솔루션으로 획기적인 업무 시간 단축"
+    },
+    {
+      "tag": "H2",
+      "text": "물류 보관비 및 부자재 비용 절감"
+    },
+    {
+      "tag": "H2",
+      "text": "빠르고 정확한 포장 및 배송 서비스"
+    },
+    {
+      "tag": "H2",
+      "text": "유연하고 전략적인 물류센터 네트워크 구축"
+    },
+    {
+      "tag": "H2",
+      "text": "지역과 시간의 한계를 극복하는 배송 파트너십"
+    },
+    {
+      "tag": "H2",
+      "text": "한 번에 전부 해결되는 초간단 풀필먼트"
+    },
+    {
+      "tag": "H2",
+      "text": "한번에 전부 해결되는 초간단 풀필먼트"
+    },
+    {
+      "tag": "H2",
+      "text": "이제 물류 걱정 없이 상품 개선과 판매 확장에 집중하세요!"
+    },
+    {
+      "tag": "H2",
+      "text": "사용할수록 높아지는 만족감과 신뢰도. 성공사례는 바로 당신입니다"
+    },
+    {
+      "tag": "H2",
+      "text": "물류 걱정없는 이커머스. 지금 바로 시작하세요!"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/#pop-salesmap",
+      "text": "다운받기"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/#ajax-content-wrap",
+      "text": "Skip to main content"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/#",
+      "text": "Close Search"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/#slide-out-widget-area",
+      "text": "Menu"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/how-it-works/",
+      "text": "WE ARE 콜로세움"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/what-we-offer/",
+      "text": "콜로세움 FOR YOU"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "이커머스 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/b2b-retail-fulfilment/",
+      "text": "B2B & 리테일 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/kitting-and-assembly/",
+      "text": "세트 제작 및 패키징"
+    },
+    {
+      "href": "https://colosseum.global/service/cross-border-fulfillment/",
+      "text": "크로스보더 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/amazon-fulfillment-fba/",
+      "text": "아마존 FBA / FBM"
+    },
+    {
+      "href": "https://colosseum.global/service/food-ingredients-franchise/",
+      "text": "프랜차이즈 / 식자재 물류"
+    },
+    {
+      "href": "https://colosseum.global/service/integrated-transport-solutions/",
+      "text": "화물 통합 운송"
+    },
+    {
+      "href": "https://colosseum.global/service/global-warehousing/",
+      "text": "한국 / 글로벌 물류센터"
+    },
+    {
+      "href": "https://colosseum.global/service/it-solution-and-consulting/",
+      "text": "물류 IT 솔루션 및 컨설팅"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing/",
+      "text": "요금 안내"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing-information/",
+      "text": "초간단 요금계산"
+    },
+    {
+      "href": "https://colosseum.global/alliances/",
+      "text": "얼라이언스"
+    },
+    {
+      "href": "https://blog.colosseum.global/",
+      "text": "블로그"
+    },
+    {
+      "href": "https://colosseum.global/company/about-us/",
+      "text": "회사소개"
+    },
+    {
+      "href": "https://colosseum.global/company/history-patents/",
+      "text": "연혁 및 수상 / 인증"
+    },
+    {
+      "href": "https://colosseum.global/company/colosseum-team-culture/",
+      "text": "팀 / 문화"
+    },
+    {
+      "href": "https://colosseum.global/company/hiring/",
+      "text": "채용"
+    },
+    {
+      "href": "https://colosseum.global/vault/",
+      "text": "서비스 소개"
+    },
+    {
+      "href": "https://vault.colosseum.global/",
+      "text": "홈페이지 바로가기"
+    },
+    {
+      "href": "https://colosseum.global/contact-us/",
+      "text": "문의하기"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "KOR"
+    },
+    {
+      "href": "https://colosseum.global/en/service/ecommerce-3pl-fulfillment/",
+      "text": "ENG"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "서비스"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "이커머스 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/contact-us/",
+      "text": "빠른 1:1 상담신청"
+    },
+    {
+      "href": "https://colosseum.global/contact-us/",
+      "text": "문의하기"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/what-we-offer/",
+      "text": "콜로세움"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/what-we-offer/",
+      "text": "WE ARE 콜로세움"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/how-it-works/",
+      "text": "콜로세움 FOR YOU"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "서비스"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "이커머스 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/b2b-retail-fulfilment/",
+      "text": "B2B 및 리테일 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/kitting-and-assembly/",
+      "text": "세트 제작 및 패키징"
+    },
+    {
+      "href": "https://colosseum.global/service/cross-border-fulfillment/",
+      "text": "크로스보더 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/amazon-fulfillment-fba/",
+      "text": "아마존 FBA / FBM"
+    },
+    {
+      "href": "https://colosseum.global/service/food-ingredients-franchise/",
+      "text": "프랜차이즈 / 식자재 물류"
+    },
+    {
+      "href": "https://colosseum.global/service/integrated-transport-solutions/",
+      "text": "화물 통합 운송"
+    },
+    {
+      "href": "https://colosseum.global/service/global-warehousing/",
+      "text": "한국 / 글로벌 물류센터"
+    },
+    {
+      "href": "https://colosseum.global/service/it-solution-and-consulting/",
+      "text": "물류 IT 솔루션 및 컨설팅"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing/",
+      "text": "요금"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing/",
+      "text": "요금안내"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing-information/",
+      "text": "초간단 요금 계산"
+    },
+    {
+      "href": "https://colosseum.global/alliances/",
+      "text": "얼라이언스"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#ecommerce/",
+      "text": "이커머스 플랫폼"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#distribution/",
+      "text": "물류센터 네트워크"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#lastmile/",
+      "text": "국내 라스트 마일 배송"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#overseasdelivery/",
+      "text": "해외 배송 & 수출입 지원"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#automation/",
+      "text": "물류 자동화 기술 지원"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#marketing/",
+      "text": "마케팅 & 비즈니스 부스팅"
+    },
+    {
+      "href": "https://blog.colosseum.global/colosseum-news",
+      "text": "뉴스룸"
+    },
+    {
+      "href": "https://blog.colosseum.global/category/colosseum-news",
+      "text": "보도자료"
+    },
+    {
+      "href": "https://blog.colosseum.global/",
+      "text": "블로그"
+    },
+    {
+      "href": "https://blog.colosseum.global/category/fulfillment-insight",
+      "text": "인사이트"
+    },
+    {
+      "href": "https://blog.colosseum.global/category/success-stories",
+      "text": "성공사례"
+    },
+    {
+      "href": "https://blog.colosseum.global/category/report-list",
+      "text": "백서"
+    },
+    {
+      "href": "https://blog.colosseum.global/category/events-promotion",
+      "text": "이벤트"
+    },
+    {
+      "href": "https://colosseum.global/company/about-us/",
+      "text": "회사"
+    },
+    {
+      "href": "https://colosseum.global/company/about-us/",
+      "text": "회사소개"
+    },
+    {
+      "href": "https://colosseum.global/company/history-patents/",
+      "text": "연혁 및 수상 / 인증"
+    },
+    {
+      "href": "https://colosseum.global/company/colosseum-team-culture/",
+      "text": "팀 & 문화"
+    },
+    {
+      "href": "https://colosseum.global/company/hiring/",
+      "text": "채용"
+    },
+    {
+      "href": "https://colosseum.global/privacy-policy/",
+      "text": "개인정보 보호정책"
+    },
+    {
+      "href": "https://colosseum.global/terms-of-use/",
+      "text": "이용약관"
+    },
+    {
+      "href": "tel:1566-9527",
+      "text": "1566-9527"
+    },
+    {
+      "href": "mailto:support@colosseum.kr",
+      "text": "support@colosseum.kr"
+    },
+    {
+      "href": "https://colosseum.global/contact-us/",
+      "text": "문의하기"
+    },
+    {
+      "href": "https://colosseum.global/contact-us/",
+      "text": "문의하기"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/what-we-offer/",
+      "text": "콜로세움"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/what-we-offer/",
+      "text": "WE ARE 콜로세움"
+    },
+    {
+      "href": "https://colosseum.global/colosseum/how-it-works/",
+      "text": "콜로세움 FOR YOU"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "서비스"
+    },
+    {
+      "href": "https://colosseum.global/service/ecommerce-3pl-fulfillment/",
+      "text": "이커머스 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/b2b-retail-fulfilment/",
+      "text": "B2B 및 리테일 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/kitting-and-assembly/",
+      "text": "세트 제작 및 패키징"
+    },
+    {
+      "href": "https://colosseum.global/service/cross-border-fulfillment/",
+      "text": "크로스보더 풀필먼트"
+    },
+    {
+      "href": "https://colosseum.global/service/amazon-fulfillment-fba/",
+      "text": "아마존 FBA / FBM"
+    },
+    {
+      "href": "https://colosseum.global/service/food-ingredients-franchise/",
+      "text": "프랜차이즈 / 식자재 물류"
+    },
+    {
+      "href": "https://colosseum.global/service/integrated-transport-solutions/",
+      "text": "화물 통합 운송"
+    },
+    {
+      "href": "https://colosseum.global/service/global-warehousing/",
+      "text": "한국 / 글로벌 물류센터"
+    },
+    {
+      "href": "https://colosseum.global/service/it-solution-and-consulting/",
+      "text": "물류 IT솔루션 및 컨설팅"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing/",
+      "text": "요금"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing/",
+      "text": "요금안내"
+    },
+    {
+      "href": "https://colosseum.global/price/pricing-information/",
+      "text": "초간단 요금계산"
+    },
+    {
+      "href": "https://colosseum.global/alliances/",
+      "text": "얼라이언스"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#ecommerce/",
+      "text": "이커머스 플랫폼"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#distribution/",
+      "text": "물류센터 네트워크"
+    },
+    {
+      "href": "https://colosseum.global/alliances/#lastmile/",
+      "text": "국내 라스트 마일 배송"
+    }
+  ],
+  "media": [
+    {
+      "alt": "채널톡 버튼",
+      "src": "https://colosseum.global/wp-content/uploads/2025/05/colosseum_quick.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "channel Talk",
+      "src": "https://colosseum.global/wp-content/uploads/2025/07/colosseum_quick_en_new1.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "콜로세움",
+      "src": "https://colosseum.global/wp-content/uploads/2025/06/colo_logo_retina.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "홈 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_about_us_banner_img01.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/04/sub_ecom_img02-2.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/04/sub_ecom_img03-3.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/04/sub_ecom_img10-2.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_ecom_img11-1.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "브랜드 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img02.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "특수 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img03.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img04-1.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "소분 포장 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img05.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "큐레이션 박스 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img06.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "제품 검수/검품 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img07.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "사은품/샘플 삽입 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img08.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "인쇄물/홍보물 삽입",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img09.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "친환경 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img10.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "브랜드 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img02.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "특수 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img03.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img04-1.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "소분 포장 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img05.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "큐레이션 박스 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img06.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "제품 검수/검품 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img07.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "사은품/샘플 삽입 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img08.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "인쇄물/홍보물 삽입",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img09.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "친환경 패키징 이미지",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_service_ecommerce-img10.jpg",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_ecom_img07.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_ecom_img08.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://colosseum.global/wp-content/uploads/2025/03/sub_ecom_img09.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "링크드인 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns01.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "인스타그램 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns02.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "콜로세움 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/06/colo_footer_logo.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "링크드인 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns01.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "인스타그램 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns02.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "콜로세움 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/06/colo_footer_logo_m.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "링크드인 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns01.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "인스타그램 바로가기",
+      "src": "https://colosseum.global/wp-content/uploads/2025/02/footer_sns02.png",
+      "tag": "IMG"
+    }
+  ],
+  "paragraphs": [
+    "콜로세움 WE ARE 콜로세움 콜로세움 FOR YOU",
+    "WE ARE 콜로세움",
+    "콜로세움 FOR YOU",
+    "서비스 이커머스 풀필먼트 B2B & 리테일 풀필먼트 세트 제작 및 패키징 크로스보더 풀필먼트 아마존 FBA / FBM 프랜차이즈 / 식자재 물류 화물 통합 운송 한국 / 글로벌 물류센터 물류 IT 솔루션 및 컨설팅",
+    "이커머스 풀필먼트",
+    "B2B & 리테일 풀필먼트",
+    "세트 제작 및 패키징",
+    "크로스보더 풀필먼트",
+    "아마존 FBA / FBM",
+    "프랜차이즈 / 식자재 물류",
+    "화물 통합 운송",
+    "한국 / 글로벌 물류센터",
+    "물류 IT 솔루션 및 컨설팅",
+    "요금 요금 안내 초간단 요금계산",
+    "요금 안내",
+    "초간단 요금계산",
+    "얼라이언스",
+    "블로그",
+    "회사 회사소개 연혁 및 수상 / 인증 팀 / 문화 채용",
+    "회사소개",
+    "연혁 및 수상 / 인증",
+    "팀 / 문화",
+    "채용",
+    "물류 자동화 플랫폼 서비스 소개 홈페이지 바로가기",
+    "서비스 소개",
+    "홈페이지 바로가기",
+    "문의하기",
+    "KOR",
+    "ENG",
+    "서비스",
+    "이커머스 풀필먼트",
+    "이커머스 풀필먼트를 간편하게 해결하고 싶으시죠?",
+    "개인 셀러에서부터 대형 브랜드까지, 최소 수량 제한이나 계약기간 제약 없이, 상품과 보관 / 배송 방식에 따른 맞춤형 풀필먼트를 제공합니다.",
+    "빠른 1:1 상담신청",
+    "300개 이상의 플랫폼이 연결되어 하나의 시스템에서 모든 채널을 관리할 수 있습니다.",
+    "반복작업을 최소화하여 시간과 실수를 줄입니다.",
+    "데이터 기반의 재고 관리와 상품의 부피를 고려한 부자재 사용으로 물류비를 최대 30% 감소시킵니다.",
+    "자동화된 출고 프로세스가 구매자의 배송 만족도와 신뢰도를 높입니다.",
+    "온도 / 작업 / 입지 등의 다양한 조건을 만족시키는 대한민국 / 글로벌 물류센터 53개소를 언제든 활용 가능합니다.",
+    "10개 이상의 택배 / 라스트 마일과의 연동으로 다양한 배송 유형을 제공합니다.",
+    "브랜드 패키징",
+    "강력한 브랜드 경험의 첫 시작, 제품과 패키지 재질을 고려해 세심하고 완성도 높게 제작됩니다.",
+    "특수 패키징",
+    "특수 포장 기계로 제품별 특징에 맞게 작업하고, 배송중 손상되지 않게 관리됩니다.",
+    "라벨링",
+    "제품의 특징과 브랜드 정체성이 담긴, 라벨의 다양한 형태를 고려하여 적합한 위치에 부착됩니다.",
+    "소분 포장",
+    "신선도 유지, 위생 관리, 법적 요건 준수등 제품에 따라 최적화해 임가공 소분포장 작업이 진행됩니다.",
+    "큐레이션 박스",
+    "다양한 구성과 복잡한 요청사항까지 표준화 된 프로세스로 적절하게 대응합니다.",
+    "제품 검수 / 검품",
+    "수량, 포장 상태, 외관 손상 여부등을 확인하고, 그에 따른 결과는 관리 시스템에 바로 입력됩니다.",
+    "사은품 / 샘플 삽입",
+    "시즌 / 프로모션에 따른 추가 제품이나, 사은품 / 샘플을 함께 포장하는 합포장 서비스를 제공합니다.",
+    "인쇄물 / 홍보물 삽입",
+    "구겨지거나 파손되지 않게 주의해서 작업한 뒤, 함께 포장해 주는 서비스입니다.",
+    "친환경 패키징",
+    "지속 가능한 환경을 위한 브랜드의 노력이 전달될 수 있게 친환경 패키징 서비스를 제공합니다.",
+    "브랜드 패키징",
+    "강력한 브랜드 경험의 첫 시작, 제품과 패키지 재질을 고려해 세심하고 완성도 높게 제작됩니다.",
+    "특수 패키징",
+    "특수 포장 기계로 제품별 특징에 맞게 작업하고, 배송중 손상되지 않게 관리됩니다.",
+    "라벨링",
+    "제품의 특징과 브랜드 정체성이 담긴, 라벨의 다양한 형태를 고려하여 적합한 위치에 부착됩니다.",
+    "소분 포장",
+    "신선도 유지, 위생 관리, 법적 요건 준수등 제품에 따라 최적화해 임가공 소분포장 작업이 진행됩니다.",
+    "큐레이션 박스",
+    "다양한 구성과 복잡한 요청사항까지 표준화 된 프로세스로 적절하게 대응합니다.",
+    "제품 검수 / 검품",
+    "수량, 포장 상태, 외관 손상 여부등을 확인하고, 그에 따른 결과는 관리 시스템에 바로 입력됩니다.",
+    "사은품 / 샘플 삽입",
+    "시즌 / 프로모션에 따른 추가 제품이나, 사은품 / 샘플을 함께 포장하는 합포장 서비스를 제공합니다.",
+    "인쇄물 / 홍보물 삽입",
+    "구겨지거나 파손되지 않게 주의해서 작업한 뒤, 함께 포장해주는 서비스입니다.",
+    "친환경 패키징",
+    "지속 가능한 환경을 위한 브랜드의 노력이 전달될 수 있게 친환경 패키징 서비스를 제공합니다.",
+    "“ 처음엔 하나의 플랫폼에서 소량의 SKU만 관리했는데 이제는 12개 플랫폼에서 100개 이상의 SKU를 손쉽게 관리하고 있습니다. 덕분에 물류 운영이 훨씬 편해지고 비용도 절감하게 되어 매우 만족하고 있어요! ”",
+    "– 뷰티 이커머스 K브랜드 셀러 –",
+    "“ 콜로세움 덕분에 물류 업무는 줄어들고 매출은 3배로 성장했습니다. 플랫폼 통합과 자동화 덕분에 운영 관리가 정말 너무 쉽고 편리해졌어요! ”",
+    "– 의류 이커머스 H브랜드 셀러 –",
+    "“ 새롭게 브랜드를 런칭하면서 프로모션과 이벤트가 많았는데 콜로세움에서 제품 관리부터 포장까지 한 번에 처리할 수 있었어요! 서비스 품질이 좋아서 만족도가 매우 높습니다. ”",
+    "– 의류 이커머스 W브랜드 셀러 –",
+    "콜로세움",
+    "WE ARE 콜로세움",
+    "콜로세움 FOR YOU",
+    "서비스",
+    "이커머스 풀필먼트",
+    "B2B 및 리테일 풀필먼트",
+    "세트 제작 및 패키징",
+    "크로스보더 풀필먼트",
+    "아마존 FBA / FBM",
+    "프랜차이즈 / 식자재 물류",
+    "화물 통합 운송",
+    "한국 / 글로벌 물류센터",
+    "물류 IT 솔루션 및 컨설팅",
+    "요금",
+    "요금안내",
+    "초간단 요금 계산",
+    "얼라이언스",
+    "이커머스 플랫폼",
+    "물류센터 네트워크",
+    "국내 라스트 마일 배송",
+    "해외 배송 & 수출입 지원",
+    "물류 자동화 기술 지원",
+    "마케팅 & 비즈니스 부스팅",
+    "뉴스룸",
+    "보도자료",
+    "블로그",
+    "인사이트",
+    "성공사례",
+    "백서",
+    "이벤트",
+    "회사",
+    "회사소개",
+    "연혁 및 수상 / 인증",
+    "팀 & 문화",
+    "채용",
+    "개인정보 보호정책 이용약관",
+    "개인정보 보호정책",
+    "이용약관",
+    "대표이사 : 박진수 | 사업자등록번호 : 507-86-01649 | 서울시 강남구 영동대로 424, 4층 (대치동, 사조빌딩) 고객센터 1566-9527 | 서비스 / 제휴 지원 support@colosseum.kr",
+    "© 2025 Colosseum Corporation | All RIGHTS RESERVED",
+    "콜로세움 서비스 문의하기",
+    "문의하기",
+    "콜로세움 서비스 문의하기",
+    "문의하기",
+    "콜로세움",
+    "WE ARE 콜로세움",
+    "콜로세움 FOR YOU",
+    "서비스",
+    "이커머스 풀필먼트"
+  ],
+  "styles": [
+    {
+      "color": "rgb(255, 255, 255)",
+      "font": "Pretendard, \"Malgun Gothic\", malgungothic, 맑은고딕, \"맑은 고딕\", sans-serif",
+      "line": "86.4px",
+      "size": "72px",
+      "tag": "H1",
+      "weight": "600"
+    },
+    {
+      "color": "rgb(0, 0, 0)",
+      "font": "Pretendard, \"Malgun Gothic\", malgungothic, 맑은고딕, \"맑은 고딕\", sans-serif",
+      "line": "49px",
+      "size": "40px",
+      "tag": "H2",
+      "weight": "600"
+    },
+    {
+      "color": "rgb(17, 48, 198)",
+      "font": "Pretendard, \"Malgun Gothic\", malgungothic, 맑은고딕, \"맑은 고딕\", sans-serif",
+      "line": "38px",
+      "size": "26px",
+      "tag": "P",
+      "weight": "600"
+    }
+  ],
+  "title": "이커머스 풀필먼트 - 콜로세움",
+  "url": "https://colosseum.global/service/ecommerce-3pl-fulfillment/"
+}

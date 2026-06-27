@@ -1,0 +1,1064 @@
+{
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "스타트업"
+    },
+    {
+      "tag": "H2",
+      "text": "고객 사례"
+    },
+    {
+      "tag": "H3",
+      "text": "페이머스스튜디오"
+    },
+    {
+      "tag": "H3",
+      "text": "팀스파르타 피플팀"
+    },
+    {
+      "tag": "H3",
+      "text": "핀다 채용팀"
+    },
+    {
+      "tag": "H2",
+      "text": "원티드 연동"
+    },
+    {
+      "tag": "H2",
+      "text": "채용 업무 자동화"
+    },
+    {
+      "tag": "H2",
+      "text": "아웃바운드 채용"
+    },
+    {
+      "tag": "H2",
+      "text": "고객 지원"
+    },
+    {
+      "tag": "H3",
+      "text": "채용 가이드북"
+    },
+    {
+      "tag": "H3",
+      "text": "HR 커뮤니티"
+    },
+    {
+      "tag": "H3",
+      "text": "서비스 소개서"
+    },
+    {
+      "tag": "H3",
+      "text": "고객 사례"
+    },
+    {
+      "tag": "H3",
+      "text": "채용 브랜딩 컨설팅"
+    },
+    {
+      "tag": "H2",
+      "text": "FAQs"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://www.greetinghr.com/why-greeting",
+      "text": "왜 그리팅인가"
+    },
+    {
+      "href": "https://www.greetinghr.com/pricing",
+      "text": "가격"
+    },
+    {
+      "href": "https://app.greetinghr.com/login",
+      "text": "로그인"
+    },
+    {
+      "href": "https://www.greetinghr.com/demo",
+      "text": "도입 문의"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/career-site",
+      "text": "채용 홈페이지 압도적 1위 레퍼런스 7000+ 고객사 사례를 확인하세요."
+    },
+    {
+      "href": "https://www.greetinghr.com/features/talent-pool",
+      "text": "인재풀 구축 핵심 직무부터 잦은 충원 포지션까지, 체계적으로 관리하는 자체 인재풀"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/trm",
+      "text": "다이렉트 소싱 기다리지 않고 먼저 제안하는 선제적인 인재 확보 전략"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/job-posting",
+      "text": "공고 관리 운영도 탐색도 막힘없는, 매끄러운 공고 관리"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/application",
+      "text": "지원자 관리 수-상시부터 공채까지 지원자 정보를 유연하게 통합 관리"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/assessment",
+      "text": "평가 관리 구조화된 평가와 실시간 협업으로 빠르고 정확한 채용 결정"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/interview",
+      "text": "면접 일정 조율 면접 일정 제안부터 확정까지 물 흐르듯 이루어지는 커뮤니케이션"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/communication",
+      "text": "지원자 연락 지원자 여정을 촘촘히 따라가는 단계별 알림과 메시지"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/analytics",
+      "text": "채용 데이터 분석 데이터로 채용을 이해하고, 성과로 이어지는 인사이트 확보"
+    },
+    {
+      "href": "https://app.greetinghr.com/signup",
+      "text": "무료 체험하기"
+    },
+    {
+      "href": "https://www.greetinghr.com/demo",
+      "text": "도입 문의하기"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/interview/famousstudio",
+      "text": "페이머스스튜디오 \"데이터를 확인할 수 있으니까 기준도 세울 수 있고, 채용을 감으로 하는 게 아니라 숫자로 확인하고 개선할 수 있게 된 거죠.\" 인터뷰 확인하기"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/interview/teamsparta",
+      "text": "팀스파르타 피플팀 “히스토리 참고한 세심한 메시지로 후보자 경험 개선되고, 자연스레 회사 관심도 높아졌어요.” 인터뷰 확인하기"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/interview/finda",
+      "text": "핀다 채용팀 \"기존에 롱리스트를 작성하는 시간이 30분이었다면, 지금은 10분, 5분으로 줄었습니다.\" 인터뷰 확인하기"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/job-posting#%EA%B3%B5%EA%B3%A0%EC%83%9D%EC%84%B1%EA%B4%80%EB%A6%AC",
+      "text": "공고 자동 게시 · 등록"
+    },
+    {
+      "href": "https://blog.greetinghr.com/wanted-integration/",
+      "text": "원티드 서류 자동 취합"
+    },
+    {
+      "href": "https://blog.greetinghr.com/wanted-integration/",
+      "text": "원티드 지원자 상태 자동 반영"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/application#%EC%A7%80%EC%9B%90%EC%9E%90%EB%8D%B0%EC%9D%B4%ED%84%B0",
+      "text": "지원서 취합 · 중복 이력 조회"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/interview#%EB%A9%B4%EC%A0%91%EC%9D%BC%EC%A0%95%EC%A1%B0%EC%9C%A8",
+      "text": "면접 일정 조율 · 평가 알림"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/communication#%EC%A7%80%EC%9B%90%EC%9E%90%EA%B2%BD%ED%97%98",
+      "text": "합격/불합격 안내 · 데이터 분석"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/trm",
+      "text": "원-클릭 인재풀 등록 · 후보자 리뷰"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/trm",
+      "text": "후보자 관계 관리 · 히스토리 통합"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/talent-pool",
+      "text": "인재풀 관리 · 지원자 재발굴"
+    },
+    {
+      "href": "https://www.greetinghr.com/guidebooks",
+      "text": "채용 가이드북 모집부터 선발까지, 채용 문제 해결을 위한 자료"
+    },
+    {
+      "href": "https://share-na2.hsforms.com/1CA3jNv2LTwaxnojOGiK-mArvbw5",
+      "text": "HR 커뮤니티 HR에 진심인 2,000+ 인사담당자와 함께하는 채인지 커뮤니티, 채용 · 인사 · 지식의 담론의 장에 참여하세요."
+    },
+    {
+      "href": "https://www.greetinghr.com/downloads/about-service",
+      "text": "서비스 소개서 차별점과 고객들이 선택한 이유를 담은 자료"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/interview",
+      "text": "고객 사례 다양한 산업의 사례 기반 벤치마킹 데이터 제공"
+    },
+    {
+      "href": "https://www.greetinghr.com/demo/employer-branding",
+      "text": "채용 브랜딩 컨설팅 조직 특화 채용 브랜딩 정비 및 고도화 지원"
+    },
+    {
+      "href": "https://www.greetinghr.com/demo/consulting",
+      "text": "1:1 맞춤 상담받기"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/career-site",
+      "text": "채용 홈페이지"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/talent-pool",
+      "text": "인재풀 구축"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/trm",
+      "text": "다이렉트 소싱 | TRM"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/job-posting",
+      "text": "공고 관리"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/application",
+      "text": "지원자 관리"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/assessment",
+      "text": "평가 관리"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/interview",
+      "text": "면접 일정 조율"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/communication",
+      "text": "지원자 연락"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/analytics",
+      "text": "채용 데이터 분석"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/volume-hiring",
+      "text": "대규모 채용"
+    },
+    {
+      "href": "https://www.greetinghr.com/features/automation",
+      "text": "채용 효율화"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/interview",
+      "text": "고객사 인터뷰"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/casestudy/nrise",
+      "text": "채용 성공 사례"
+    },
+    {
+      "href": "https://www.greetinghr.com/customer-stories/career-page",
+      "text": "채용 홈페이지 사례"
+    },
+    {
+      "href": "https://www.greetinghr.com/pricing",
+      "text": "가격 안내"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/enterprise",
+      "text": "중견 · 대기업"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/small-business",
+      "text": "중소기업"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/startup",
+      "text": "스타트업"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/information-technology",
+      "text": "IT · 기술"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/manufacturing",
+      "text": "제조 · 생산"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/ecommerce",
+      "text": "유통 · 커머스"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/bio",
+      "text": "의료 · 제약"
+    },
+    {
+      "href": "https://www.greetinghr.com/solutions/fashion-beauty",
+      "text": "패션 · 뷰티"
+    },
+    {
+      "href": "https://www.greetinghr.com/downloads/about-service",
+      "text": "서비스 소개서"
+    },
+    {
+      "href": "https://www.greetinghr.com/downloads/persuasion",
+      "text": "도입 설득자료"
+    },
+    {
+      "href": "https://www.greetinghr.com/downloads/proposal",
+      "text": "도입 제안서"
+    },
+    {
+      "href": "https://www.greetinghr.com/guidebooks",
+      "text": "채용 가이드북"
+    },
+    {
+      "href": "https://blog.greetinghr.com/tag/recruitment-article/",
+      "text": "HR 아티클"
+    },
+    {
+      "href": "https://blog.greetinghr.com/tag/recruitment-article/",
+      "text": "HR 인터뷰"
+    },
+    {
+      "href": "https://share-na2.hsforms.com/1CA3jNv2LTwaxnojOGiK-mArvbw5",
+      "text": "채인지 커뮤니티"
+    },
+    {
+      "href": "https://update.greetinghr.com/ko",
+      "text": "업데이트 소식"
+    },
+    {
+      "href": "https://guide.greetinghr.com/ko",
+      "text": "이용 가이드"
+    },
+    {
+      "href": "https://www.greetinghr.com/demo",
+      "text": "도입 · 제휴 문의"
+    },
+    {
+      "href": "https://www.doodlin.co.kr/ko/career",
+      "text": "두들린 채용"
+    },
+    {
+      "href": "https://www.greetinghr.com/terms/privacy_policy",
+      "text": "개인정보 처리방침"
+    },
+    {
+      "href": "https://www.greetinghr.com/terms/user_policy",
+      "text": "이용약관"
+    },
+    {
+      "href": "https://www.greetinghr.com/terms/operation_policy",
+      "text": "운영정책"
+    }
+  ],
+  "media": [
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/KYxbB6eHHjFsseVDyxEJD9QbcfU.png",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/assets/xe7Qj2k9bKKN52vdCywYW4Bo1vY.mp4",
+      "tag": "VIDEO"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZqlpwwBQZN5xJ6F4MwxgTpLXyo.png?width=504&height=84",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CxW6NpiEoRHNwPol6nJpbanBFA.png?scale-down-to=512&width=2432&height=320",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cdHTDEEGT9jJmu6cj4EGv3Pj3Y.png?scale-down-to=512&width=2040&height=776",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZV5c72D5jontjA5AGs3ofpcFmI4.png?scale-down-to=512&width=2806&height=500",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MHmCYAu8Kb5AhWoYxhRutdXgw4.png?scale-down-to=512&width=720&height=266",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZqlpwwBQZN5xJ6F4MwxgTpLXyo.png?width=504&height=84",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CxW6NpiEoRHNwPol6nJpbanBFA.png?scale-down-to=512&width=2432&height=320",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cdHTDEEGT9jJmu6cj4EGv3Pj3Y.png?scale-down-to=512&width=2040&height=776",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZV5c72D5jontjA5AGs3ofpcFmI4.png?scale-down-to=512&width=2806&height=500",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MHmCYAu8Kb5AhWoYxhRutdXgw4.png?scale-down-to=512&width=720&height=266",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZqlpwwBQZN5xJ6F4MwxgTpLXyo.png?width=504&height=84",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CxW6NpiEoRHNwPol6nJpbanBFA.png?scale-down-to=512&width=2432&height=320",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cdHTDEEGT9jJmu6cj4EGv3Pj3Y.png?scale-down-to=512&width=2040&height=776",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZV5c72D5jontjA5AGs3ofpcFmI4.png?scale-down-to=512&width=2806&height=500",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MHmCYAu8Kb5AhWoYxhRutdXgw4.png?scale-down-to=512&width=720&height=266",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZqlpwwBQZN5xJ6F4MwxgTpLXyo.png?width=504&height=84",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CxW6NpiEoRHNwPol6nJpbanBFA.png?scale-down-to=512&width=2432&height=320",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cdHTDEEGT9jJmu6cj4EGv3Pj3Y.png?scale-down-to=512&width=2040&height=776",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZV5c72D5jontjA5AGs3ofpcFmI4.png?scale-down-to=512&width=2806&height=500",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MHmCYAu8Kb5AhWoYxhRutdXgw4.png?scale-down-to=512&width=720&height=266",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/AMseOVJgvP5mjAAXlbGvHtqgnCA.png?scale-down-to=512&width=1000&height=1200",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/gvHqlidDRPyMFk5LSsY8DR8Mwc.png?scale-down-to=512&width=500&height=600",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YzbPUWiE5P1FmxjyGe1sT7Hu1C4.png?scale-down-to=512&width=500&height=600",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZqlpwwBQZN5xJ6F4MwxgTpLXyo.png?width=504&height=84",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CxW6NpiEoRHNwPol6nJpbanBFA.png?scale-down-to=512&width=2432&height=320",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cdHTDEEGT9jJmu6cj4EGv3Pj3Y.png?scale-down-to=512&width=2040&height=776",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ZV5c72D5jontjA5AGs3ofpcFmI4.png?scale-down-to=512&width=2806&height=500",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/MHmCYAu8Kb5AhWoYxhRutdXgw4.png?scale-down-to=512&width=720&height=266",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/qr9kgzqyf19jnuggCtUaouo0PKw.png?width=504&height=248",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kYUlS9NuqbHabLLnCuYB3rnZyeI.png?width=468&height=244",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ruNvMZSn1O3K45ZPGdmpPGieuS4.png?width=344&height=112",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/wHDMmWsSeOhv46oHv1tDSGdgSHg.png?scale-down-to=512&width=608&height=176",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FBTFvCqOhKwz7UHzWWiLQD0RPM.png?scale-down-to=512&width=646&height=312",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/CVzSNb9R0NHFPPVWAM9zNeBog.png?scale-down-to=512&width=1343&height=291",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ad1Ezq6tLriqM0EUde2szYMgews.png?scale-down-to=512&width=981&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Ec8ar87BF4N6M6SH5jR6KoSq0.png?scale-down-to=512&width=973&height=240",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/ek2R1SSGXPX8zsu8oMZqtz6Gi6M.png?scale-down-to=512&width=882&height=228",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/kyX0oi5jFkAJ3gksVtfmKuRLRVc.png?scale-down-to=512&width=1300&height=348",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/YjuSBqSKuKIwCjjNANOcPmcju8.png?scale-down-to=512&width=1074&height=223",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/cUpPBk9twADcCoI9tpusG1Q78.png?scale-down-to=512&width=1342&height=391",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/tiUDPjxhBTqNaZ5xa9Hgj2xKYPM.png?scale-down-to=512&width=670&height=300",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/Gi07ICyGG3Hi1zzhNa95bWVaTM.png?scale-down-to=512&width=610&height=100",
+      "tag": "IMG"
+    },
+    {
+      "alt": "",
+      "src": "https://framerusercontent.com/images/FSJtCNitbLaEIAKSCJ94p60P4.png?scale-down-to=512&width=2987&height=650",
+      "tag": "IMG"
+    }
+  ],
+  "paragraphs": [
+    "왜 그리팅인가",
+    "제품",
+    "솔루션",
+    "고객 사례",
+    "가격",
+    "유용한 자료",
+    "로그인",
+    "도입 문의",
+    "모집",
+    "채용 홈페이지",
+    "압도적 1위 레퍼런스 7000+ 고객사 사례를 확인하세요.",
+    "인재풀 구축",
+    "핵심 직무부터 잦은 충원 포지션까지, 체계적으로 관리하는 자체 인재풀",
+    "다이렉트 소싱",
+    "기다리지 않고 먼저 제안하는 선제적인 인재 확보 전략",
+    "관리",
+    "공고 관리",
+    "운영도 탐색도 막힘없는, 매끄러운 공고 관리",
+    "지원자 관리",
+    "수-상시부터 공채까지 지원자 정보를 유연하게 통합 관리",
+    "평가 관리",
+    "구조화된 평가와 실시간 협업으로 빠르고 정확한 채용 결정",
+    "운영",
+    "면접 일정 조율",
+    "면접 일정 제안부터 확정까지 물 흐르듯 이루어지는 커뮤니케이션",
+    "지원자 연락",
+    "지원자 여정을 촘촘히 따라가는 단계별 알림과 메시지",
+    "채용 데이터 분석",
+    "데이터로 채용을 이해하고, 성과로 이어지는 인사이트 확보",
+    "신규 업데이트",
+    "지원자별 평가가 업데이트 되었어요.",
+    "즉시 전력 확보를 더 빠르고 확실하게",
+    "그리팅과 함께 후보자 발굴부터 입사까지 막힘 없이 인재를 영입하세요.",
+    "무료 체험하기",
+    "도입 문의하기",
+    "그리팅은 10,000+ 기업이 선택한 국내 1위 채용 관리 솔루션입니다.",
+    "성장하는 스타트업의 채용 성공을 함께합니다.",
+    "137",
+    "67",
+    "50",
+    "3,500",
+    "인재 영입에 진심인 채용팀이 그리팅을 추천합니다",
+    "\"데이터를 확인할 수 있으니까 기준도 세울 수 있고, 채용을 감으로 하는 게 아니라 숫자로 확인하고 개선할 수 있게 된 거죠.\"",
+    "인터뷰 확인하기",
+    "“히스토리 참고한 세심한 메시지로 후보자 경험 개선되고, 자연스레 회사 관심도 높아졌어요.”",
+    "인터뷰 확인하기",
+    "\"기존에 롱리스트를 작성하는 시간이 30분이었다면, 지금은 10분, 5분으로 줄었습니다.\"",
+    "인터뷰 확인하기",
+    "원티드 공고 게시부터 취합, 지원자 관리까지 한곳에서",
+    "원티드를 비롯한 다양한 채용 플랫폼 연동으로 공고 등록부터 지원자 관리까지 한곳에서 해결합니다.",
+    "공고 자동 게시 · 등록",
+    "원티드 서류 자동 취합",
+    "원티드 지원자 상태 자동 반영",
+    "단순 반복 업무는 줄이고 채용은 전략적으로",
+    "일당백이 필요한 스타트업, 단순 반복 업무는 그리팅에 맡기고 중요한 일에 집중하세요.",
+    "지원서 취합 · 중복 이력 조회",
+    "면접 일정 조율 · 평가 알림",
+    "합격/불합격 안내 · 데이터 분석",
+    "현업 니즈에 딱 맞는 인재, 빠르게 모으고 영입까지",
+    "프로젝트별 맞춤 후보자, 인재풀에 손쉽게 등록하고 개인화된 인재 영입을 빠르게 실행하세요.",
+    "원-클릭 인재풀 등록 · 후보자 리뷰",
+    "후보자 관계 관리 · 히스토리 통합",
+    "인재풀 관리 · 지원자 재발굴",
+    "이미 사용 중인 서비스와 채용 데이터를 한곳에서 편리하게 관리하세요.",
+    "그리팅은 채용 성공을 위한 모든 것을 제공합니다",
+    "모집부터 선발까지, 채용 문제 해결을 위한 자료",
+    "HR에 진심인 2,000+ 인사담당자와 함께하는 채인지 커뮤니티, 채용 · 인사 · 지식의 담론의 장에 참여하세요.",
+    "차별점과 고객들이 선택한 이유를 담은 자료",
+    "다양한 산업의 사례 기반 벤치마킹 데이터 제공",
+    "조직 특화 채용 브랜딩 정비 및 고도화 지원",
+    "자주 묻는 질문",
+    "궁금한 점이 아직 해결되지 않았으면, 우측 하단의 상담 버튼을 클릭해 문의해 주세요.",
+    "채용 관리를 넘어, 채용 성공으로",
+    "국내 1위 채용 관리 솔루션, 그리팅으로 원하는 시기에 적합한 인재를 확보하세요.",
+    "1:1 맞춤 상담받기",
+    "(주)두들린 서울시 강남구 테헤란로 427, 위워크타워 9층 대표: 이태규 문의 : 02-567-5021 사업자등록번호 : 513-86-01891 통신판매업신고번호 : 제 2021-서울강남-05322 직업정보제공사업신고번호 : J1200020250002 유료직업소개사업신고번호 : 제 2025-3220250-14-5-00039",
+    "정보보호/개인정보보호 국제 표준 [ISO/IEC 27001, 27701] 인증 획득",
+    "클라우드 서비스 정보보호/개인정보보호",
+    "국제 표준 [ISO 27017, 27018] 인증 획득",
+    "인증범위] 채용(Greeting) 서비스",
+    "(정보통신망법 제47조의7에 따른 인증의 특례)",
+    "[유효기간] 2026. 01. 18 ~ 2029. 01. 17",
+    "개인정보 처리방침",
+    "이용약관",
+    "운영정책",
+    "Copyright © 2026 Doodlin Corp. All rights reserved."
+  ],
+  "styles": [
+    {
+      "color": "rgb(63, 63, 70)",
+      "font": "\"Pretendard SemiBold\", \"Pretendard SemiBold Placeholder\", sans-serif",
+      "line": "16px",
+      "size": "16px",
+      "tag": "H1",
+      "weight": "400"
+    },
+    {
+      "color": "rgb(23, 23, 23)",
+      "font": "\"Pretendard SemiBold\", \"Pretendard SemiBold Placeholder\", sans-serif",
+      "line": "16px",
+      "size": "16px",
+      "tag": "H2",
+      "weight": "400"
+    },
+    {
+      "color": "rgb(23, 23, 23)",
+      "font": "\"Pretendard SemiBold\", \"Pretendard SemiBold Placeholder\", sans-serif",
+      "line": "24px",
+      "size": "16px",
+      "tag": "P",
+      "weight": "400"
+    }
+  ],
+  "title": "기업 유형별 그리팅 활용 사례 - 스타트업 | 그리팅",
+  "url": "https://www.greetinghr.com/solutions/startup"
+}
