@@ -1,0 +1,672 @@
+[
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_A_slow__sm_5320_0.mp4",
+    "dest": "videos/hero-generated-slow-motion-ooh.mp4",
+    "group": "video",
+    "type": "generated/hero",
+    "definition": "AI 생성형 히어로 후보 영상. 느린 카메라 무브와 도시/OOH 무드를 배경으로 쓰기 좋은 분위기성 영상으로 추정.",
+    "landing_use": "메인 히어로 또는 기술 상세 페이지 상단 배경 후보. 실제 캠페인 증거보다는 브랜드 무드용.",
+    "source": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_A_slow__sm_5320_0.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\hero-generated-slow-motion-ooh.mp4",
+    "relative_path": "landing-page-assets/videos/hero-generated-slow-motion-ooh.mp4",
+    "size_bytes": 6317155,
+    "media": {
+      "duration_seconds": 3.04,
+      "width": 1916,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_A_cinemati_5287_0.mp4",
+    "dest": "videos/hero-generated-cinematic-ooh.mp4",
+    "group": "video",
+    "type": "generated/hero",
+    "definition": "AI 생성형 시네마틱 OOH/도시 무드 영상 후보.",
+    "landing_use": "히어로 배경, 중간 풀블리드 전환 섹션 후보.",
+    "source": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_A_cinemati_5287_0.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\hero-generated-cinematic-ooh.mp4",
+    "relative_path": "landing-page-assets/videos/hero-generated-cinematic-ooh.mp4",
+    "size_bytes": 8767342,
+    "media": {
+      "duration_seconds": 3.04,
+      "width": 1920,
+      "height": 1076
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_An_ultra_s_5271_0.mp4",
+    "dest": "videos/hero-generated-ultra-ooh.mp4",
+    "group": "video",
+    "type": "generated/hero",
+    "definition": "AI 생성형 초광각/시네마틱 계열 OOH 무드 영상 후보.",
+    "landing_use": "기술 상세 페이지 히어로 배경 또는 브랜드 무드 영상 후보.",
+    "source": "C:\\Users\\tmdak\\Downloads\\kling_20260625_VIDEO_An_ultra_s_5271_0.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\hero-generated-ultra-ooh.mp4",
+    "relative_path": "landing-page-assets/videos/hero-generated-ultra-ooh.mp4",
+    "size_bytes": 8928545,
+    "media": {
+      "duration_seconds": 3.04,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\팔로잉미디어_예술극장앞_2025.12.09_올리브영.mp4",
+    "dest": "videos/field-following-media-oliveyoung-theater.mp4",
+    "group": "video",
+    "type": "field/ooh",
+    "definition": "예술극장 앞 팔로잉미디어/올리브영 관련 현장 영상. 실제 오프라인 매체 집행감을 보여주는 증거형 에셋.",
+    "landing_use": "OOH 크리에이티브 설계, 현장 집행/매체 적용 사례 섹션.",
+    "source": "C:\\Users\\tmdak\\Downloads\\팔로잉미디어_예술극장앞_2025.12.09_올리브영.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\field-following-media-oliveyoung-theater.mp4",
+    "relative_path": "landing-page-assets/videos/field-following-media-oliveyoung-theater.mp4",
+    "size_bytes": 9740898,
+    "media": {
+      "duration_seconds": 10.48,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\adtype_MMS.mp4",
+    "dest": "videos/product-media-planning-system.mp4",
+    "group": "video",
+    "type": "product/ui",
+    "definition": "Adtype MMS 또는 Media Planning System 제품 화면 녹화.",
+    "landing_use": "공간 접점과 미디어 플래닝 기술 상세 페이지의 핵심 시연 영상.",
+    "source": "C:\\Users\\tmdak\\Downloads\\adtype_MMS.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\product-media-planning-system.mp4",
+    "relative_path": "landing-page-assets/videos/product-media-planning-system.mp4",
+    "size_bytes": 48275114,
+    "media": {
+      "duration_seconds": 32.43,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\adtype_intell.mp4",
+    "dest": "videos/product-adtype-intelligence-map.mp4",
+    "group": "video",
+    "type": "product/ui",
+    "definition": "Adtype Intelligence/지도·공간 데이터 계열 제품 화면 녹화.",
+    "landing_use": "Adtype Map / Simulator 또는 공간정보기술 설명 페이지의 핵심 시연 영상.",
+    "source": "C:\\Users\\tmdak\\Downloads\\adtype_intell.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\product-adtype-intelligence-map.mp4",
+    "relative_path": "landing-page-assets/videos/product-adtype-intelligence-map.mp4",
+    "size_bytes": 38085555,
+    "media": {
+      "duration_seconds": 20.94,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\mental market_clip.mp4",
+    "dest": "videos/product-mental-market-clip.mp4",
+    "group": "video",
+    "type": "product/ui",
+    "definition": "Mental Market 제품 화면 클립. 검색 키워드/시장 기억 구조 분석을 보여주는 짧은 시연 영상.",
+    "landing_use": "Mental Market 상세 페이지의 대표 제품 비주얼.",
+    "source": "C:\\Users\\tmdak\\Downloads\\mental market_clip.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\product-mental-market-clip.mp4",
+    "relative_path": "landing-page-assets/videos/product-mental-market-clip.mp4",
+    "size_bytes": 806097,
+    "media": {
+      "duration_seconds": 31.93,
+      "width": 853,
+      "height": 480
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\ad_effect_clip.mp4",
+    "dest": "videos/product-ooh-performance-effect.mp4",
+    "group": "video",
+    "type": "product/ui",
+    "definition": "OOH 성과/효과 분석 제품 화면 클립.",
+    "landing_use": "OOH Performance System 상세 페이지 대표 영상.",
+    "source": "C:\\Users\\tmdak\\Downloads\\ad_effect_clip.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\product-ooh-performance-effect.mp4",
+    "relative_path": "landing-page-assets/videos/product-ooh-performance-effect.mp4",
+    "size_bytes": 9588178,
+    "media": {
+      "duration_seconds": 16.43,
+      "width": 1352,
+      "height": 848
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\adtype_hero2.mp4",
+    "dest": "videos/brand-hero-city-ooh.mp4",
+    "group": "video",
+    "type": "brand/hero",
+    "definition": "현재 애드타입 메인 히어로 성격의 도시/OOH 배경 영상.",
+    "landing_use": "브랜드 메인 히어로 또는 공통 상세 페이지 히어로 배경.",
+    "source": "C:\\Users\\tmdak\\Downloads\\adtype_hero2.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\brand-hero-city-ooh.mp4",
+    "relative_path": "landing-page-assets/videos/brand-hero-city-ooh.mp4",
+    "size_bytes": 29406188,
+    "media": {
+      "duration_seconds": 13.37,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\adtype_bus.mp4",
+    "dest": "videos/field-bus-ooh-mediheal.mp4",
+    "group": "video",
+    "type": "field/ooh",
+    "definition": "버스 외부 광고 현장 영상. 이동형 OOH 매체 사례.",
+    "landing_use": "OOH 크리에이티브, 미디어 플래닝, 현장 접점 섹션.",
+    "source": "C:\\Users\\tmdak\\Downloads\\adtype_bus.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\field-bus-ooh-mediheal.mp4",
+    "relative_path": "landing-page-assets/videos/field-bus-ooh-mediheal.mp4",
+    "size_bytes": 19904639,
+    "media": {
+      "duration_seconds": 13.12,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\adtype_radar.mp4",
+    "dest": "videos/product-survey-review-radar.mp4",
+    "group": "video",
+    "type": "product/ui",
+    "definition": "Survey/Review Radar 계열 제품 화면 영상.",
+    "landing_use": "Survey / Review Radar 상세 페이지 대표 영상.",
+    "source": "C:\\Users\\tmdak\\Downloads\\adtype_radar.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\product-survey-review-radar.mp4",
+    "relative_path": "landing-page-assets/videos/product-survey-review-radar.mp4",
+    "size_bytes": 13543839,
+    "media": {
+      "duration_seconds": 25.42,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\creative.mp4",
+    "dest": "videos/field-creative-ooh-showcase.mp4",
+    "group": "video",
+    "type": "field/ooh",
+    "definition": "OOH 크리에이티브 현장/소재 쇼케이스 영상.",
+    "landing_use": "Key Visual / Creative 상세 페이지 또는 현장감 섹션.",
+    "source": "C:\\Users\\tmdak\\Downloads\\creative.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\field-creative-ooh-showcase.mp4",
+    "relative_path": "landing-page-assets/videos/field-creative-ooh-showcase.mp4",
+    "size_bytes": 18060330,
+    "media": {
+      "duration_seconds": 6.9,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\recording_surveyradar.mp4",
+    "dest": "videos/recording-survey-radar-walkthrough.mp4",
+    "group": "video",
+    "type": "product/recording",
+    "definition": "Survey Radar 사용 흐름을 보여주는 화면 녹화.",
+    "landing_use": "Survey Radar 기능 상세 설명, 데이터 업로드/분석 플로우 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\recording_surveyradar.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\recording-survey-radar-walkthrough.mp4",
+    "relative_path": "landing-page-assets/videos/recording-survey-radar-walkthrough.mp4",
+    "size_bytes": 17308075,
+    "media": {
+      "duration_seconds": 57.82,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\recording_reviewradar.mp4",
+    "dest": "videos/recording-review-radar-walkthrough.mp4",
+    "group": "video",
+    "type": "product/recording",
+    "definition": "Review Radar 사용 흐름을 보여주는 화면 녹화.",
+    "landing_use": "Review Radar 상세 설명, 리뷰 데이터 분석/근거 드릴다운 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\recording_reviewradar.mp4",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\videos\\recording-review-radar-walkthrough.mp4",
+    "relative_path": "landing-page-assets/videos/recording-review-radar-walkthrough.mp4",
+    "size_bytes": 9915492,
+    "media": {
+      "duration_seconds": 41.57,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\IMG_4314.jpg",
+    "dest": "images/ooh-field/shinsegae-checkin-dooh-cubes-wide.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "지하철 환승/통로 공간의 다면 디지털 큐브 광고. 신세계면세점 Check-in 캠페인.",
+    "landing_use": "OOH 현장감, 공간 접점, 대형 DOOH 매체 사례.",
+    "source": "C:\\Users\\tmdak\\Downloads\\IMG_4314.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\shinsegae-checkin-dooh-cubes-wide.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/shinsegae-checkin-dooh-cubes-wide.jpg",
+    "size_bytes": 1477366,
+    "media": {
+      "width": 4032,
+      "height": 3024,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\20260226_191417.jpg",
+    "dest": "images/ooh-field/mediheal-1st-tonerpad-large-lightbox.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "지하철 역사 내 대형 라이트박스/와이드 광고. 메디힐 x 올리브영 토너패드 캠페인.",
+    "landing_use": "뷰티 브랜드 OOH 사례, 구매 이유/리테일 접점 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\20260226_191417.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\mediheal-1st-tonerpad-large-lightbox.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/mediheal-1st-tonerpad-large-lightbox.jpg",
+    "size_bytes": 562895,
+    "media": {
+      "width": 3000,
+      "height": 4000,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\IMG_4325.jpg",
+    "dest": "images/ooh-field/shinsegae-checkin-dooh-cubes-perspective-01.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "연속 배치된 다면 디지털 큐브 광고. 시야 반복성과 공간 점유감이 강한 현장 사진.",
+    "landing_use": "브랜드 존재감 확대, 반복 접점 구조 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\IMG_4325.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\shinsegae-checkin-dooh-cubes-perspective-01.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/shinsegae-checkin-dooh-cubes-perspective-01.jpg",
+    "size_bytes": 1229035,
+    "media": {
+      "width": 4032,
+      "height": 3024,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\IMG_4326.jpg",
+    "dest": "images/ooh-field/shinsegae-checkin-dooh-cubes-perspective-02.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "신세계면세점 Check-in 캠페인의 연속 큐브 광고 다른 컷. 인물/크리에이티브가 선명함.",
+    "landing_use": "OOH 크리에이티브 적용, 공간 내 반복 노출 예시.",
+    "source": "C:\\Users\\tmdak\\Downloads\\IMG_4326.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\shinsegae-checkin-dooh-cubes-perspective-02.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/shinsegae-checkin-dooh-cubes-perspective-02.jpg",
+    "size_bytes": 1258141,
+    "media": {
+      "width": 4032,
+      "height": 3024,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\1000333938.jpg",
+    "dest": "images/ooh-field/dr-althea-oliveyoung-subway-wide.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "지하철 객차/역사 내 와이드 광고. 닥터엘시아 올리브영 1등 진정 듀오 캠페인.",
+    "landing_use": "뷰티/리테일 구매 접점, 브랜드 포지셔닝 사례.",
+    "source": "C:\\Users\\tmdak\\Downloads\\1000333938.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\dr-althea-oliveyoung-subway-wide.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/dr-althea-oliveyoung-subway-wide.jpg",
+    "size_bytes": 366399,
+    "media": {
+      "width": 4000,
+      "height": 2252,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\image (74).png",
+    "dest": "images/ooh-field/mediheal-tonerpad-station-monitor.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "역사 내 소형 모니터형 디지털 광고. 메디힐 토너패드 캠페인.",
+    "landing_use": "소형 DOOH 접점, 매체 규격 다양성 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\image (74).png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\mediheal-tonerpad-station-monitor.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/mediheal-tonerpad-station-monitor.jpg",
+    "size_bytes": 103365,
+    "media": {
+      "width": 318,
+      "height": 206,
+      "mode": "RGBA",
+      "format": "PNG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\20260605_091608.jpg",
+    "dest": "images/ooh-field/mediheal-oliveyoung-electric-bus-wrap.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "전기버스 외부 래핑 광고. 메디힐 x 올리브영 토너패드 캠페인.",
+    "landing_use": "이동형 OOH, 생활 동선 반복 노출, 크리에이티브 확장 사례.",
+    "source": "C:\\Users\\tmdak\\Downloads\\20260605_091608.jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\mediheal-oliveyoung-electric-bus-wrap.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/mediheal-oliveyoung-electric-bus-wrap.jpg",
+    "size_bytes": 970101,
+    "media": {
+      "width": 4000,
+      "height": 3000,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\KakaoTalk_20260522_092808221 (1).jpg",
+    "dest": "images/ooh-field/subway-wide-anime-creative.jpg",
+    "group": "image",
+    "type": "field/ooh",
+    "definition": "지하철 역사 내 와이드 디지털 광고. 캐릭터/엔터테인먼트형 크리에이티브 사례.",
+    "landing_use": "게임·엔터테인먼트/팬덤 캠페인, 현장 크리에이티브 예시.",
+    "source": "C:\\Users\\tmdak\\Downloads\\KakaoTalk_20260522_092808221 (1).jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\ooh-field\\subway-wide-anime-creative.jpg",
+    "relative_path": "landing-page-assets/images/ooh-field/subway-wide-anime-creative.jpg",
+    "size_bytes": 5077004,
+    "media": {
+      "width": 5712,
+      "height": 4284,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\09-upload.png",
+    "dest": "images/product-ui/survey-radar-upload-modal.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 데이터 업로드 모달. CSV/XLSX 설문 파일 업로드 플로우.",
+    "landing_use": "Survey Radar 데이터 입력/업로드 기능 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\09-upload.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-upload-modal.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-upload-modal.png",
+    "size_bytes": 49128,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\08-export.png",
+    "dest": "images/product-ui/review-radar-export-menu.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 대시보드 내보내기 메뉴. Markdown/Excel export.",
+    "landing_use": "리포팅/내보내기, 내부 공유 기능 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\08-export.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-export-menu.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-export-menu.png",
+    "size_bytes": 69102,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\07-evidence.png",
+    "dest": "images/product-ui/survey-radar-evidence-modal.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 교차분석 셀의 원문 근거 모달. 세그먼트별 자유응답 원문 확인.",
+    "landing_use": "정량 결과와 정성 근거 연결, evidence drilldown 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\07-evidence.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-evidence-modal.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-evidence-modal.png",
+    "size_bytes": 70986,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\08-chat.png",
+    "dest": "images/product-ui/survey-radar-chat-assistant.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 탐색 도우미 패널. 분석 결과에 질문하는 채팅형 보조 기능.",
+    "landing_use": "AI 분석 보조/질문형 인사이트 탐색 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\08-chat.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-chat-assistant.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-chat-assistant.png",
+    "size_bytes": 63448,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\06-audience.png",
+    "dest": "images/product-ui/survey-radar-audience-cell-actions.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 교차분석 셀 선택 액션. 세그먼트 프로파일/응답 원문/질문하기 메뉴.",
+    "landing_use": "오디언스 세그먼트별 드릴다운, 분석 액션 구조 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\06-audience.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-audience-cell-actions.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-audience-cell-actions.png",
+    "size_bytes": 57334,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\04-cross.png",
+    "dest": "images/product-ui/survey-radar-cross-analysis-table.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 교차분석 테이블. 성장 오디언스 유형과 페르소나 유형을 교차 비교.",
+    "landing_use": "세그먼트 차이 분석, 타겟별 메시지 도출 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\04-cross.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-cross-analysis-table.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-cross-analysis-table.png",
+    "size_bytes": 53477,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\05-funnel.png",
+    "dest": "images/product-ui/survey-radar-audience-analysis.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 오디언스 분석 화면. 성장 오디언스/페르소나/인구통계 구성.",
+    "landing_use": "타겟 오디언스 정의와 속성 기반 캠페인 과제 도출.",
+    "source": "C:\\Users\\tmdak\\Downloads\\05-funnel.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-audience-analysis.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-audience-analysis.png",
+    "size_bytes": 91393,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\03-attributes.png .jpg",
+    "dest": "images/product-ui/survey-radar-attribute-analysis.jpg",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 속성 분석 화면. 브랜드 인지, 구매·이용 퍼널, CEP 등 속성별 응답 분포.",
+    "landing_use": "브랜드 진단, 퍼널/속성 기반 지표 해석.",
+    "source": "C:\\Users\\tmdak\\Downloads\\03-attributes.png .jpg",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-attribute-analysis.jpg",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-attribute-analysis.jpg",
+    "size_bytes": 76315,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\01-overview-hero.png",
+    "dest": "images/product-ui/survey-radar-overview-hero.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 개요 대시보드 상단. 종합 인사이트와 브랜드 핵심 진단 카드.",
+    "landing_use": "Survey Radar 대표 대시보드, 첫 화면 소개.",
+    "source": "C:\\Users\\tmdak\\Downloads\\01-overview-hero.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-overview-hero.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-overview-hero.png",
+    "size_bytes": 92126,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\02-overview-segments.png",
+    "dest": "images/product-ui/survey-radar-overview-segments.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Survey Radar 소비자 세그먼트 개요. 성장 오디언스와 페르소나 유형 분포.",
+    "landing_use": "오디언스 유형화, 세그먼트 기반 전략 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\02-overview-segments.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\survey-radar-overview-segments.png",
+    "relative_path": "landing-page-assets/images/product-ui/survey-radar-overview-segments.png",
+    "size_bytes": 96651,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\03-factors-purchase.png",
+    "dest": "images/product-ui/review-radar-purchase-factors.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 리뷰 심층 분석. 만족/불만 요인, 구매 행동, 구매 동기/정보 경로.",
+    "landing_use": "구매 이유 형성, 리뷰 기반 메시지 단서 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\03-factors-purchase.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-purchase-factors.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-purchase-factors.png",
+    "size_bytes": 76545,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\04-usage-keywords.png",
+    "dest": "images/product-ui/review-radar-usage-keywords.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 사용·재구매와 빈출 키워드 분석 화면.",
+    "landing_use": "사용 맥락, 재구매 의향, 긍정/부정/브랜드 키워드 추출 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\04-usage-keywords.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-usage-keywords.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-usage-keywords.png",
+    "size_bytes": 76603,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\02-dashboard-overview.png",
+    "dest": "images/product-ui/review-radar-dashboard-overview.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 대시보드 개요. 리뷰 수, 평균 평점, 긍정 비율, 분기 추세와 분포.",
+    "landing_use": "Review Radar 대표 화면, 리뷰 데이터 진단 소개.",
+    "source": "C:\\Users\\tmdak\\Downloads\\02-dashboard-overview.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-dashboard-overview.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-dashboard-overview.png",
+    "size_bytes": 65802,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\06-evidence-drilldown.png",
+    "dest": "images/product-ui/review-radar-evidence-drilldown.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 근거 원문 드릴다운. 특정 요인에 해당하는 리뷰 원문 리스트.",
+    "landing_use": "정량 요약과 실제 소비자 언어 연결 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\06-evidence-drilldown.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-evidence-drilldown.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-evidence-drilldown.png",
+    "size_bytes": 99132,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\05-product-comparison.png",
+    "dest": "images/product-ui/review-radar-product-comparison.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 제품별 비교 화면. 제품별 리뷰 수, 평점, 감성 분포 비교.",
+    "landing_use": "제품/라인업별 소비자 반응 비교, 개선 포인트 도출.",
+    "source": "C:\\Users\\tmdak\\Downloads\\05-product-comparison.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-product-comparison.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-product-comparison.png",
+    "size_bytes": 87991,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  },
+  {
+    "src": "C:\\Users\\tmdak\\Downloads\\07-chat.png",
+    "dest": "images/product-ui/review-radar-chat-assistant.png",
+    "group": "image",
+    "type": "product/ui",
+    "definition": "Review Radar 탐색 도우미 패널. 리뷰 데이터를 자연어 질문으로 탐색.",
+    "landing_use": "AI 탐색/인사이트 질문 기능 설명.",
+    "source": "C:\\Users\\tmdak\\Downloads\\07-chat.png",
+    "path": "C:\\Users\\tmdak\\Documents\\Codex\\2026-06-26\\github-plugin-github-openai-curated-remote\\adtype-website-prototype-main\\outputs\\assets\\landing-page-assets\\images\\product-ui\\review-radar-chat-assistant.png",
+    "relative_path": "landing-page-assets/images/product-ui/review-radar-chat-assistant.png",
+    "size_bytes": 84688,
+    "media": {
+      "width": 1387,
+      "height": 868,
+      "mode": "RGB",
+      "format": "JPEG"
+    }
+  }
+]

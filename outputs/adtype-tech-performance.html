@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OOH Performance System | Adtype OOH Technology</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    html, body { margin:0 !important; padding:0 !important; background:#fff !important; }
+    #adtype-tech, #adtype-tech * { box-sizing:border-box !important; }
+    #adtype-tech {
+      --ad:#eb4200; --ink:#171719; --sub:#4e5968; --muted:#8b95a1; --soft:#f7f8fa; --line:#e5e8eb;
+      width:100% !important; min-height:100vh !important; overflow-x:hidden !important; color:var(--ink) !important;
+      font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important; word-break:keep-all !important; letter-spacing:0 !important;
+    }
+    #adtype-tech a { color:inherit !important; text-decoration:none !important; }
+    #adtype-tech h1,#adtype-tech h2,#adtype-tech h3,#adtype-tech p,#adtype-tech ul,#adtype-tech li { margin:0 !important; padding:0 !important; }
+    #adtype-tech li { list-style:none !important; }
+    #adtype-tech .wrap { width:min(1180px, calc(100% - 48px)) !important; margin:0 auto !important; }
+    #adtype-tech .nav { position:fixed !important; inset:0 0 auto 0 !important; z-index:50 !important; height:72px !important; background:rgba(255,255,255,.94) !important; backdrop-filter:blur(18px) !important; border-bottom:1px solid rgba(23,23,25,.08) !important; }
+    #adtype-tech .nav__inner { width:min(1180px, calc(100% - 48px)) !important; height:100% !important; margin:0 auto !important; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:24px !important; }
+    #adtype-tech .brand img { display:block !important; width:100px !important; height:auto !important; }
+    #adtype-tech .nav__links { display:flex !important; align-items:center !important; gap:26px !important; color:#4e5968 !important; font-size:15px !important; font-weight:650 !important; }
+    #adtype-tech .nav__cta { height:40px !important; padding:0 16px !important; display:inline-flex !important; align-items:center !important; border:1px solid rgba(23,23,25,.75) !important; border-radius:8px !important; color:#171719 !important; }
+    #adtype-tech .hero { min-height:100vh !important; position:relative !important; display:flex !important; align-items:center !important; padding:132px 0 84px !important; background:#050505 !important; color:#fff !important; overflow:hidden !important; }
+    #adtype-tech .hero__video { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:cover !important; opacity:.5 !important; filter:saturate(.95) contrast(1.04) !important; }
+    #adtype-tech .hero:before { content:"" !important; position:absolute !important; inset:0 !important; z-index:1 !important; background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.72) 46%,rgba(0,0,0,.42) 100%),linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.62)) !important; }
+    #adtype-tech .hero__inner { position:relative !important; z-index:2 !important; width:min(1180px, calc(100% - 48px)) !important; margin:0 auto !important; }
+    #adtype-tech .eyebrow { display:block !important; color:var(--ad) !important; font-size:15px !important; line-height:1.4 !important; font-weight:800 !important; margin-bottom:18px !important; }
+    #adtype-tech .hero h1 { max-width:920px !important; color:#fff !important; font-size:clamp(48px,5.2vw,78px) !important; line-height:1.16 !important; font-weight:760 !important; letter-spacing:0 !important; }
+    #adtype-tech .hero__copy { max-width:760px !important; margin-top:28px !important; color:rgba(255,255,255,.78) !important; font-size:21px !important; line-height:1.72 !important; }
+    #adtype-tech .hero__actions { margin-top:42px !important; display:flex !important; gap:12px !important; flex-wrap:wrap !important; }
+    #adtype-tech .btn { min-height:54px !important; padding:0 24px !important; border-radius:999px !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; border:1px solid #171719 !important; background:#171719 !important; color:#fff !important; font-size:16px !important; font-weight:750 !important; }
+    #adtype-tech .btn--ad { background:var(--ad) !important; border-color:var(--ad) !important; }
+    #adtype-tech .btn--white { background:rgba(255,255,255,.08) !important; border-color:rgba(255,255,255,.7) !important; color:#fff !important; }
+    #adtype-tech .section { padding:112px 0 !important; background:#fff !important; }
+    #adtype-tech .section--soft { background:var(--soft) !important; }
+    #adtype-tech .section--dark { background:#111 !important; color:#fff !important; }
+    #adtype-tech .section-head { max-width:860px !important; margin:0 auto 42px !important; text-align:center !important; }
+    #adtype-tech .section-head h2 { font-size:clamp(34px,4vw,56px) !important; line-height:1.2 !important; font-weight:760 !important; letter-spacing:0 !important; }
+    #adtype-tech .section-desc { margin-top:18px !important; color:var(--sub) !important; font-size:20px !important; line-height:1.75 !important; }
+    #adtype-tech .section--dark .section-desc { color:rgba(255,255,255,.72) !important; }
+    #adtype-tech .intro-grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:24px !important; }
+    #adtype-tech .intro-card { padding:34px !important; border:1px solid var(--line) !important; border-radius:8px !important; background:#fff !important; }
+    #adtype-tech .intro-card h3 { font-size:24px !important; line-height:1.35 !important; font-weight:760 !important; margin-bottom:16px !important; }
+    #adtype-tech .intro-card p { color:var(--sub) !important; font-size:18px !important; line-height:1.75 !important; }
+    #adtype-tech .card-grid { display:grid !important; grid-template-columns:repeat(2, minmax(0,1fr)) !important; gap:16px !important; }
+    #adtype-tech .card { min-height:112px !important; padding:26px !important; border:1px solid var(--line) !important; border-radius:8px !important; background:#fff !important; box-shadow:0 16px 34px rgba(17,24,39,.04) !important; }
+    #adtype-tech .card p { color:#2b3138 !important; font-size:18px !important; line-height:1.68 !important; font-weight:560 !important; }
+    #adtype-tech .output-list { display:grid !important; grid-template-columns:repeat(3, minmax(0,1fr)) !important; gap:12px !important; }
+    #adtype-tech .output-list li { padding:18px 20px !important; border-radius:8px !important; background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.14) !important; color:rgba(255,255,255,.86) !important; font-size:17px !important; line-height:1.55 !important; }
+    #adtype-tech .next { padding:88px 0 !important; background:linear-gradient(180deg,#fff7f3 0%,#fff 100%) !important; }
+    #adtype-tech .next__box { display:flex !important; align-items:center !important; justify-content:space-between !important; gap:28px !important; padding:36px !important; border:1px solid rgba(235,66,0,.18) !important; border-radius:8px !important; background:#fff !important; }
+    #adtype-tech .next h2 { font-size:32px !important; line-height:1.25 !important; }
+    #adtype-tech .next p { margin-top:10px !important; color:var(--sub) !important; font-size:18px !important; line-height:1.65 !important; }
+    #adtype-tech .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    #adtype-tech .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (max-width:900px) {
+      #adtype-tech .nav__links a:not(.nav__cta) { display:none !important; }
+      #adtype-tech .hero h1 { font-size:44px !important; }
+      #adtype-tech .intro-grid, #adtype-tech .card-grid, #adtype-tech .output-list { grid-template-columns:1fr !important; }
+      #adtype-tech .next__box { display:block !important; }
+      #adtype-tech .next .btn { margin-top:24px !important; }
+    }
+    @media (max-width:640px) {
+      #adtype-tech .wrap, #adtype-tech .hero__inner, #adtype-tech .nav__inner { width:min(100% - 32px, 1180px) !important; }
+      #adtype-tech .hero { min-height:760px !important; padding-top:112px !important; }
+      #adtype-tech .hero h1 { font-size:38px !important; }
+      #adtype-tech .hero__copy, #adtype-tech .section-desc { font-size:17px !important; }
+      #adtype-tech .section { padding:78px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="adtype-tech">
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="adtype-for-brands.html"><img src="./assets/adtype-logo-orange-crop.png" alt="Adtype" /></a>
+        <div class="nav__links">
+          <a href="adtype-for-brands.html#technology">Technology</a>
+          <a href="#outputs">산출물</a>
+          <a class="nav__cta" href="#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <video class="hero__video" src="./assets/ad-effect-clip.mp4" autoplay muted loop playsinline></video>
+      <div class="hero__inner">
+        <span class="eyebrow">PERFORMANCE &amp; INSIGHT LOOP</span>
+        <h1>OOH 캠페인의 성과를 측정하고 다음 전략으로 되돌립니다</h1>
+        <p class="hero__copy">OOH Performance System은 캠페인별 노출, 도달, 빈도와 성별·연령별 도달 구조를 분석합니다. 집행 결과를 브랜드 지표와 함께 해석해 다음 타겟, 지역, 매체 조합, 메시지 개선으로 연결합니다.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ad" href="#contact">상담 문의하기</a>
+          <a class="btn btn--white" href="adtype-for-brands.html#technology">기술 흐름 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="intro-grid">
+          <article class="intro-card reveal">
+            <span class="eyebrow">PROBLEM</span>
+            <h3>왜 필요한가요</h3>
+            <p>OOH는 집행하면 끝나는 매체처럼 다뤄져 왔습니다. 하지만 브랜드가 알고 싶은 것은 광고가 걸렸는지가 아니라, 누구에게 얼마나 닿았고 다음에는 무엇을 바꿔야 하는지입니다.</p>
+          </article>
+          <article class="intro-card reveal">
+            <span class="eyebrow">SYSTEM DEFINITION</span>
+            <h3>OOH Performance System이란</h3>
+            <p>캠페인 집행 결과를 노출, 도달, 빈도, 타겟 구조, 브랜드 지표 변화와 연결해 다음 전략으로 환류시키는 성과 분석 시스템입니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">성과 지표</span>
+              <h2>성과 지표</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>Impression, Reach, Frequency를 확인합니다.</p></article><article class="card reveal"><p>일별·기간별 성과를 봅니다.</p></article><article class="card reveal"><p>성별·연령별 도달 구조를 분석합니다.</p></article><article class="card reveal"><p>지역과 매체 유형별 도달을 비교합니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">브랜드 지표 연결</span>
+              <h2>브랜드 지표 연결</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>Survey Radar의 인지도, 상기도, 구매 고려도 변화와 연결합니다.</p></article><article class="card reveal"><p>광고 기억, 메시지 회상, 브랜드 이미지 변화를 함께 봅니다.</p></article><article class="card reveal"><p>Review Radar의 만족·불만과 리뷰 감성 변화를 연결할 수 있습니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">학습 루프</span>
+              <h2>학습 루프</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>성과 데이터를 수집합니다.</p></article><article class="card reveal"><p>잘 작동한 타겟과 접점을 확인합니다.</p></article><article class="card reveal"><p>약했던 지역, 시간대, 매체 조합을 찾습니다.</p></article><article class="card reveal"><p>다음 캠페인의 타겟, 공간, 메시지, 매체 조합을 개선합니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">다음 전략으로 환류</span>
+              <h2>다음 전략으로 환류</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>메시지가 약하면 Creative로 돌아갑니다.</p></article><article class="card reveal"><p>타겟 도달이 부족하면 Map / Simulator로 돌아갑니다.</p></article><article class="card reveal"><p>매체 효율이 낮으면 MMS를 다시 조정합니다.</p></article><article class="card reveal"><p>브랜드 지표 변화가 약하면 Radar에서 과제를 다시 봅니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+    <section class="section section--dark" id="outputs">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">OUTPUT</span>
+          <h2>이 시스템이 남기는 결과물</h2>
+          <p class="section-desc">상세페이지에서는 이 산출물을 화면, 카드, 샘플 리포트, 시각 자료로 보여주면 제품의 역할이 더 빠르게 이해됩니다.</p>
+        </div>
+        <ul class="output-list reveal">
+          <li>캠페인 성과 대시보드</li><li>Impression / Reach / Frequency 리포트</li><li>타겟별 도달 구조</li><li>매체 조합별 효율 비교</li><li>브랜드 지표 연계 인사이트</li><li>다음 캠페인 개선안</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="next" id="contact">
+      <div class="wrap">
+        <div class="next__box reveal">
+          <div>
+            <span class="eyebrow">NEXT STEP</span>
+            <h2>전체 기술 흐름으로 돌아가기</h2>
+            <p>애드타입은 6개의 시스템을 하나의 흐름으로 연결해 브랜드 성장 과제를 OOH 캠페인으로 설계합니다.</p>
+          </div>
+          <a class="btn btn--ad" href="adtype-for-brands.html#technology">다음 페이지 보기</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var root = document.getElementById('adtype-tech');
+      if (!root) return;
+      var items = root.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+</body>
+</html>

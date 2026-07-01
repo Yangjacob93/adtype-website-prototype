@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adtype Map / Simulator | Adtype OOH Technology</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    html, body { margin:0 !important; padding:0 !important; background:#fff !important; }
+    #adtype-tech, #adtype-tech * { box-sizing:border-box !important; }
+    #adtype-tech {
+      --ad:#eb4200; --ink:#171719; --sub:#4e5968; --muted:#8b95a1; --soft:#f7f8fa; --line:#e5e8eb;
+      width:100% !important; min-height:100vh !important; overflow-x:hidden !important; color:var(--ink) !important;
+      font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important; word-break:keep-all !important; letter-spacing:0 !important;
+    }
+    #adtype-tech a { color:inherit !important; text-decoration:none !important; }
+    #adtype-tech h1,#adtype-tech h2,#adtype-tech h3,#adtype-tech p,#adtype-tech ul,#adtype-tech li { margin:0 !important; padding:0 !important; }
+    #adtype-tech li { list-style:none !important; }
+    #adtype-tech .wrap { width:min(1180px, calc(100% - 48px)) !important; margin:0 auto !important; }
+    #adtype-tech .nav { position:fixed !important; inset:0 0 auto 0 !important; z-index:50 !important; height:72px !important; background:rgba(255,255,255,.94) !important; backdrop-filter:blur(18px) !important; border-bottom:1px solid rgba(23,23,25,.08) !important; }
+    #adtype-tech .nav__inner { width:min(1180px, calc(100% - 48px)) !important; height:100% !important; margin:0 auto !important; display:flex !important; align-items:center !important; justify-content:space-between !important; gap:24px !important; }
+    #adtype-tech .brand img { display:block !important; width:100px !important; height:auto !important; }
+    #adtype-tech .nav__links { display:flex !important; align-items:center !important; gap:26px !important; color:#4e5968 !important; font-size:15px !important; font-weight:650 !important; }
+    #adtype-tech .nav__cta { height:40px !important; padding:0 16px !important; display:inline-flex !important; align-items:center !important; border:1px solid rgba(23,23,25,.75) !important; border-radius:8px !important; color:#171719 !important; }
+    #adtype-tech .hero { min-height:100vh !important; position:relative !important; display:flex !important; align-items:center !important; padding:132px 0 84px !important; background:#050505 !important; color:#fff !important; overflow:hidden !important; }
+    #adtype-tech .hero__video { position:absolute !important; inset:0 !important; width:100% !important; height:100% !important; object-fit:cover !important; opacity:.5 !important; filter:saturate(.95) contrast(1.04) !important; }
+    #adtype-tech .hero:before { content:"" !important; position:absolute !important; inset:0 !important; z-index:1 !important; background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.72) 46%,rgba(0,0,0,.42) 100%),linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.62)) !important; }
+    #adtype-tech .hero__inner { position:relative !important; z-index:2 !important; width:min(1180px, calc(100% - 48px)) !important; margin:0 auto !important; }
+    #adtype-tech .eyebrow { display:block !important; color:var(--ad) !important; font-size:15px !important; line-height:1.4 !important; font-weight:800 !important; margin-bottom:18px !important; }
+    #adtype-tech .hero h1 { max-width:920px !important; color:#fff !important; font-size:clamp(48px,5.2vw,78px) !important; line-height:1.16 !important; font-weight:760 !important; letter-spacing:0 !important; }
+    #adtype-tech .hero__copy { max-width:760px !important; margin-top:28px !important; color:rgba(255,255,255,.78) !important; font-size:21px !important; line-height:1.72 !important; }
+    #adtype-tech .hero__actions { margin-top:42px !important; display:flex !important; gap:12px !important; flex-wrap:wrap !important; }
+    #adtype-tech .btn { min-height:54px !important; padding:0 24px !important; border-radius:999px !important; display:inline-flex !important; align-items:center !important; justify-content:center !important; border:1px solid #171719 !important; background:#171719 !important; color:#fff !important; font-size:16px !important; font-weight:750 !important; }
+    #adtype-tech .btn--ad { background:var(--ad) !important; border-color:var(--ad) !important; }
+    #adtype-tech .btn--white { background:rgba(255,255,255,.08) !important; border-color:rgba(255,255,255,.7) !important; color:#fff !important; }
+    #adtype-tech .section { padding:112px 0 !important; background:#fff !important; }
+    #adtype-tech .section--soft { background:var(--soft) !important; }
+    #adtype-tech .section--dark { background:#111 !important; color:#fff !important; }
+    #adtype-tech .section-head { max-width:860px !important; margin:0 auto 42px !important; text-align:center !important; }
+    #adtype-tech .section-head h2 { font-size:clamp(34px,4vw,56px) !important; line-height:1.2 !important; font-weight:760 !important; letter-spacing:0 !important; }
+    #adtype-tech .section-desc { margin-top:18px !important; color:var(--sub) !important; font-size:20px !important; line-height:1.75 !important; }
+    #adtype-tech .section--dark .section-desc { color:rgba(255,255,255,.72) !important; }
+    #adtype-tech .intro-grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:24px !important; }
+    #adtype-tech .intro-card { padding:34px !important; border:1px solid var(--line) !important; border-radius:8px !important; background:#fff !important; }
+    #adtype-tech .intro-card h3 { font-size:24px !important; line-height:1.35 !important; font-weight:760 !important; margin-bottom:16px !important; }
+    #adtype-tech .intro-card p { color:var(--sub) !important; font-size:18px !important; line-height:1.75 !important; }
+    #adtype-tech .card-grid { display:grid !important; grid-template-columns:repeat(2, minmax(0,1fr)) !important; gap:16px !important; }
+    #adtype-tech .card { min-height:112px !important; padding:26px !important; border:1px solid var(--line) !important; border-radius:8px !important; background:#fff !important; box-shadow:0 16px 34px rgba(17,24,39,.04) !important; }
+    #adtype-tech .card p { color:#2b3138 !important; font-size:18px !important; line-height:1.68 !important; font-weight:560 !important; }
+    #adtype-tech .output-list { display:grid !important; grid-template-columns:repeat(3, minmax(0,1fr)) !important; gap:12px !important; }
+    #adtype-tech .output-list li { padding:18px 20px !important; border-radius:8px !important; background:rgba(255,255,255,.08) !important; border:1px solid rgba(255,255,255,.14) !important; color:rgba(255,255,255,.86) !important; font-size:17px !important; line-height:1.55 !important; }
+    #adtype-tech .next { padding:88px 0 !important; background:linear-gradient(180deg,#fff7f3 0%,#fff 100%) !important; }
+    #adtype-tech .next__box { display:flex !important; align-items:center !important; justify-content:space-between !important; gap:28px !important; padding:36px !important; border:1px solid rgba(235,66,0,.18) !important; border-radius:8px !important; background:#fff !important; }
+    #adtype-tech .next h2 { font-size:32px !important; line-height:1.25 !important; }
+    #adtype-tech .next p { margin-top:10px !important; color:var(--sub) !important; font-size:18px !important; line-height:1.65 !important; }
+    #adtype-tech .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    #adtype-tech .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (max-width:900px) {
+      #adtype-tech .nav__links a:not(.nav__cta) { display:none !important; }
+      #adtype-tech .hero h1 { font-size:44px !important; }
+      #adtype-tech .intro-grid, #adtype-tech .card-grid, #adtype-tech .output-list { grid-template-columns:1fr !important; }
+      #adtype-tech .next__box { display:block !important; }
+      #adtype-tech .next .btn { margin-top:24px !important; }
+    }
+    @media (max-width:640px) {
+      #adtype-tech .wrap, #adtype-tech .hero__inner, #adtype-tech .nav__inner { width:min(100% - 32px, 1180px) !important; }
+      #adtype-tech .hero { min-height:760px !important; padding-top:112px !important; }
+      #adtype-tech .hero h1 { font-size:38px !important; }
+      #adtype-tech .hero__copy, #adtype-tech .section-desc { font-size:17px !important; }
+      #adtype-tech .section { padding:78px 0 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="adtype-tech">
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="adtype-for-brands.html"><img src="./assets/adtype-logo-orange-crop.png" alt="Adtype" /></a>
+        <div class="nav__links">
+          <a href="adtype-for-brands.html#technology">Technology</a>
+          <a href="#outputs">산출물</a>
+          <a class="nav__cta" href="#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <video class="hero__video" src="./assets/adtype-map-simulator.mp4" autoplay muted loop playsinline></video>
+      <div class="hero__inner">
+        <span class="eyebrow">SPATIAL &amp; ROUTE INTELLIGENCE</span>
+        <h1>타겟이 머무르고 이동하는 공간을 250m 단위로 찾습니다</h1>
+        <p class="hero__copy">Adtype Map과 Simulator는 체류·거주·근무 인구, 상권 데이터, 이동 경로 DB, 버스·대중교통 경로를 결합해 캠페인이 작동할 생활권과 동선을 찾습니다.</p>
+        <div class="hero__actions">
+          <a class="btn btn--ad" href="#contact">상담 문의하기</a>
+          <a class="btn btn--white" href="adtype-for-brands.html#technology">기술 흐름 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="intro-grid">
+          <article class="intro-card reveal">
+            <span class="eyebrow">PROBLEM</span>
+            <h3>왜 필요한가요</h3>
+            <p>사람이 많은 곳이 곧 좋은 OOH 위치는 아닙니다. 우리 타겟이 실제로 살고, 일하고, 머물고, 이동하는 공간을 찾아야 캠페인이 작동합니다.</p>
+          </article>
+          <article class="intro-card reveal">
+            <span class="eyebrow">SYSTEM DEFINITION</span>
+            <h3>Adtype Map / Simulator이란</h3>
+            <p>타겟의 체류·거주·근무 공간과 이동 경로를 분석해, OOH 캠페인이 집중해야 할 생활권과 접점을 찾는 시스템입니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">ADmap Intelligence</span>
+              <h2>ADmap Intelligence</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>자치구 25개, 행정동 426개, 주요 상권 1,026개, 250m 격자 단위 분석</p></article><article class="card reveal"><p>서울 전역 체류인구 히트맵을 2D·3D로 시각화</p></article><article class="card reveal"><p>평일·주말과 시간대별 변화를 슬라이더로 확인</p></article><article class="card reveal"><p>체류·거주·근무 인구를 전환해 비교</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">정밀 타겟 필터</span>
+              <h2>정밀 타겟 필터</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>성별×연령 AND 필터로 브리프 타겟을 지도에 투영합니다.</p></article><article class="card reveal"><p>원형, 폴리곤, 행정동, 상권 단위로 영역을 지정합니다.</p></article><article class="card reveal"><p>반경 1~5km와 시간 조건을 결합해 밀집 격자 TOP 30을 뽑습니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">Route Simulator</span>
+              <h2>Route Simulator</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>1억 개 경로 DB에서 특정 공간과 겹치는 동선만 추립니다.</p></article><article class="card reveal"><p>출발지와 도착지 조건을 따로 걸 수 있습니다.</p></article><article class="card reveal"><p>정류장별 승하차 규모와 공통 동선 Stream을 확인합니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+        <section class="section">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <span class="eyebrow">Bus Simulator</span>
+              <h2>Bus Simulator</h2>
+            </div>
+            <div class="card-grid">
+              <article class="card reveal"><p>광고하고 싶은 지점이나 영역을 선택합니다.</p></article><article class="card reveal"><p>그 안을 지나는 버스 노선을 자동 매칭합니다.</p></article><article class="card reveal"><p>노선별 예산, 예상 노출, 타겟 CPM, 도달률을 비교합니다.</p></article>
+            </div>
+          </div>
+        </section>
+    
+
+    <section class="section section--dark" id="outputs">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">OUTPUT</span>
+          <h2>이 시스템이 남기는 결과물</h2>
+          <p class="section-desc">상세페이지에서는 이 산출물을 화면, 카드, 샘플 리포트, 시각 자료로 보여주면 제품의 역할이 더 빠르게 이해됩니다.</p>
+        </div>
+        <ul class="output-list reveal">
+          <li>타겟 밀집 생활권</li><li>시간대별 체류 인구 변화</li><li>성별·연령별 핫스팟</li><li>이동 경로와 유입·유출 흐름</li><li>정류장·노선별 도달 가능성</li><li>버스 노선별 예상 노출과 CPM</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="next" id="contact">
+      <div class="wrap">
+        <div class="next__box reveal">
+          <div>
+            <span class="eyebrow">NEXT STEP</span>
+            <h2>공간형 크리에이티브 설계하기</h2>
+            <p>애드타입은 6개의 시스템을 하나의 흐름으로 연결해 브랜드 성장 과제를 OOH 캠페인으로 설계합니다.</p>
+          </div>
+          <a class="btn btn--ad" href="adtype-tech-creative.html">다음 페이지 보기</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var root = document.getElementById('adtype-tech');
+      if (!root) return;
+      var items = root.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+</body>
+</html>

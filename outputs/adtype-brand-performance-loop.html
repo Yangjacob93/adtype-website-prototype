@@ -7,160 +7,1958 @@
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-    html, body { margin: 0 !important; padding: 0 !important; background: #f5f6f8 !important; }
-    #adtype-performance, #adtype-performance * { box-sizing: border-box !important; }
+    html,
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #fff !important;
+    }
+
+    #adtype-performance,
+    #adtype-performance * {
+      box-sizing: border-box !important;
+    }
+
     #adtype-performance {
-      --ad: #eb4200; --ink: #171719; --sub: #333333; --muted: #6b7280; --line: #e5e8eb; --soft: #f6f7f9; --paper: #fff; --dark: #111214;
-      width: 100% !important; min-height: 100vh !important; overflow-x: hidden !important; color: var(--ink) !important; background: #f5f6f8 !important;
-      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important; letter-spacing: 0 !important; word-break: keep-all !important;
+      --ad: #eb4200;
+      --ink: #171719;
+      --sub: #333;
+      --muted: #6b7684;
+      --soft: #f7f8fa;
+      --soft2: #f2f4f6;
+      --line: #e5e8eb;
+      --dark: #111214;
+      --green: #00a36c;
+      width: 100% !important;
+      min-height: 100vh !important;
+      overflow-x: hidden !important;
+      background: #fff !important;
+      color: var(--ink) !important;
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+      word-break: keep-all !important;
+      letter-spacing: 0 !important;
+      scroll-padding-top: 84px !important;
     }
-    #adtype-performance a { color: inherit !important; text-decoration: none !important; }
-    #adtype-performance h1, #adtype-performance h2, #adtype-performance h3, #adtype-performance h4, #adtype-performance p, #adtype-performance ul, #adtype-performance li, #adtype-performance figure { margin: 0 !important; padding: 0 !important; }
-    #adtype-performance li { list-style: none !important; }
-    #adtype-performance .wrap { width: min(1180px, calc(100% - 48px)) !important; margin: 0 auto !important; }
-    #adtype-performance .nav { position: fixed !important; inset: 0 0 auto 0 !important; z-index: 60 !important; height: 72px !important; background: rgba(10,10,12,.68) !important; border-bottom: 1px solid rgba(255,255,255,.12) !important; backdrop-filter: blur(18px) !important; }
-    #adtype-performance .nav__inner { width: min(1180px, calc(100% - 48px)) !important; height: 100% !important; margin: 0 auto !important; display: flex !important; align-items: center !important; justify-content: space-between !important; }
-    #adtype-performance .brand img { width: 92px !important; height: auto !important; display: block !important; }
-    #adtype-performance .nav__links { display: flex !important; align-items: center !important; gap: 28px !important; color: rgba(255,255,255,.78) !important; font-size: 14px !important; line-height: 1 !important; font-weight: 700 !important; }
-    #adtype-performance .nav__cta { min-height: 42px !important; padding: 0 17px !important; display: inline-flex !important; align-items: center !important; border: 1px solid rgba(255,255,255,.34) !important; border-radius: 999px !important; color: #fff !important; }
 
-    #adtype-performance .hero { position: relative !important; min-height: 880px !important; padding: 162px 0 96px !important; background: radial-gradient(circle at 80% 18%, rgba(235,66,0,.28), rgba(235,66,0,0) 26%), radial-gradient(circle at 18% 30%, rgba(255,255,255,.12), rgba(255,255,255,0) 28%), linear-gradient(135deg, #08090b 0%, #111214 48%, #050505 100%) !important; color: #fff !important; overflow: hidden !important; }
-    #adtype-performance .hero::before { content: "" !important; position: absolute !important; inset: 0 !important; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px) !important; background-size: 54px 54px !important; mask-image: radial-gradient(circle at 50% 42%, #000 0%, transparent 72%) !important; opacity: .7 !important; }
-    #adtype-performance .hero__grid { position: relative !important; z-index: 2 !important; display: grid !important; grid-template-columns: .92fr 1.08fr !important; gap: 64px !important; align-items: center !important; }
-    #adtype-performance .eyebrow, #adtype-performance .kicker { display: block !important; color: var(--ad) !important; font-size: 14px !important; line-height: 1.2 !important; font-weight: 800 !important; margin-bottom: 22px !important; text-transform: none !important; letter-spacing: 0 !important; }
-    #adtype-performance .hero h1 { max-width: 650px !important; color: #fff !important; font-size: clamp(54px, 5.2vw, 86px) !important; line-height: 1.06 !important; font-weight: 720 !important; letter-spacing: 0 !important; }
-    #adtype-performance .hero__copy { max-width: 610px !important; margin-top: 32px !important; color: rgba(255,255,255,.78) !important; font-size: 20px !important; line-height: 1.78 !important; font-weight: 500 !important; }
-    #adtype-performance .hero__actions { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; margin-top: 42px !important; }
-    #adtype-performance .btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; min-height: 54px !important; padding: 0 24px !important; border-radius: 999px !important; border: 1px solid rgba(23,23,25,.18) !important; background: #fff !important; color: #171719 !important; font-size: 16px !important; line-height: 1 !important; font-weight: 800 !important; white-space: nowrap !important; transition: transform .18s ease !important; }
-    #adtype-performance .btn:hover { transform: translateY(-2px) !important; }
-    #adtype-performance .btn--ad { background: var(--ad) !important; border-color: var(--ad) !important; color: #fff !important; }
-    #adtype-performance .btn--ghost { background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.28) !important; color: #fff !important; }
-
-    #adtype-performance .review-console { position: relative !important; border-radius: 30px !important; background: rgba(255,255,255,.08) !important; border: 1px solid rgba(255,255,255,.14) !important; box-shadow: 0 38px 120px rgba(0,0,0,.45) !important; overflow: hidden !important; backdrop-filter: blur(18px) !important; }
-    #adtype-performance .console-top { display: flex !important; align-items: center !important; justify-content: space-between !important; min-height: 58px !important; padding: 0 20px !important; border-bottom: 1px solid rgba(255,255,255,.12) !important; color: rgba(255,255,255,.58) !important; font-size: 13px !important; font-weight: 800 !important; }
-    #adtype-performance .dots { display: inline-flex !important; gap: 8px !important; align-items: center !important; }
-    #adtype-performance .dots i { width: 8px !important; height: 8px !important; border-radius: 50% !important; display: block !important; }
-    #adtype-performance .dots i:nth-child(1) { background: #eb4200 !important; } #adtype-performance .dots i:nth-child(2) { background: #f4b740 !important; } #adtype-performance .dots i:nth-child(3) { background: #4fb879 !important; }
-    #adtype-performance .console-body { padding: 24px !important; display: grid !important; gap: 18px !important; }
-    #adtype-performance .score-row { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
-    #adtype-performance .score-card { min-height: 124px !important; padding: 18px !important; border-radius: 18px !important; background: rgba(255,255,255,.1) !important; border: 1px solid rgba(255,255,255,.12) !important; }
-    #adtype-performance .score-card span { display: block !important; color: rgba(255,255,255,.58) !important; font-size: 12px !important; font-weight: 800 !important; margin-bottom: 14px !important; }
-    #adtype-performance .score-card strong { display: block !important; color: #fff !important; font-size: 34px !important; line-height: 1 !important; font-weight: 820 !important; }
-    #adtype-performance .score-card em { display: block !important; color: var(--ad) !important; font-size: 13px !important; font-style: normal !important; font-weight: 800 !important; margin-top: 12px !important; }
-    #adtype-performance .chart-panel { padding: 20px !important; border-radius: 22px !important; background: #fff !important; color: #171719 !important; min-height: 310px !important; overflow: hidden !important; }
-    #adtype-performance .chart-head { display: flex !important; align-items: flex-start !important; justify-content: space-between !important; gap: 20px !important; margin-bottom: 20px !important; }
-    #adtype-performance .chart-head strong { display: block !important; font-size: 20px !important; line-height: 1.35 !important; font-weight: 780 !important; }
-    #adtype-performance .chart-head span { display: block !important; color: #8b95a1 !important; font-size: 12px !important; font-weight: 800 !important; margin-top: 5px !important; }
-    #adtype-performance .mini-tag { color: var(--ad) !important; background: rgba(235,66,0,.08) !important; border-radius: 999px !important; padding: 8px 12px !important; font-size: 12px !important; font-weight: 900 !important; white-space: nowrap !important; }
-    #adtype-performance .chart-area { position: relative !important; height: 180px !important; border-radius: 18px !important; background: linear-gradient(to top, rgba(229,232,235,.7) 1px, transparent 1px), linear-gradient(90deg, rgba(229,232,235,.7) 1px, transparent 1px), linear-gradient(180deg, #fff, #f8fafc) !important; background-size: 100% 45px, 72px 100%, 100% 100% !important; overflow: hidden !important; }
-    #adtype-performance .chart-area svg { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; }
-    #adtype-performance .chart-note { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px !important; margin-top: 14px !important; }
-    #adtype-performance .chart-note div { border-radius: 14px !important; background: #f6f7f9 !important; padding: 12px !important; color: #4e5968 !important; font-size: 12px !important; line-height: 1.45 !important; font-weight: 700 !important; }
-
-    #adtype-performance .section { padding: 150px 0 !important; background: #fff !important; }
-    #adtype-performance .section--soft { background: #f5f6f8 !important; } #adtype-performance .section--dark { background: #0c0d10 !important; color: #fff !important; }
-    #adtype-performance .section-head { max-width: 900px !important; margin: 0 auto 64px !important; text-align: center !important; }
-    #adtype-performance .section-head--left { margin-left: 0 !important; text-align: left !important; }
-    #adtype-performance .section h2 { color: #171719 !important; font-size: clamp(40px, 4.2vw, 68px) !important; line-height: 1.14 !important; font-weight: 720 !important; letter-spacing: 0 !important; }
-    #adtype-performance .section--dark h2 { color: #fff !important; }
-    #adtype-performance .section-desc { max-width: 760px !important; margin: 28px auto 0 !important; color: #4e5968 !important; font-size: 19px !important; line-height: 1.78 !important; font-weight: 500 !important; }
-    #adtype-performance .section-head--left .section-desc { margin-left: 0 !important; } #adtype-performance .section--dark .section-desc { color: rgba(255,255,255,.68) !important; }
-
-    #adtype-performance .challenge-strip { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; border: 1px solid var(--line) !important; border-radius: 28px !important; background: #fff !important; overflow: hidden !important; box-shadow: 0 24px 70px rgba(17,18,20,.06) !important; }
-    #adtype-performance .challenge-item { padding: 42px 36px !important; min-height: 260px !important; border-right: 1px solid var(--line) !important; }
-    #adtype-performance .challenge-item:last-child { border-right: 0 !important; }
-    #adtype-performance .challenge-item span { display: block !important; color: var(--ad) !important; font-size: 13px !important; line-height: 1 !important; font-weight: 900 !important; margin-bottom: 22px !important; }
-    #adtype-performance .challenge-item strong { display: block !important; color: #171719 !important; font-size: 28px !important; line-height: 1.28 !important; font-weight: 720 !important; margin-bottom: 20px !important; }
-    #adtype-performance .challenge-item p { color: #4e5968 !important; font-size: 17px !important; line-height: 1.7 !important; font-weight: 500 !important; }
-
-    #adtype-performance .review-room { display: grid !important; grid-template-columns: .9fr 1.1fr !important; gap: 34px !important; align-items: stretch !important; }
-    #adtype-performance .room-panel { position: sticky !important; top: 108px !important; min-height: 600px !important; padding: 34px !important; border-radius: 32px !important; background: radial-gradient(circle at 82% 16%, rgba(235,66,0,.25), transparent 28%), linear-gradient(180deg, #191a1d, #0d0e11) !important; color: #fff !important; overflow: hidden !important; }
-    #adtype-performance .room-panel h3 { color: #fff !important; font-size: 46px !important; line-height: 1.1 !important; font-weight: 720 !important; margin-top: 18px !important; }
-    #adtype-performance .room-panel p { margin-top: 24px !important; color: rgba(255,255,255,.68) !important; font-size: 18px !important; line-height: 1.76 !important; font-weight: 500 !important; }
-    #adtype-performance .room-mini-board { position: absolute !important; left: 34px !important; right: 34px !important; bottom: 34px !important; padding: 22px !important; border-radius: 22px !important; background: rgba(255,255,255,.08) !important; border: 1px solid rgba(255,255,255,.12) !important; }
-    #adtype-performance .room-mini-board span { display: block !important; color: rgba(255,255,255,.5) !important; font-size: 12px !important; font-weight: 900 !important; margin-bottom: 14px !important; }
-    #adtype-performance .mini-bars { display: grid !important; gap: 10px !important; } #adtype-performance .mini-bars i { display: block !important; height: 11px !important; border-radius: 999px !important; background: rgba(255,255,255,.14) !important; overflow: hidden !important; } #adtype-performance .mini-bars i::before { content: "" !important; display: block !important; height: 100% !important; width: var(--w) !important; background: var(--ad) !important; border-radius: inherit !important; }
-    #adtype-performance .lens-list { display: grid !important; gap: 18px !important; }
-    #adtype-performance .lens-card { padding: 30px !important; border-radius: 26px !important; background: #fff !important; border: 1px solid var(--line) !important; box-shadow: 0 24px 80px rgba(17,18,20,.06) !important; }
-    #adtype-performance .lens-card__top { display: flex !important; align-items: flex-start !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 18px !important; }
-    #adtype-performance .lens-card__no { color: var(--ad) !important; font-size: 14px !important; line-height: 1 !important; font-weight: 900 !important; }
-    #adtype-performance .lens-card h3 { color: #171719 !important; font-size: 30px !important; line-height: 1.28 !important; font-weight: 720 !important; }
-    #adtype-performance .lens-card p { color: #4e5968 !important; font-size: 17px !important; line-height: 1.72 !important; font-weight: 500 !important; }
-    #adtype-performance .lens-tags { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; margin-top: 22px !important; }
-    #adtype-performance .lens-tags span { display: inline-flex !important; align-items: center !important; min-height: 32px !important; padding: 0 11px !important; border-radius: 999px !important; background: #f2f4f6 !important; color: #4e5968 !important; font-size: 13px !important; font-weight: 800 !important; }
-
-    #adtype-performance .decision-board { border-radius: 34px !important; background: #111214 !important; color: #fff !important; padding: 28px !important; box-shadow: 0 30px 90px rgba(17,18,20,.18) !important; }
-    #adtype-performance .board-top { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 20px !important; padding: 8px 8px 28px !important; }
-    #adtype-performance .board-top strong { display: block !important; color: #fff !important; font-size: 30px !important; line-height: 1.25 !important; font-weight: 720 !important; }
-    #adtype-performance .board-top span { color: rgba(255,255,255,.52) !important; font-size: 14px !important; font-weight: 800 !important; }
-    #adtype-performance .decision-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 14px !important; }
-    #adtype-performance .decision-card { min-height: 310px !important; padding: 24px !important; border-radius: 24px !important; background: #fff !important; color: #171719 !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
-    #adtype-performance .decision-card em { color: var(--ad) !important; font-style: normal !important; font-size: 13px !important; font-weight: 900 !important; }
-    #adtype-performance .decision-card strong { display: block !important; margin-top: 16px !important; color: #171719 !important; font-size: 28px !important; line-height: 1.08 !important; font-weight: 820 !important; }
-    #adtype-performance .decision-card p { margin-top: 18px !important; color: #4e5968 !important; font-size: 15px !important; line-height: 1.62 !important; font-weight: 500 !important; }
-    #adtype-performance .decision-card ul { display: grid !important; gap: 9px !important; margin-top: 24px !important; }
-    #adtype-performance .decision-card li { position: relative !important; padding-left: 14px !important; color: #333 !important; font-size: 13px !important; line-height: 1.45 !important; font-weight: 700 !important; }
-    #adtype-performance .decision-card li::before { content: "" !important; position: absolute !important; left: 0 !important; top: .58em !important; width: 5px !important; height: 5px !important; border-radius: 50% !important; background: var(--ad) !important; }
-
-    #adtype-performance .system-proof { display: grid !important; grid-template-columns: .9fr 1.1fr !important; gap: 56px !important; align-items: center !important; }
-    #adtype-performance .proof-copy h2 { font-size: clamp(36px, 3.4vw, 52px) !important; }
-    #adtype-performance .proof-list { display: grid !important; gap: 14px !important; margin-top: 34px !important; }
-    #adtype-performance .proof-list li { display: grid !important; grid-template-columns: 42px 1fr !important; gap: 14px !important; align-items: start !important; color: #333 !important; font-size: 17px !important; line-height: 1.62 !important; font-weight: 600 !important; }
-    #adtype-performance .proof-list b { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 42px !important; height: 42px !important; border-radius: 50% !important; color: var(--ad) !important; background: rgba(235,66,0,.08) !important; font-size: 13px !important; font-weight: 900 !important; }
-    #adtype-performance .video-frame { overflow: hidden !important; border-radius: 28px !important; background: #fff !important; border: 1px solid var(--line) !important; box-shadow: 0 28px 90px rgba(17,18,20,.12) !important; }
-    #adtype-performance .video-frame__top { height: 48px !important; display: flex !important; align-items: center !important; gap: 8px !important; padding: 0 18px !important; border-bottom: 1px solid var(--line) !important; }
-    #adtype-performance .video-frame video { display: block !important; width: 100% !important; height: auto !important; aspect-ratio: 16 / 10 !important; object-fit: cover !important; }
-
-    #adtype-performance .closing { padding: 140px 0 !important; background: #111214 !important; color: #fff !important; }
-    #adtype-performance .closing__box { display: grid !important; grid-template-columns: 1fr auto !important; gap: 40px !important; align-items: end !important; padding: 58px !important; border-radius: 34px !important; background: radial-gradient(circle at 84% 10%, rgba(235,66,0,.3), transparent 30%), #191a1d !important; border: 1px solid rgba(255,255,255,.1) !important; }
-    #adtype-performance .closing h2 { color: #fff !important; max-width: 760px !important; font-size: clamp(42px, 4.4vw, 72px) !important; line-height: 1.12 !important; font-weight: 720 !important; }
-    #adtype-performance .closing p { max-width: 670px !important; margin-top: 24px !important; color: rgba(255,255,255,.66) !important; font-size: 19px !important; line-height: 1.74 !important; font-weight: 500 !important; }
-    #adtype-performance .closing__actions { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; justify-content: flex-end !important; }
-    #adtype-performance .reveal { opacity: 0 !important; transform: translateY(26px) !important; transition: opacity .72s ease, transform .72s ease !important; }
-    #adtype-performance .reveal.is-visible { opacity: 1 !important; transform: translateY(0) !important; }
-
-    @media (max-width: 980px) {
-      #adtype-performance .nav__links a:not(.nav__cta) { display: none !important; }
-      #adtype-performance .hero { min-height: auto !important; padding: 136px 0 82px !important; }
-      #adtype-performance .hero__grid, #adtype-performance .review-room, #adtype-performance .system-proof, #adtype-performance .closing__box { grid-template-columns: 1fr !important; }
-      #adtype-performance .review-console { order: 0 !important; }
-      #adtype-performance .score-row, #adtype-performance .challenge-strip, #adtype-performance .decision-grid { grid-template-columns: 1fr !important; }
-      #adtype-performance .challenge-item { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; }
-      #adtype-performance .challenge-item:last-child { border-bottom: 0 !important; }
-      #adtype-performance .room-panel { position: relative !important; top: auto !important; min-height: 560px !important; }
-      #adtype-performance .closing__actions { justify-content: flex-start !important; }
+    #adtype-performance a {
+      color: inherit !important;
+      text-decoration: none !important;
     }
+
+    #adtype-performance h1,
+    #adtype-performance h2,
+    #adtype-performance h3,
+    #adtype-performance h4,
+    #adtype-performance p,
+    #adtype-performance ul,
+    #adtype-performance li,
+    #adtype-performance figure {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    #adtype-performance li {
+      list-style: none !important;
+    }
+
+    #adtype-performance .wrap {
+      width: min(1180px, calc(100% - 48px)) !important;
+      margin: 0 auto !important;
+    }
+
+    #adtype-performance .nav {
+      position: fixed !important;
+      inset: 0 0 auto 0 !important;
+      z-index: 50 !important;
+      height: 72px !important;
+      background: rgba(255, 255, 255, .94) !important;
+      backdrop-filter: blur(18px) !important;
+      border-bottom: 1px solid rgba(23, 23, 25, .08) !important;
+    }
+
+    #adtype-performance .nav__inner {
+      width: min(1180px, calc(100% - 48px)) !important;
+      height: 100% !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    #adtype-performance .brand img {
+      width: 92px !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    #adtype-performance .nav__links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 30px !important;
+      font-size: 14px !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+      color: #4e5968 !important;
+    }
+
+    #adtype-performance .nav__cta {
+      padding: 12px 18px !important;
+      border: 1px solid rgba(23, 23, 25, .2) !important;
+      border-radius: 999px !important;
+      color: #171719 !important;
+    }
+
+    #adtype-performance .hero {
+      position: relative !important;
+      min-height: 760px !important;
+      height: 100vh !important;
+      display: flex !important;
+      align-items: center !important;
+      overflow: hidden !important;
+      background: #050505 !important;
+    }
+
+    #adtype-performance .hero__video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      opacity: .42 !important;
+      transform: scale(1.02) !important;
+    }
+
+    #adtype-performance .hero::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(0, 0, 0, .12), rgba(0, 0, 0, .74) 62%, rgba(0, 0, 0, .88) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, .62), rgba(0, 0, 0, .82)) !important;
+    }
+
+    #adtype-performance .hero__inner {
+      position: relative !important;
+      z-index: 2 !important;
+      width: min(1180px, calc(100% - 48px)) !important;
+      margin: 0 auto !important;
+      padding-top: 72px !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .eyebrow,
+    #adtype-performance .kicker {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 14px !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      margin-bottom: 22px !important;
+      letter-spacing: 0 !important;
+      text-transform: none !important;
+    }
+
+    #adtype-performance .hero h1 {
+      max-width: 920px !important;
+      font-size: clamp(52px, 5.8vw, 92px) !important;
+      line-height: 1.08 !important;
+      font-weight: 780 !important;
+      letter-spacing: 0 !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .hero__copy {
+      max-width: 640px !important;
+      margin-top: 32px !important;
+      font-size: 22px !important;
+      line-height: 1.72 !important;
+      font-weight: 500 !important;
+      color: rgba(255, 255, 255, .82) !important;
+    }
+
+    #adtype-performance .hero__actions {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-performance .btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 54px !important;
+      padding: 0 24px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(23, 23, 25, .18) !important;
+      background: #fff !important;
+      color: #171719 !important;
+      font-size: 16px !important;
+      line-height: 1 !important;
+      font-weight: 800 !important;
+      white-space: nowrap !important;
+      transition: transform .18s ease, background .18s ease, color .18s ease !important;
+    }
+
+    #adtype-performance .btn:hover {
+      transform: translateY(-2px) !important;
+    }
+
+    #adtype-performance .btn--ad {
+      background: var(--ad) !important;
+      border-color: var(--ad) !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .btn--dark {
+      background: #050505 !important;
+      border-color: #050505 !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .btn--ghost {
+      background: transparent !important;
+      border-color: rgba(255, 255, 255, .48) !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .section {
+      padding: 150px 0 !important;
+      background: #fff !important;
+    }
+
+    #adtype-performance .section--soft {
+      background: var(--soft) !important;
+    }
+
+    #adtype-performance .section--dark {
+      background: #08090c !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .section-head {
+      max-width: 920px !important;
+      margin: 0 auto 72px !important;
+      text-align: center !important;
+    }
+
+    #adtype-performance .section-head--left {
+      margin-left: 0 !important;
+      text-align: left !important;
+    }
+
+    #adtype-performance h2 {
+      color: var(--ink) !important;
+      font-size: clamp(42px, 4.1vw, 66px) !important;
+      line-height: 1.16 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .section--dark h2 {
+      color: #fff !important;
+    }
+
+    #adtype-performance .section-desc {
+      max-width: 780px !important;
+      margin: 30px auto 0 !important;
+      color: var(--muted) !important;
+      font-size: 21px !important;
+      line-height: 1.86 !important;
+      font-weight: 500 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .section-head--left .section-desc {
+      margin-left: 0 !important;
+    }
+
+    #adtype-performance .section--dark .section-desc {
+      color: rgba(255, 255, 255, .66) !important;
+    }
+
+    #adtype-performance .question-list {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 16px !important;
+    }
+
+    #adtype-performance .question {
+      min-height: 180px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      border: 1px solid var(--line) !important;
+      background: #fff !important;
+    }
+
+    #adtype-performance .question span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 800 !important;
+      margin-bottom: 22px !important;
+    }
+
+    #adtype-performance .question strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 24px !important;
+      line-height: 1.42 !important;
+      font-weight: 720 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .action-lab {
+      display: grid !important;
+      grid-template-columns: 1.03fr .97fr !important;
+      gap: 28px !important;
+      align-items: stretch !important;
+    }
+
+    #adtype-performance .action-map {
+      position: relative !important;
+      min-height: 610px !important;
+      padding: 34px !important;
+      overflow: hidden !important;
+      border-radius: 34px !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      background:
+        linear-gradient(rgba(229, 232, 235, .58) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229, 232, 235, .58) 1px, transparent 1px),
+        radial-gradient(circle at 24% 26%, rgba(235, 66, 0, .16), transparent 26%),
+        radial-gradient(circle at 76% 68%, rgba(0, 163, 108, .12), transparent 28%),
+        #fff !important;
+      background-size: 34px 34px, 34px 34px, auto, auto, auto !important;
+      box-shadow: 0 28px 90px rgba(15, 23, 42, .08) !important;
+    }
+
+    #adtype-performance .action-map::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 11% !important;
+      right: 10% !important;
+      top: 48% !important;
+      height: 2px !important;
+      background: linear-gradient(90deg, transparent, rgba(235, 66, 0, .8), rgba(0, 163, 108, .7), transparent) !important;
+      transform: rotate(-8deg) !important;
+    }
+
+    #adtype-performance .action-map__label {
+      display: inline-flex !important;
+      align-items: center !important;
+      height: 34px !important;
+      padding: 0 14px !important;
+      border-radius: 999px !important;
+      background: rgba(235, 66, 0, .08) !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-performance .flow-node {
+      position: absolute !important;
+      width: 178px !important;
+      padding: 20px !important;
+      border-radius: 24px !important;
+      background: rgba(255, 255, 255, .94) !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, .1) !important;
+    }
+
+    #adtype-performance .flow-node--life { left: 9% !important; top: 24% !important; }
+    #adtype-performance .flow-node--contact { left: 39% !important; top: 44% !important; }
+    #adtype-performance .flow-node--action { right: 8% !important; bottom: 18% !important; }
+
+    #adtype-performance .flow-node em {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 32px !important;
+      height: 32px !important;
+      margin-bottom: 16px !important;
+      border-radius: 50% !important;
+      background: var(--ad) !important;
+      color: #fff !important;
+      font-size: 13px !important;
+      font-style: normal !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-performance .flow-node strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 21px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .flow-node p {
+      margin-top: 10px !important;
+      color: #6b7684 !important;
+      font-size: 14px !important;
+      line-height: 1.55 !important;
+      font-weight: 550 !important;
+    }
+
+    #adtype-performance .signal-panel {
+      position: absolute !important;
+      left: 34px !important;
+      right: 34px !important;
+      bottom: 34px !important;
+      padding: 28px !important;
+      border-radius: 26px !important;
+      background: #111214 !important;
+      color: #fff !important;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .18) !important;
+    }
+
+    #adtype-performance .signal-panel span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-performance .signal-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+    }
+
+    #adtype-performance .signal {
+      padding: 18px 16px !important;
+      border-radius: 18px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border: 1px solid rgba(255, 255, 255, .08) !important;
+    }
+
+    #adtype-performance .signal b {
+      display: block !important;
+      color: #fff !important;
+      font-size: 28px !important;
+      line-height: 1 !important;
+      font-weight: 820 !important;
+    }
+
+    #adtype-performance .signal small {
+      display: block !important;
+      margin-top: 10px !important;
+      color: rgba(255, 255, 255, .54) !important;
+      font-size: 12px !important;
+      line-height: 1.3 !important;
+      font-weight: 700 !important;
+    }
+
+    #adtype-performance .action-steps {
+      display: grid !important;
+      gap: 16px !important;
+    }
+
+    #adtype-performance .action-step {
+      width: 100% !important;
+      min-height: 186px !important;
+      padding: 28px !important;
+      text-align: left !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      border-radius: 28px !important;
+      background: #fff !important;
+      cursor: pointer !important;
+      box-shadow: 0 18px 60px rgba(15, 23, 42, .05) !important;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+      font-family: inherit !important;
+    }
+
+    #adtype-performance .action-step:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(235, 66, 0, .3) !important;
+      box-shadow: 0 26px 70px rgba(235, 66, 0, .09) !important;
+    }
+
+    #adtype-performance .action-step span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-performance .action-step strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 27px !important;
+      line-height: 1.28 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .action-step p {
+      margin-top: 16px !important;
+      color: #4e5968 !important;
+      font-size: 16px !important;
+      line-height: 1.62 !important;
+      font-weight: 520 !important;
+    }
+
+    #adtype-performance .action-step em {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 22px !important;
+      color: #171719 !important;
+      font-size: 15px !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-performance .action-step em::after {
+      content: "→" !important;
+    }
+
+
+    #adtype-performance .performance-lab {
+      display: grid !important;
+      grid-template-columns: 1.08fr .92fr !important;
+      gap: 28px !important;
+      align-items: stretch !important;
+    }
+
+    #adtype-performance .insight-dashboard {
+      position: relative !important;
+      min-height: 650px !important;
+      padding: 34px !important;
+      overflow: hidden !important;
+      border-radius: 34px !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      background: #111214 !important;
+      box-shadow: 0 30px 90px rgba(15, 23, 42, .14) !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .insight-dashboard::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background:
+        radial-gradient(circle at 22% 16%, rgba(235, 66, 0, .28), transparent 30%),
+        radial-gradient(circle at 82% 74%, rgba(0, 163, 108, .16), transparent 32%) !important;
+      pointer-events: none !important;
+    }
+
+    #adtype-performance .dashboard-top,
+    #adtype-performance .dashboard-chart,
+    #adtype-performance .dashboard-grid,
+    #adtype-performance .insight-note {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    #adtype-performance .dashboard-top {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: flex-start !important;
+      gap: 18px !important;
+      margin-bottom: 34px !important;
+    }
+
+    #adtype-performance .dashboard-top span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 12px !important;
+    }
+
+    #adtype-performance .dashboard-top strong {
+      display: block !important;
+      color: #fff !important;
+      font-size: 30px !important;
+      line-height: 1.25 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .dashboard-period {
+      flex: 0 0 auto !important;
+      padding: 12px 14px !important;
+      border-radius: 999px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      color: rgba(255, 255, 255, .72) !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      font-weight: 750 !important;
+    }
+
+    #adtype-performance .dashboard-chart {
+      height: 230px !important;
+      padding: 26px 24px !important;
+      border-radius: 26px !important;
+      background:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+        rgba(255, 255, 255, .06) !important;
+      background-size: 48px 46px !important;
+      border: 1px solid rgba(255, 255, 255, .09) !important;
+    }
+
+    #adtype-performance .chart-line {
+      position: absolute !important;
+      left: 28px !important;
+      right: 28px !important;
+      bottom: 42px !important;
+      height: 96px !important;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0 !important;
+      border-top: 4px solid var(--ad) !important;
+      transform: rotate(-4deg) !important;
+      opacity: .95 !important;
+    }
+
+    #adtype-performance .chart-line--sub {
+      bottom: 76px !important;
+      border-top-color: #28d19c !important;
+      transform: rotate(6deg) !important;
+      opacity: .72 !important;
+    }
+
+    #adtype-performance .chart-pin {
+      position: absolute !important;
+      width: 14px !important;
+      height: 14px !important;
+      border-radius: 50% !important;
+      background: #fff !important;
+      border: 4px solid var(--ad) !important;
+      box-shadow: 0 0 0 8px rgba(235, 66, 0, .14) !important;
+    }
+
+    #adtype-performance .chart-pin--one { left: 24% !important; bottom: 94px !important; }
+    #adtype-performance .chart-pin--two { right: 21% !important; bottom: 128px !important; }
+
+    #adtype-performance .dashboard-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 12px !important;
+      margin-top: 14px !important;
+    }
+
+    #adtype-performance .dashboard-metric {
+      padding: 20px !important;
+      border-radius: 22px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border: 1px solid rgba(255, 255, 255, .08) !important;
+    }
+
+    #adtype-performance .dashboard-metric b {
+      display: block !important;
+      color: #fff !important;
+      font-size: 30px !important;
+      line-height: 1 !important;
+      font-weight: 820 !important;
+    }
+
+    #adtype-performance .dashboard-metric small {
+      display: block !important;
+      margin-top: 10px !important;
+      color: rgba(255, 255, 255, .56) !important;
+      font-size: 12px !important;
+      line-height: 1.35 !important;
+      font-weight: 700 !important;
+    }
+
+    #adtype-performance .insight-note {
+      margin-top: 14px !important;
+      padding: 22px !important;
+      border-radius: 22px !important;
+      background: rgba(235, 66, 0, .12) !important;
+      border: 1px solid rgba(235, 66, 0, .2) !important;
+    }
+
+    #adtype-performance .insight-note span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 10px !important;
+    }
+
+    #adtype-performance .insight-note strong {
+      display: block !important;
+      color: #fff !important;
+      font-size: 22px !important;
+      line-height: 1.42 !important;
+      font-weight: 740 !important;
+    }
+
+    #adtype-performance .performance-steps {
+      display: grid !important;
+      gap: 16px !important;
+    }
+
+    #adtype-performance .performance-step {
+      width: 100% !important;
+      min-height: 194px !important;
+      padding: 28px !important;
+      text-align: left !important;
+      border: 1px solid rgba(23, 23, 25, .08) !important;
+      border-radius: 28px !important;
+      background: #fff !important;
+      cursor: pointer !important;
+      box-shadow: 0 18px 60px rgba(15, 23, 42, .05) !important;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+      font-family: inherit !important;
+    }
+
+    #adtype-performance .performance-step:hover {
+      transform: translateY(-4px) !important;
+      border-color: rgba(235, 66, 0, .3) !important;
+      box-shadow: 0 26px 70px rgba(235, 66, 0, .09) !important;
+    }
+
+    #adtype-performance .performance-step span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-performance .performance-step strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 27px !important;
+      line-height: 1.28 !important;
+      font-weight: 740 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .performance-step p {
+      margin-top: 16px !important;
+      color: #4e5968 !important;
+      font-size: 16px !important;
+      line-height: 1.62 !important;
+      font-weight: 520 !important;
+    }
+
+    #adtype-performance .performance-step em {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 22px !important;
+      color: #171719 !important;
+      font-size: 15px !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-performance .performance-step em::after {
+      content: "→" !important;
+    }
+
+    #adtype-performance .translation {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      overflow: hidden !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 30px !important;
+      background: #fff !important;
+    }
+
+    #adtype-performance .translation__box {
+      min-height: 310px !important;
+      padding: 34px !important;
+      border-right: 1px solid var(--line) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+
+    #adtype-performance .translation__box:last-child {
+      border-right: 0 !important;
+    }
+
+    #adtype-performance .translation__box--after {
+      background: #111214 !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .translation__label {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 20px !important;
+    }
+
+    #adtype-performance .translation__text {
+      color: #171719 !important;
+      font-size: 28px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .translation__box--after .translation__text {
+      color: #fff !important;
+    }
+
+    #adtype-performance .translation__desc {
+      margin-top: 28px !important;
+      color: #6b7684 !important;
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+      font-weight: 520 !important;
+    }
+
+    #adtype-performance .translation__box--after .translation__desc {
+      color: rgba(255, 255, 255, .64) !important;
+    }
+
+    #adtype-performance .data-layout {
+      display: grid !important;
+      grid-template-columns: .86fr 1.14fr !important;
+      gap: 56px !important;
+      align-items: center !important;
+    }
+
+    #adtype-performance .data-list {
+      margin-top: 42px !important;
+      display: grid !important;
+      gap: 14px !important;
+    }
+
+    #adtype-performance .data-list li {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 14px !important;
+      color: #4e5968 !important;
+      font-size: 17px !important;
+      line-height: 1.6 !important;
+      font-weight: 580 !important;
+    }
+
+    #adtype-performance .data-list b {
+      flex: 0 0 auto !important;
+      color: var(--ad) !important;
+      font-size: 15px !important;
+      font-weight: 850 !important;
+    }
+
+    #adtype-performance .browser {
+      overflow: hidden !important;
+      border-radius: 28px !important;
+      border: 1px solid var(--line) !important;
+      background: #fff !important;
+      box-shadow: 0 32px 90px rgba(15, 23, 42, .12) !important;
+    }
+
+    #adtype-performance .browser__bar {
+      height: 44px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 0 18px !important;
+      border-bottom: 1px solid var(--line) !important;
+      background: #fff !important;
+    }
+
+    #adtype-performance .browser__dot {
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 50% !important;
+      display: block !important;
+    }
+
+    #adtype-performance .browser__dot:nth-child(1) { background: #ff5b22 !important; }
+    #adtype-performance .browser__dot:nth-child(2) { background: #f3ba43 !important; }
+    #adtype-performance .browser__dot:nth-child(3) { background: #4bb76b !important; }
+
+    #adtype-performance .browser video,
+    #adtype-performance .browser img {
+      display: block !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      object-fit: cover !important;
+      background: #f2f4f6 !important;
+    }
+
+    #adtype-performance .loop {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+      margin-top: 70px !important;
+    }
+
+    #adtype-performance .loop__item {
+      min-height: 250px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border: 1px solid rgba(255, 255, 255, .1) !important;
+    }
+
+    #adtype-performance .loop__item span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 15px !important;
+      font-weight: 850 !important;
+      margin-bottom: 28px !important;
+    }
+
+    #adtype-performance .loop__item strong {
+      display: block !important;
+      color: #fff !important;
+      font-size: 24px !important;
+      line-height: 1.34 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .loop__item p {
+      margin-top: 18px !important;
+      color: rgba(255, 255, 255, .62) !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-performance .proof-grid {
+      display: grid !important;
+      grid-template-columns: 1.15fr .85fr !important;
+      gap: 18px !important;
+      align-items: stretch !important;
+    }
+
+    #adtype-performance .proof-card {
+      position: relative !important;
+      min-height: 520px !important;
+      overflow: hidden !important;
+      border-radius: 30px !important;
+      background: #111 !important;
+    }
+
+    #adtype-performance .proof-card img,
+    #adtype-performance .proof-card video {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: inherit !important;
+      display: block !important;
+      object-fit: cover !important;
+      transition: transform .45s ease !important;
+    }
+
+    #adtype-performance .proof-card:hover img,
+    #adtype-performance .proof-card:hover video {
+      transform: scale(1.035) !important;
+    }
+
+    #adtype-performance .proof-card::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, .72)) !important;
+    }
+
+    #adtype-performance .proof-card__caption {
+      position: absolute !important;
+      left: 28px !important;
+      right: 28px !important;
+      bottom: 28px !important;
+      z-index: 2 !important;
+      color: #fff !important;
+    }
+
+    #adtype-performance .proof-card__caption small {
+      display: inline-flex !important;
+      height: 34px !important;
+      align-items: center !important;
+      padding: 0 13px !important;
+      border-radius: 999px !important;
+      background: rgba(255, 255, 255, .16) !important;
+      color: #fff !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-performance .proof-card__caption strong {
+      display: block !important;
+      max-width: 620px !important;
+      color: #fff !important;
+      font-size: 28px !important;
+      line-height: 1.36 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .metrics {
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 14px !important;
+    }
+
+    #adtype-performance .metric {
+      min-height: 250px !important;
+      padding: 30px !important;
+      border-radius: 26px !important;
+      background: #fff !important;
+      border: 1px solid var(--line) !important;
+    }
+
+    #adtype-performance .metric span {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      margin-bottom: 28px !important;
+    }
+
+    #adtype-performance .metric strong {
+      display: block !important;
+      color: #171719 !important;
+      font-size: 25px !important;
+      line-height: 1.34 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .metric p {
+      margin-top: 18px !important;
+      color: #6b7684 !important;
+      font-size: 16px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-performance .closing {
+      padding: 150px 0 !important;
+      background: #111214 !important;
+      color: #fff !important;
+      text-align: center !important;
+    }
+
+    #adtype-performance .closing h2 {
+      max-width: 860px !important;
+      margin: 0 auto !important;
+      color: #fff !important;
+      font-size: clamp(42px, 4vw, 66px) !important;
+      line-height: 1.18 !important;
+      font-weight: 760 !important;
+    }
+
+    #adtype-performance .closing p {
+      max-width: 720px !important;
+      margin: 30px auto 0 !important;
+      color: rgba(255, 255, 255, .66) !important;
+      font-size: 20px !important;
+      line-height: 1.78 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-performance .closing__actions {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 12px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-performance .modal {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 100 !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 28px !important;
+    }
+
+    #adtype-performance .modal.is-open {
+      display: flex !important;
+    }
+
+    #adtype-performance .modal__backdrop {
+      position: absolute !important;
+      inset: 0 !important;
+      background: rgba(0, 0, 0, .58) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    #adtype-performance .modal__panel {
+      position: relative !important;
+      width: min(920px, 100%) !important;
+      max-height: min(780px, calc(100vh - 56px)) !important;
+      overflow: auto !important;
+      border-radius: 32px !important;
+      background: #fff !important;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, .28) !important;
+      outline: 0 !important;
+    }
+
+    #adtype-performance .modal__close {
+      position: absolute !important;
+      right: 22px !important;
+      top: 22px !important;
+      width: 44px !important;
+      height: 44px !important;
+      border: 0 !important;
+      border-radius: 50% !important;
+      background: #f2f4f6 !important;
+      color: #171719 !important;
+      font-size: 24px !important;
+      line-height: 1 !important;
+      font-weight: 500 !important;
+      cursor: pointer !important;
+      font-family: inherit !important;
+    }
+
+    #adtype-performance .modal__body {
+      padding: 62px !important;
+    }
+
+    #adtype-performance .modal__eyebrow {
+      display: block !important;
+      color: var(--ad) !important;
+      font-size: 14px !important;
+      line-height: 1.2 !important;
+      font-weight: 850 !important;
+      margin-bottom: 20px !important;
+    }
+
+    #adtype-performance .modal__title {
+      color: #171719 !important;
+      font-size: 46px !important;
+      line-height: 1.18 !important;
+      font-weight: 760 !important;
+      letter-spacing: 0 !important;
+    }
+
+    #adtype-performance .modal__lead {
+      max-width: 720px !important;
+      margin-top: 24px !important;
+      color: #4e5968 !important;
+      font-size: 20px !important;
+      line-height: 1.7 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-performance .modal__grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 18px !important;
+      margin-top: 42px !important;
+    }
+
+    #adtype-performance .modal__block {
+      padding: 28px !important;
+      border-radius: 24px !important;
+      background: #f7f8fa !important;
+    }
+
+    #adtype-performance .modal__block h4 {
+      color: #171719 !important;
+      font-size: 20px !important;
+      line-height: 1.32 !important;
+      font-weight: 760 !important;
+      margin-bottom: 18px !important;
+    }
+
+    #adtype-performance .modal__block p,
+    #adtype-performance .modal__block li {
+      color: #4e5968 !important;
+      font-size: 16px !important;
+      line-height: 1.72 !important;
+      font-weight: 500 !important;
+    }
+
+    #adtype-performance .modal__block li {
+      position: relative !important;
+      padding-left: 14px !important;
+      margin-top: 10px !important;
+    }
+
+    #adtype-performance .modal__block li::before {
+      content: "" !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 12px !important;
+      width: 5px !important;
+      height: 5px !important;
+      border-radius: 50% !important;
+      background: var(--ad) !important;
+    }
+
+    #adtype-performance .modal__chips {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      margin-top: 24px !important;
+    }
+
+    #adtype-performance .modal__chip {
+      display: inline-flex !important;
+      align-items: center !important;
+      min-height: 34px !important;
+      padding: 0 12px !important;
+      border-radius: 999px !important;
+      background: rgba(235, 66, 0, .09) !important;
+      color: var(--ad) !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      font-weight: 800 !important;
+    }
+
+    #adtype-performance .modal__actions {
+      display: flex !important;
+      gap: 10px !important;
+      margin-top: 38px !important;
+    }
+
+    #adtype-performance .reveal {
+      opacity: 0 !important;
+      transform: translateY(26px) !important;
+      transition: opacity .7s ease, transform .7s ease !important;
+    }
+
+    #adtype-performance .reveal.is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    @media (max-width: 960px) {
+      #adtype-performance .nav__links {
+        display: none !important;
+      }
+
+      #adtype-performance .hero {
+        min-height: 680px !important;
+      }
+
+      #adtype-performance .hero h1 {
+        font-size: clamp(42px, 11vw, 68px) !important;
+      }
+
+      #adtype-performance .hero__copy {
+        font-size: 18px !important;
+      }
+
+      #adtype-performance .section,
+      #adtype-performance .closing {
+        padding: 96px 0 !important;
+      }
+
+      #adtype-performance .section-head {
+        margin-bottom: 46px !important;
+      }
+
+      #adtype-performance h2 {
+        font-size: clamp(34px, 8.4vw, 48px) !important;
+      }
+
+      #adtype-performance .section-desc {
+        font-size: 18px !important;
+        line-height: 1.78 !important;
+      }
+
+      #adtype-performance .question-list,
+      #adtype-performance .action-lab,
+      #adtype-performance .translation,
+      #adtype-performance .data-layout,
+      #adtype-performance .proof-grid,
+      #adtype-performance .loop,
+      #adtype-performance .metrics,
+      #adtype-performance .modal__grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      #adtype-performance .action-map {
+        min-height: 760px !important;
+        padding: 22px !important;
+        border-radius: 28px !important;
+      }
+
+      #adtype-performance .flow-node {
+        width: calc(100% - 44px) !important;
+        left: 22px !important;
+        right: 22px !important;
+      }
+
+      #adtype-performance .flow-node--life { top: 88px !important; }
+      #adtype-performance .flow-node--contact { top: 272px !important; }
+      #adtype-performance .flow-node--action { top: 456px !important; bottom: auto !important; }
+
+      #adtype-performance .signal-panel {
+        left: 22px !important;
+        right: 22px !important;
+        bottom: 22px !important;
+      }
+
+      #adtype-performance .signal-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+
+      #adtype-performance .performance-lab {
+        grid-template-columns: 1fr !important;
+      }
+
+      #adtype-performance .insight-dashboard {
+        min-height: 610px !important;
+        padding: 24px !important;
+        border-radius: 28px !important;
+      }
+
+      #adtype-performance .dashboard-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      #adtype-performance .translation__box,
+      #adtype-performance .translation__box:last-child {
+        min-height: auto !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--line) !important;
+      }
+
+      #adtype-performance .proof-card {
+        min-height: 440px !important;
+      }
+    }
+
     @media (max-width: 640px) {
-      #adtype-performance .wrap, #adtype-performance .nav__inner { width: min(100% - 32px, 1180px) !important; }
-      #adtype-performance .nav { height: 64px !important; }
-      #adtype-performance .brand img { width: 82px !important; }
-      #adtype-performance .nav__cta { min-height: 38px !important; padding: 0 14px !important; font-size: 13px !important; }
-      #adtype-performance .hero h1 { font-size: 38px !important; line-height: 1.14 !important; }
-      #adtype-performance .hero__copy { font-size: 17px !important; line-height: 1.72 !important; }
-      #adtype-performance .section { padding: 96px 0 !important; }
-      #adtype-performance .section-head { margin-bottom: 42px !important; text-align: left !important; }
-      #adtype-performance .section h2 { font-size: 36px !important; line-height: 1.18 !important; }
-      #adtype-performance .section-desc { margin-left: 0 !important; font-size: 16px !important; line-height: 1.72 !important; }
-      #adtype-performance .console-body, #adtype-performance .lens-card, #adtype-performance .room-panel, #adtype-performance .decision-board, #adtype-performance .closing__box { padding: 24px !important; border-radius: 24px !important; }
-      #adtype-performance .chart-note { grid-template-columns: 1fr !important; }
-      #adtype-performance .room-panel h3 { font-size: 34px !important; }
-      #adtype-performance .room-mini-board { left: 24px !important; right: 24px !important; bottom: 24px !important; }
-      #adtype-performance .lens-card h3 { font-size: 25px !important; }
-      #adtype-performance .decision-card { min-height: 250px !important; }
-      #adtype-performance .btn { width: 100% !important; }
+      #adtype-performance .wrap,
+      #adtype-performance .nav__inner,
+      #adtype-performance .hero__inner {
+        width: min(100% - 36px, 1180px) !important;
+      }
+
+      #adtype-performance .nav {
+        height: 64px !important;
+      }
+
+      #adtype-performance .brand img {
+        width: 82px !important;
+      }
+
+      #adtype-performance .hero {
+        min-height: 640px !important;
+      }
+
+      #adtype-performance .hero h1 {
+        font-size: 40px !important;
+      }
+
+      #adtype-performance .hero__copy {
+        margin-top: 24px !important;
+        font-size: 17px !important;
+        line-height: 1.72 !important;
+      }
+
+      #adtype-performance .hero__actions,
+      #adtype-performance .closing__actions,
+      #adtype-performance .modal__actions {
+        flex-direction: column !important;
+      }
+
+      #adtype-performance .btn {
+        width: 100% !important;
+        min-height: 52px !important;
+      }
+
+      #adtype-performance .section,
+      #adtype-performance .closing {
+        padding: 84px 0 !important;
+      }
+
+      #adtype-performance .eyebrow,
+      #adtype-performance .kicker {
+        font-size: 13px !important;
+        margin-bottom: 16px !important;
+      }
+
+      #adtype-performance h2,
+      #adtype-performance .closing h2 {
+        font-size: 34px !important;
+        line-height: 1.22 !important;
+      }
+
+      #adtype-performance .section-desc,
+      #adtype-performance .closing p {
+        font-size: 17px !important;
+      }
+
+      #adtype-performance .question {
+        min-height: auto !important;
+        padding: 24px !important;
+        border-radius: 22px !important;
+      }
+
+      #adtype-performance .question strong {
+        font-size: 21px !important;
+      }
+
+      #adtype-performance .action-step {
+        min-height: auto !important;
+        padding: 24px !important;
+        border-radius: 24px !important;
+      }
+
+      #adtype-performance .action-step strong {
+        font-size: 23px !important;
+      }
+
+      #adtype-performance .signal b {
+        font-size: 23px !important;
+      }
+
+      #adtype-performance .translation__box {
+        padding: 26px !important;
+      }
+
+      #adtype-performance .translation__text {
+        font-size: 24px !important;
+      }
+
+      #adtype-performance .data-list li,
+      #adtype-performance .metric p,
+      #adtype-performance .loop__item p {
+        font-size: 15px !important;
+      }
+
+      #adtype-performance .browser {
+        border-radius: 20px !important;
+      }
+
+      #adtype-performance .browser video,
+      #adtype-performance .browser img {
+        aspect-ratio: 4 / 3 !important;
+      }
+
+      #adtype-performance .proof-card {
+        min-height: 390px !important;
+        border-radius: 24px !important;
+      }
+
+      #adtype-performance .proof-card__caption {
+        left: 22px !important;
+        right: 22px !important;
+        bottom: 22px !important;
+      }
+
+      #adtype-performance .proof-card__caption strong {
+        font-size: 22px !important;
+      }
+
+      #adtype-performance .modal {
+        padding: 14px !important;
+      }
+
+      #adtype-performance .modal__panel {
+        border-radius: 24px !important;
+      }
+
+      #adtype-performance .modal__body {
+        padding: 54px 24px 28px !important;
+      }
+
+      #adtype-performance .modal__title {
+        font-size: 34px !important;
+      }
+
+      #adtype-performance .modal__lead {
+        font-size: 17px !important;
+      }
     }
   </style>
 </head>
 <body>
   <div id="adtype-performance">
-    <nav class="nav"><div class="nav__inner"><a class="brand" href="./adtype-for-brands.html" aria-label="Adtype home"><img src="./assets/adtype-logo-white-crop.png" alt="Adtype" /></a><div class="nav__links"><a href="#challenge">브랜드 질문</a><a href="#review">성과 분석</a><a href="#decision">다음 전략</a><a href="#system">성과 시스템</a><a class="nav__cta" href="#contact">문의하기</a></div></div></nav>
-    <header class="hero"><div class="wrap hero__grid"><div><span class="eyebrow">브랜드 과제 06 · 브랜드 지표 개선과 캠페인 고도화</span><h1>성과를 읽고<br />다음 성장 전략으로 연결합니다</h1><p class="hero__copy">애드타입은 캠페인 결과를 집행 리포트로 끝내지 않습니다. 노출, 도달, 빈도와 브랜드 지표, 검색 신호, 지역별 반응을 함께 읽고 다음 캠페인의 타겟·공간·메시지·매체 결정을 고도화합니다.</p><div class="hero__actions"><a class="btn btn--ad" href="#contact">캠페인 문의하기</a><a class="btn btn--ghost" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a></div></div><div class="review-console" aria-label="성과 분석 대시보드"><div class="console-top"><span class="dots"><i></i><i></i><i></i></span><span>캠페인 성과 분석</span></div><div class="console-body"><div class="score-row"><div class="score-card"><span>상기도 변화</span><strong>+18%</strong><em>캠페인 전후</em></div><div class="score-card"><span>타겟 도달률</span><strong>41%</strong><em>핵심 타겟</em></div><div class="score-card"><span>검색 반응</span><strong>2.7x</strong><em>브랜드 검색</em></div></div><div class="chart-panel"><div class="chart-head"><div><strong>성과는 숫자가 아니라<br />다음 전략의 근거입니다</strong><span>노출 · 브랜드 지표 · 검색 신호</span></div><div class="mini-tag">다음 캠페인</div></div><div class="chart-area"><svg viewBox="0 0 640 180" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="adPerfFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#eb4200" stop-opacity="0.28"/><stop offset="1" stop-color="#eb4200" stop-opacity="0"/></linearGradient></defs><path d="M0,146 C80,136 112,110 178,116 C260,126 290,76 362,82 C450,88 474,42 548,50 C594,55 612,34 640,28 L640,180 L0,180 Z" fill="url(#adPerfFill)"/><path d="M0,146 C80,136 112,110 178,116 C260,126 290,76 362,82 C450,88 474,42 548,50 C594,55 612,34 640,28" fill="none" stroke="#eb4200" stroke-width="5" stroke-linecap="round"/><path d="M0,126 C94,122 120,130 180,116 C250,100 306,112 370,90 C470,56 532,72 640,58" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" opacity=".75"/></svg></div><div class="chart-note"><div>인지도와 상기도가 오른 지역을 우선 확장 후보로 분류합니다.</div><div>반응이 약한 조합은 메시지·빈도·매체 위치를 다시 점검합니다.</div></div></div></div></div></div></header>
-    <section class="section" id="challenge"><div class="wrap"><div class="section-head reveal"><span class="kicker">브랜드의 질문</span><h2>캠페인이 끝난 뒤에도<br />브랜드의 질문은 남습니다</h2><p class="section-desc">OOH 캠페인의 결과는 노출량만으로 설명하기 어렵습니다. 브랜드가 실제로 더 기억되었는지, 어느 지역과 타겟에서 반응했는지, 다음 캠페인에서는 무엇을 바꿔야 하는지가 더 중요한 질문입니다.</p></div><div class="challenge-strip reveal"><article class="challenge-item"><span>질문 01</span><strong>브랜드 지표가 실제로 움직였는가?</strong><p>인지도, 상기도, 고려도, 검색량이 캠페인 전후로 어떻게 달라졌는지 확인해야 합니다.</p></article><article class="challenge-item"><span>질문 02</span><strong>어떤 조합이 효과를 만들었는가?</strong><p>타겟, 지역, 시간대, 매체, 메시지 조합별 반응 차이를 읽어야 다음 판단이 가능합니다.</p></article><article class="challenge-item"><span>질문 03</span><strong>다음 캠페인에서 무엇을 바꿀 것인가?</strong><p>좋았던 조합은 확장하고, 약했던 조합은 조정하며, 새로운 실험 과제를 정의해야 합니다.</p></article></div></div></section>
-    <section class="section section--soft" id="review"><div class="wrap"><div class="review-room"><div class="room-panel reveal"><span class="kicker">성과 분석 기준</span><h3>성과를<br />네 가지 기준으로<br />다시 봅니다</h3><p>애드타입은 캠페인 결과를 단일 숫자로 판단하지 않습니다. 브랜드 지표, 매체 효율, 생활권 반응, 메시지 신호를 함께 읽어 왜 성과가 났는지와 다음에 무엇을 바꿔야 하는지를 찾습니다.</p><div class="room-mini-board"><span>성과 신호 종합</span><div class="mini-bars"><i style="--w:78%"></i><i style="--w:62%"></i><i style="--w:88%"></i><i style="--w:54%"></i></div></div></div><div class="lens-list reveal"><article class="lens-card"><div class="lens-card__top"><span class="lens-card__no">01</span><h3>브랜드 지표 변화</h3></div><p>캠페인 전후 인지도, 상기도, 고려도, 구매의향의 변화를 확인해 OOH가 브랜드 지표에 남긴 변화를 읽습니다.</p><div class="lens-tags"><span>인지도</span><span>상기도</span><span>고려도</span><span>구매의향</span></div></article><article class="lens-card"><div class="lens-card__top"><span class="lens-card__no">02</span><h3>타겟·지역별 반응</h3></div><p>성별, 연령, 생활권, 지역별 반응 차이를 비교해 브랜드가 더 강하게 작동한 타겟과 공간을 분리합니다.</p><div class="lens-tags"><span>타겟 반응</span><span>생활권</span><span>지역별 리프트</span></div></article><article class="lens-card"><div class="lens-card__top"><span class="lens-card__no">03</span><h3>매체 조합 효율</h3></div><p>노출, 도달, 빈도, CPM, CPR, 매체별 성과를 함께 비교해 유지할 조합과 조정할 조합을 구분합니다.</p><div class="lens-tags"><span>도달</span><span>빈도</span><span>CPM</span><span>매체 조합</span></div></article><article class="lens-card"><div class="lens-card__top"><span class="lens-card__no">04</span><h3>검색·메시지 신호</h3></div><p>캠페인 이후 브랜드 검색, 제품 검색, 리뷰/서베이 반응을 함께 확인해 메시지가 실제 기억으로 이어졌는지 봅니다.</p><div class="lens-tags"><span>검색량</span><span>메시지 인식</span><span>리뷰/서베이</span></div></article></div></div></div></section>
-    <section class="section section--dark" id="decision"><div class="wrap"><div class="section-head reveal"><span class="kicker">다음 캠페인 전략</span><h2>리포트가 아니라<br />다음 캠페인의 의사결정을 남깁니다</h2><p class="section-desc">좋은 성과 관리는 결과를 설명하는 데서 끝나지 않습니다. 무엇을 유지하고, 어디까지 확장하고, 무엇을 수정하며, 다음에 무엇을 실험할지 결정할 수 있어야 합니다.</p></div><div class="decision-board reveal"><div class="board-top"><strong>유지 · 확장 · 수정 · 실험</strong><span>캠페인 개선 메모</span></div><div class="decision-grid"><article class="decision-card"><div><em>유지</em><strong>유지할 것</strong><p>효과가 확인된 타겟, 지역, 매체 조합을 다음 캠페인의 기준점으로 남깁니다.</p></div><ul><li>고효율 매체 조합</li><li>반응이 강한 생활권</li><li>핵심 메시지 유지</li></ul></article><article class="decision-card"><div><em>확장</em><strong>확장할 것</strong><p>성과가 검증된 조합을 유사 타겟과 인접 생활권으로 확장합니다.</p></div><ul><li>인접 상권 확장</li><li>유사 타겟 확대</li><li>상징 매체 증폭</li></ul></article><article class="decision-card"><div><em>수정</em><strong>수정할 것</strong><p>성과가 약했던 구간은 메시지, 빈도, 위치, 매체 환경을 다시 조정합니다.</p></div><ul><li>노출 빈도 보정</li><li>소재 베리에이션</li><li>매체 위치 조정</li></ul></article><article class="decision-card"><div><em>실험</em><strong>실험할 것</strong><p>다음 캠페인에서 검증할 새로운 타겟, 메시지, 공간 가설을 정의합니다.</p></div><ul><li>신규 생활권 테스트</li><li>검색 유도 메시지</li><li>브랜드 지표 실험</li></ul></article></div></div></div></section>
-    <section class="section" id="system"><div class="wrap system-proof"><div class="proof-copy reveal"><span class="kicker">성과 관리 시스템</span><h2>성과 관리를 캠페인 설계의 일부로 운영합니다</h2><p class="section-desc">애드타입은 캠페인 시작 전부터 어떤 지표를 확인하고, 어떤 단위로 비교하며, 어떤 기준으로 다음 캠페인을 개선할지 설계합니다.</p><ul class="proof-list"><li><b>01</b><span>노출, 도달, 빈도 데이터를 일별·기간별로 확인합니다.</span></li><li><b>02</b><span>성별·연령별 도달 구조와 지역별 반응 차이를 함께 봅니다.</span></li><li><b>03</b><span>브랜드 지표, 검색량, 메시지 반응을 연결해 성장 인사이트를 발굴합니다.</span></li></ul></div><div class="video-frame reveal"><div class="video-frame__top"><span class="dots"><i></i><i></i><i></i></span></div><video src="./assets/ad-effect-clip.mp4" autoplay muted loop playsinline></video></div></div></section>
-    <footer class="closing" id="contact"><div class="wrap"><div class="closing__box reveal"><div><span class="kicker">다음 캠페인</span><h2>이번 캠페인의 결과를<br />다음 성장 전략으로 남기세요</h2><p>브랜드 지표와 OOH 성과를 함께 읽고, 다음 캠페인의 타겟·지역·메시지·매체 조합을 더 정교하게 설계합니다.</p></div><div class="closing__actions"><a class="btn btn--ad" href="mailto:contact@draftype.co.kr">캠페인 문의하기</a><a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a></div></div></div></footer>
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="./adtype-for-brands.html" aria-label="Adtype home">
+          <img src="./assets/adtype-logo-orange-crop.png" alt="Adtype" />
+        </a>
+        <div class="nav__links">
+          <a href="#problem">Problem</a>
+          <a href="#strategies">Strategies</a>
+          <a href="#data">Data</a>
+          <a href="#loop">Loop</a>
+          <a class="nav__cta" href="#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <video class="hero__video" src="./assets/media-planning-system.mp4" autoplay muted loop playsinline></video>
+      <div class="hero__inner">
+        <span class="eyebrow">브랜드 과제 06 · 브랜드 지표 개선과 캠페인 고도화</span>
+        <h1>성과를 읽고<br>다음 성장 전략으로 연결합니다.</h1>
+        <p class="hero__copy">
+          캠페인 결과를 단순 리포트로 끝내지 않고, 브랜드 지표와 지역·타겟·매체별 반응을 분석해 다음 캠페인의 성장 인사이트로 연결합니다.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--ad" href="#contact">캠페인 문의하기</a>
+          <a class="btn btn--ghost" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="problem">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Brand Challenge</span>
+          <h2>캠페인은 끝난 뒤에 더 중요한 질문을 남깁니다.</h2>
+          <p class="section-desc">
+            OOH 캠페인의 결과는 노출량과 집행 리포트만으로 설명되기 어렵습니다.<br>
+            브랜드 인지도, 상기도, 고려도, 검색량, 지역별 반응이 어떻게 움직였는지 읽어야 다음 캠페인의 판단 기준이 생깁니다.
+          </p>
+        </div>
+        <div class="question-list reveal">
+          <div class="question">
+            <span>Question 01</span>
+            <strong>이번 캠페인은 브랜드 지표를 실제로 움직였는가?</strong>
+          </div>
+          <div class="question">
+            <span>Question 02</span>
+            <strong>어떤 타겟, 지역, 메시지, 매체 조합이 더 강하게 반응했는가?</strong>
+          </div>
+          <div class="question">
+            <span>Question 03</span>
+            <strong>다음 캠페인에서 무엇을 유지하고 무엇을 바꿔야 하는가?</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="strategies">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Growth Insight Strategy</span>
+          <h2>성과를 다음 전략으로 바꾸는 3가지 방식</h2>
+          <p class="section-desc">
+            캠페인의 성과는 숫자를 모으는 데서 끝나지 않습니다.<br>
+            어떤 지표가 움직였고, 어떤 조합이 작동했으며, 다음 캠페인에서 무엇을 바꿔야 하는지까지 해석해야 합니다.
+          </p>
+        </div>
+
+        <div class="performance-lab reveal" aria-label="브랜드 지표 개선과 캠페인 고도화 대표 전략">
+          <div class="insight-dashboard">
+            <div class="dashboard-top">
+              <div>
+                <span>Campaign Insight Dashboard</span>
+                <strong>브랜드 지표와<br>성과 신호를 함께 읽습니다.</strong>
+              </div>
+              <div class="dashboard-period">Before / During / After</div>
+            </div>
+            <div class="dashboard-chart">
+              <i class="chart-line"></i>
+              <i class="chart-line chart-line--sub"></i>
+              <i class="chart-pin chart-pin--one"></i>
+              <i class="chart-pin chart-pin--two"></i>
+            </div>
+            <div class="dashboard-grid">
+              <div class="dashboard-metric">
+                <b>+18%</b>
+                <small>Brand Recall</small>
+              </div>
+              <div class="dashboard-metric">
+                <b>2.7x</b>
+                <small>Search Lift</small>
+              </div>
+              <div class="dashboard-metric">
+                <b>41%</b>
+                <small>Target Reach</small>
+              </div>
+            </div>
+            <div class="insight-note">
+              <span>Next Growth Insight</span>
+              <strong>성과가 좋았던 타겟, 지역, 매체 조합을 다음 캠페인의 설계 기준으로 남깁니다.</strong>
+            </div>
+          </div>
+
+          <div class="performance-steps">
+            <button class="performance-step" type="button" data-modal-target="brandmetric">
+              <span>01 Brand Metric</span>
+              <strong>브랜드 지표 변화 분석</strong>
+              <p>인지도, 상기도, 고려도, 구매의향이 캠페인 전후로 어떻게 움직였는지 확인합니다.</p>
+              <em>자세히 보기</em>
+            </button>
+            <button class="performance-step" type="button" data-modal-target="response">
+              <span>02 Response Structure</span>
+              <strong>성과 구조 해석</strong>
+              <p>타겟, 지역, 시간대, 매체 조합별 반응 차이를 비교해 캠페인이 작동한 구조를 해석합니다.</p>
+              <em>자세히 보기</em>
+            </button>
+            <button class="performance-step" type="button" data-modal-target="optimization">
+              <span>03 Campaign Optimization</span>
+              <strong>다음 캠페인 고도화</strong>
+              <p>성과 분석을 다음 타겟, 지역, 메시지, 매체 조합 개선안으로 연결합니다.</p>
+              <em>자세히 보기</em>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Strategy Translation</span>
+          <h2>캠페인 결과를 성장 인사이트로 다시 씁니다.</h2>
+          <p class="section-desc">
+            애드타입은 캠페인 결과를 집행 리포트로만 정리하지 않습니다.<br>
+            노출, 도달, 빈도와 브랜드 지표, 검색량, 지역별 반응을 함께 읽고 다음 캠페인의 성장 판단으로 연결합니다.
+          </p>
+        </div>
+        <div class="translation reveal">
+          <div class="translation__box">
+            <div>
+              <span class="translation__label">01 Brand Challenge</span>
+              <p class="translation__text">이번 캠페인이 브랜드를 움직였는지 알고 싶다</p>
+            </div>
+            <p class="translation__desc">
+              브랜드사의 질문은 노출량이 아니라 실제 인지도, 상기도, 고려도, 검색량 변화로 향합니다.
+            </p>
+          </div>
+          <div class="translation__box">
+            <div>
+              <span class="translation__label">02 Data Question</span>
+              <p class="translation__text">무엇이 움직였고 무엇이 움직이지 않았는가</p>
+            </div>
+            <p class="translation__desc">
+              캠페인 전후 지표, 지역별 반응, 타겟별 도달 구조를 비교해 성과의 원인을 찾습니다.
+            </p>
+          </div>
+          <div class="translation__box translation__box--after">
+            <div>
+              <span class="translation__label">03 OOH Strategy</span>
+              <p class="translation__text">다음 캠페인의 개선 기준을 만든다</p>
+            </div>
+            <p class="translation__desc">
+              효과가 있었던 타겟, 지역, 메시지, 매체 조합을 다음 전략의 기준으로 재구성합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="wrap">
+        <div class="data-layout">
+          <div class="reveal">
+            <span class="kicker">Data Diagnosis</span>
+            <h2>성과 데이터와 브랜드 지표를 함께 읽습니다.</h2>
+            <p class="section-desc">
+              캠페인별 노출, 도달, 빈도뿐 아니라 브랜드 인지도, 상기도, 고려도, 검색량, 지역별 반응을 함께 봅니다.
+              단일 지표가 아니라 여러 신호를 연결해 캠페인의 실제 의미를 판단합니다.
+            </p>
+            <ul class="data-list">
+              <li><b>01</b>캠페인 노출·도달·빈도 데이터</li>
+              <li><b>02</b>인지도·상기도·고려도 변화</li>
+              <li><b>03</b>브랜드 지표 변화·지역별 반응</li>
+              <li><b>04</b>타겟·지역·매체별 성과 차이</li>
+            </ul>
+          </div>
+          <div class="browser reveal">
+            <div class="browser__bar">
+              <i class="browser__dot"></i>
+              <i class="browser__dot"></i>
+              <i class="browser__dot"></i>
+            </div>
+            <video src="./assets/ad-effect-clip.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="loop">
+      <div class="wrap">
+        <div class="section-head section-head--left reveal">
+          <span class="kicker">Campaign Loop</span>
+          <h2>성과, 인사이트, 다음 캠페인을 하나의 루프로 연결합니다.</h2>
+          <p class="section-desc">
+            캠페인 결과를 확인하는 데서 끝내지 않고, 브랜드 지표와 성과 신호를 해석해 다음 캠페인의 타겟, 지역, 메시지, 매체 개선안으로 연결합니다.
+          </p>
+        </div>
+        <div class="loop reveal">
+          <article class="loop__item">
+            <span>01</span>
+            <strong>성과 기준 정의</strong>
+            <p>캠페인에서 움직여야 할 브랜드 지표와 성과 신호를 정합니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>02</span>
+            <strong>성과 데이터 통합</strong>
+            <p>노출, 도달, 빈도, 검색량, 브랜드 지표 데이터를 함께 봅니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>03</span>
+            <strong>반응 구조 해석</strong>
+            <p>타겟, 지역, 매체, 메시지별 성과 차이를 해석합니다.</p>
+          </article>
+          <article class="loop__item">
+            <span>04</span>
+            <strong>다음 전략 고도화</strong>
+            <p>분석 결과를 다음 캠페인의 개선 기준으로 연결합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Execution Proof</span>
+          <h2>성과를 읽을 수 있도록 캠페인을 운영합니다.</h2>
+          <p class="section-desc">
+            좋은 성과 관리는 캠페인이 끝난 뒤에만 시작되지 않습니다.
+            캠페인 설계 단계부터 측정 기준과 비교 구조를 함께 잡아야 다음 판단에 쓸 수 있는 인사이트가 남습니다.
+          </p>
+        </div>
+        <div class="proof-grid reveal">
+          <figure class="proof-card">
+            <img src="./assets/creative-bus-wrap.jpg" alt="버스 외부 광고 집행 사례" />
+            <figcaption class="proof-card__caption">
+              <small>Moving Media</small>
+              <strong>캠페인 노출과 도달 구조를 기간별로 확인해 성과의 흐름을 읽습니다.</strong>
+            </figcaption>
+          </figure>
+          <figure class="proof-card">
+            <img src="./assets/creative-dooh-columns.jpg" alt="DOOH 광고 집행 사례" />
+            <figcaption class="proof-card__caption">
+              <small>Retail Contact</small>
+              <strong>매체와 지역별 반응 차이를 비교해 다음 캠페인의 개선 포인트를 찾습니다.</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Performance Management</span>
+          <h2>성과가 다음 성장 전략으로 이어졌는지 봅니다.</h2>
+          <p class="section-desc">
+            브랜드 지표 개선과 캠페인 고도화는 단순한 리포팅이 아닙니다.
+            캠페인 결과를 브랜드 성장의 다음 판단으로 바꾸는 과정입니다.
+          </p>
+        </div>
+        <div class="metrics reveal">
+          <article class="metric">
+            <span>Measure 01</span>
+            <strong>브랜드 지표 변화</strong>
+            <p>인지도, 상기도, 고려도, 구매의향 변화가 실제로 있었는지 확인합니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 02</span>
+            <strong>검색·유입 신호</strong>
+            <p>브랜드 검색량, 직접 유입, 지역별 반응 변화를 캠페인 성과와 함께 봅니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 03</span>
+            <strong>타겟·지역·매체 차이</strong>
+            <p>어떤 타겟, 지역, 매체 조합에서 더 강한 반응이 있었는지 비교합니다.</p>
+          </article>
+          <article class="metric">
+            <span>Measure 04</span>
+            <strong>다음 캠페인 개선안</strong>
+            <p>다음 캠페인에서 강화하거나 조정해야 할 타겟, 지역, 메시지, 매체를 제안합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="wrap reveal">
+        <h2>캠페인 결과를 다음 성장 전략으로 연결해보세요.</h2>
+        <p>
+          애드타입은 브랜드의 성장 과제를 데이터 기반 OOH 캠페인 전략으로 치환하고,
+          실행과 성과 매니지먼트, 다음 캠페인을 위한 인사이트까지 연결합니다.
+        </p>
+        <div class="closing__actions">
+          <a class="btn btn--ad" href="mailto:contact@draftype.co.kr">캠페인 문의하기</a>
+          <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" data-modal="brandmetric" role="dialog" aria-modal="true" aria-labelledby="modal-brandmetric-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">01 Brand Metric</span>
+          <h3 class="modal__title" id="modal-brandmetric-title">브랜드 지표 변화 분석</h3>
+          <p class="modal__lead">
+            캠페인 전후 브랜드 인지도, 상기도, 고려도, 구매의향이 어떻게 움직였는지 확인합니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>이번 캠페인이 브랜드 지표를 실제로 움직였는지 확인해야 하는 경우</li>
+                <li>인지도, 상기도, 고려도 중 어떤 지표가 개선됐는지 설명해야 하는 경우</li>
+                <li>브랜드 캠페인의 성과를 내부 의사결정자에게 설득해야 하는 경우</li>
+                <li>다음 캠페인에서 어떤 지표를 우선 개선할지 정해야 하는 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                캠페인 전후 브랜드 지표를 비교하고, 노출·도달·빈도 데이터와 함께 해석합니다.
+                단순 지표 변화가 아니라 어떤 타겟과 접점에서 변화가 만들어졌는지 함께 봅니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">인지도</span>
+                <span class="modal__chip">상기도</span>
+                <span class="modal__chip">고려도</span>
+                <span class="modal__chip">구매의향</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="response" role="dialog" aria-modal="true" aria-labelledby="modal-response-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">02 Response Structure</span>
+          <h3 class="modal__title" id="modal-response-title">성과 구조 해석</h3>
+          <p class="modal__lead">
+            타겟, 지역, 시간대, 매체 조합별 반응 차이를 비교해 캠페인이 작동한 구조를 해석합니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>어떤 지역과 매체 조합이 효과적이었는지 알고 싶은 경우</li>
+                <li>타겟별 도달 구조와 실제 반응 차이를 비교해야 하는 경우</li>
+                <li>검색량, 직접 유입, 지역별 반응이 왜 달랐는지 설명해야 하는 경우</li>
+                <li>성과가 좋은 조합과 그렇지 않은 조합을 구분해야 하는 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                캠페인 노출, 도달, 빈도 데이터를 기준으로 지역, 타겟, 매체, 메시지별 성과 차이를 비교합니다.
+                이후 검색량과 브랜드 지표 변화를 함께 연결해 성과의 구조를 해석합니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">지역별 반응</span>
+                <span class="modal__chip">매체 조합</span>
+                <span class="modal__chip">타겟 도달</span>
+                <span class="modal__chip">검색 신호</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="optimization" role="dialog" aria-modal="true" aria-labelledby="modal-optimization-title">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" tabindex="-1">
+        <button class="modal__close" type="button" data-modal-close aria-label="닫기">×</button>
+        <div class="modal__body">
+          <span class="modal__eyebrow">03 Campaign Optimization</span>
+          <h3 class="modal__title" id="modal-optimization-title">다음 캠페인 고도화</h3>
+          <p class="modal__lead">
+            성과 분석을 다음 타겟, 지역, 메시지, 매체 조합 개선안으로 연결합니다.
+          </p>
+          <div class="modal__grid">
+            <div class="modal__block">
+              <h4>이런 경우에 필요합니다</h4>
+              <ul>
+                <li>다음 캠페인에서 무엇을 유지하고 바꿀지 판단해야 하는 경우</li>
+                <li>효과가 좋았던 지역과 매체 조합을 확장해야 하는 경우</li>
+                <li>성과가 약했던 메시지나 타겟 전략을 조정해야 하는 경우</li>
+                <li>캠페인을 단발 집행이 아니라 성장 루프로 만들고 싶은 경우</li>
+              </ul>
+            </div>
+            <div class="modal__block">
+              <h4>애드타입은 이렇게 설계합니다</h4>
+              <p>
+                캠페인 결과를 다음 실행안으로 재구성합니다. 강화할 타겟과 지역, 줄일 매체, 바꿔야 할 메시지,
+                새롭게 테스트할 접점을 정리해 다음 캠페인의 설계 기준을 만듭니다.
+              </p>
+              <div class="modal__chips" aria-label="성과 지표">
+                <span class="modal__chip">타겟 개선</span>
+                <span class="modal__chip">지역 확장</span>
+                <span class="modal__chip">메시지 조정</span>
+                <span class="modal__chip">매체 최적화</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a class="btn btn--ad" href="#contact" data-modal-close>이 전략으로 상담하기</a>
+            <a class="btn" href="./assets/adtype-company-profile.pdf" download>회사소개서 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <script>(()=>{const root=document.querySelector('#adtype-performance');const revealEls=root.querySelectorAll('.reveal');const io=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting)entry.target.classList.add('is-visible');});},{threshold:.16});revealEls.forEach((el)=>io.observe(el));})();</script>
+
+  <script>
+    (function () {
+      var root = document.getElementById('adtype-performance');
+      if (!root) return;
+
+      var items = root.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.14 });
+      items.forEach(function (item) { observer.observe(item); });
+
+      var modalTriggers = root.querySelectorAll('[data-modal-target]');
+      var modalCloseButtons = root.querySelectorAll('[data-modal-close]');
+      var activeModal = null;
+
+      function openModal(name) {
+        var modal = root.querySelector('[data-modal="' + name + '"]');
+        if (!modal) return;
+        activeModal = modal;
+        modal.classList.add('is-open');
+        document.documentElement.style.overflow = 'hidden';
+        var panel = modal.querySelector('.modal__panel');
+        if (panel) panel.focus();
+      }
+
+      function closeModal() {
+        if (!activeModal) return;
+        activeModal.classList.remove('is-open');
+        activeModal = null;
+        document.documentElement.style.overflow = '';
+      }
+
+      modalTriggers.forEach(function (button) {
+        button.addEventListener('click', function () {
+          openModal(button.getAttribute('data-modal-target'));
+        });
+      });
+
+      modalCloseButtons.forEach(function (button) {
+        button.addEventListener('click', closeModal);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>
