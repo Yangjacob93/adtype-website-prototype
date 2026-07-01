@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>캠페인 과제 도출 | Adtype OOH Growth System</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+    :root {
+      --ad: #eb4200;
+      --ink: #151515;
+      --ink-2: #343434;
+      --muted: #6f747b;
+      --line: #e2e2e2;
+      --paper: #f7f7f7;
+      --white: #ffffff;
+      --max: 1280px;
+      --pad: 32px;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); }
+    body {
+      color: var(--ink);
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+    button { font: inherit; }
+    img, video { display: block; max-width: 100%; }
+
+    .page {
+      min-height: 80vh;
+      overflow-x: hidden;
+      background: var(--paper);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - (var(--pad) * 2)));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      background: transparent;
+      border-bottom: 0;
+      backdrop-filter: none;
+    }
+    .nav__inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      width: 106px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .brand img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 500;
+    }
+    .nav__cta {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: var(--radius);
+      padding: 0 14px;
+      color: #fff;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px 0 64px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: #080808;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.54) 0%, rgba(0,0,0,.68) 48%, rgba(0,0,0,.76) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,.16), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 48%;
+      filter: saturate(.98) contrast(1.02);
+    }
+    .hero__copy {
+      position: relative;
+      z-index: 2;
+      width: min(1040px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 24px;
+      text-align: center;
+    }
+    .hero__index {
+      display: block;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,.76);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 520;
+      letter-spacing: .02em;
+      text-shadow: 0 12px 36px rgba(0,0,0,.34);
+    }
+    h1 {
+      max-width: none;
+      color: #fff;
+      font-size: clamp(42px, 4.5vw, 64px);
+      line-height: 1.05;
+      font-weight: 560;
+      letter-spacing: 0;
+      text-shadow: 0 18px 58px rgba(0,0,0,.42);
+    }
+    .hero__subcopy {
+      max-width: 1040px;
+      margin: 24px auto 0;
+      color: rgba(255,255,255,.88);
+      font-size: clamp(16px, 1.18vw, 18px);
+      line-height: 1.66;
+      font-weight: 400;
+      text-shadow: 0 12px 42px rgba(0,0,0,.36);
+    }
+
+    .task-section {
+      background: #f9f9f9;
+      padding: 92px 0 104px;
+    }
+    .task-head {
+      display: grid;
+      grid-template-columns: minmax(0, 760px) auto;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+    .task-label {
+      display: block;
+      margin-bottom: 17px;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .task-head h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 2.7vw, 44px);
+      line-height: 1.22;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .task-head p {
+      max-width: 560px;
+      margin-top: 24px;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .task-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-bottom: 4px;
+    }
+    .task-button {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #d8d8d8;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .task-button:hover {
+      border-color: #151515;
+      background: #151515;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .task-gallery-wrap {
+      width: min(100vw, calc(100% + var(--pad)));
+      overflow: hidden;
+    }
+    .task-gallery {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 420px;
+      gap: 18px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 0;
+      scrollbar-width: none;
+      cursor: grab;
+    }
+    .task-gallery:active { cursor: grabbing; }
+    .task-gallery::-webkit-scrollbar { display: none; }
+    .task-card {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #151515;
+      scroll-snap-align: start;
+      isolation: isolate;
+    }
+    .task-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.012);
+    }
+    .task-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.06) 38%, rgba(0,0,0,.68) 78%, rgba(0,0,0,.90) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.26), rgba(0,0,0,.02) 58%);
+      pointer-events: none;
+    }
+    .task-card__content {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 23px;
+      z-index: 2;
+      color: #fff;
+    }
+    .task-card__num {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .task-card h3 {
+      color: #fff;
+      font-size: 24px;
+      line-height: 1.24;
+      font-weight: 580;
+      letter-spacing: 0;
+      text-shadow: 0 8px 28px rgba(0,0,0,.44);
+    }
+    .task-card p {
+      margin-top: 10px;
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+      line-height: 1.54;
+      font-weight: 400;
+      text-shadow: 0 8px 26px rgba(0,0,0,.44);
+    }
+    .task-progress {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .task-track {
+      height: 2px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #dedede;
+    }
+    .task-thumb {
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--ad);
+      transform: none;
+      transition: width 180ms ease;
+    }
+    .task-help {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 620;
+      white-space: nowrap;
+    }
+    .task-count {
+      display: inline-flex;
+      min-width: 52px;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 620;
+      letter-spacing: 0;
+    }
+    .task-help strong {
+      color: var(--ink);
+      font-weight: 560;
+    }
+    .task-note {
+      max-width: 720px;
+      margin: 42px auto 0;
+      color: var(--ink-2);
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.76;
+      font-weight: 400;
+    }
+    .task-note strong {
+      color: var(--ad);
+      font-weight: 560;
+    }
+
+    .brief-section {
+      background: #fff;
+      padding: 98px 0 112px;
+    }
+    .brief-headline {
+      max-width: 780px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+    .brief-headline h2 {
+      color: var(--ink);
+      font-size: clamp(32px, 2.85vw, 46px);
+      line-height: 1.18;
+      font-weight: 610;
+      letter-spacing: 0;
+    }
+    .brief-headline p {
+      max-width: 900px;
+      margin: 20px auto 0;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.74;
+      font-weight: 400;
+    }
+    .brief-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      grid-template-areas:
+        "copy visual"
+        "features visual";
+      gap: 36px 48px;
+      align-items: center;
+      padding: 52px 44px;
+      border-radius: 8px;
+      background: #f6f6f6;
+    }
+    .brief-copy {
+      grid-area: copy;
+      min-width: 0;
+    }
+    .brief-kicker {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .brief-index {
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 620;
+    }
+    .brief-system {
+      color: #9aa0a6;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 450;
+    }
+    .brief-copy h3 {
+      max-width: 450px;
+      color: var(--ink);
+      font-size: clamp(28px, 2.45vw, 38px);
+      line-height: 1.24;
+      font-weight: 610;
+      letter-spacing: 0;
+    }
+    .brief-copy p {
+      max-width: 462px;
+      margin-top: 22px;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.78;
+      font-weight: 400;
+    }
+    .brief-features {
+      grid-area: features;
+      max-width: 500px;
+      border-top: 1px solid rgba(21,21,21,.12);
+    }
+    .brief-feature {
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 20px;
+      padding: 17px 0 18px;
+      border-bottom: 1px solid rgba(21,21,21,.12);
+    }
+    .brief-feature strong {
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 580;
+    }
+    .brief-feature span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+      font-weight: 400;
+    }
+    .brief-visual {
+      grid-area: visual;
+      min-width: 0;
+    }
+    .brief-sheet {
+      width: 100%;
+      min-width: 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .brief-sheet-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 32px 18px;
+    }
+    .brief-sheet-title {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 580;
+    }
+    .brief-sheet-count {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .brief-current {
+      color: var(--ad);
+      font-weight: 620;
+    }
+    .brief-sheet-progress {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0 32px 24px;
+    }
+    .brief-sheet-progress span {
+      height: 2px;
+      border-radius: 999px;
+      background: var(--line);
+      transition: background-color 180ms ease;
+    }
+    .brief-sheet-progress span.is-active {
+      background: var(--ad);
+    }
+    .brief-sheet-body {
+      border-top: 1px solid var(--line);
+    }
+    .brief-row {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      min-height: 92px;
+      padding: 22px 32px 23px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brief-row.is-task {
+      min-height: 100px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    .brief-row-label {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.56;
+      font-weight: 560;
+    }
+    .brief-row-value {
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.52;
+      font-weight: 520;
+      letter-spacing: 0;
+      transition: opacity 120ms ease, transform 120ms ease;
+      will-change: opacity, transform;
+    }
+    .brief-row.is-task .brief-row-value {
+      max-width: 460px;
+      font-size: 24px;
+      line-height: 1.34;
+      font-weight: 600;
+    }
+    .brief-row-value.is-out {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    .brief-row-value.is-typing::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: .86em;
+      margin-left: 3px;
+      vertical-align: -0.08em;
+      background: var(--ad);
+      animation: briefCursor .72s steps(1, end) infinite;
+    }
+    @keyframes briefCursor {
+      0%, 48% { opacity: .9; }
+      49%, 100% { opacity: 0; }
+    }
+    .brief-sheet-foot {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 18px 32px 22px;
+      background: #fff;
+    }
+    .brief-sheet-foot strong {
+      flex: 0 0 auto;
+      color: var(--ad);
+      font-size: 12px;
+      line-height: 1.6;
+      font-weight: 620;
+    }
+    .brief-sheet-foot span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.62;
+      font-weight: 400;
+    }
+
+    .kpi-section {
+      background: #fff;
+      padding: 96px 0 110px;
+    }
+    .kpi-headline {
+      max-width: 820px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .kpi-label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 620;
+    }
+    .kpi-headline h2 {
+      color: var(--ink);
+      font-size: clamp(32px, 2.85vw, 45px);
+      line-height: 1.2;
+      font-weight: 610;
+      letter-spacing: 0;
+    }
+    .kpi-headline p {
+      max-width: 760px;
+      margin: 20px auto 0;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.74;
+      font-weight: 400;
+    }
+    .kpi-board {
+      overflow: hidden;
+      padding: 36px 38px 34px;
+      border-radius: 8px;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    .kpi-board-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .kpi-board-kicker {
+      margin-bottom: 8px;
+      color: rgba(255,255,255,.42);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 560;
+    }
+    .kpi-board-title {
+      color: #fff;
+      font-size: clamp(23px, 1.95vw, 28px);
+      line-height: 1.22;
+      font-weight: 610;
+    }
+    .kpi-board-title::after {
+      content: "";
+      display: block;
+      width: 82px;
+      height: 2px;
+      margin-top: 13px;
+      background: var(--ad);
+    }
+    .kpi-board-count {
+      flex: 0 0 auto;
+      color: rgba(255,255,255,.44);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 520;
+      white-space: nowrap;
+    }
+    .kpi-board-count strong {
+      color: var(--ad);
+      font-weight: 640;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(430px, 1.55fr);
+      gap: 28px;
+      align-items: start;
+      --arrow-y: 174px;
+    }
+    .kpi-layer {
+      position: relative;
+      min-width: 0;
+      min-height: 338px;
+    }
+    .kpi-layer:not(.kpi-result)::after {
+      content: "";
+      position: absolute;
+      top: var(--arrow-y);
+      right: -16px;
+      width: 14px;
+      height: 1px;
+      background: rgba(235,66,0,.62);
+    }
+    .kpi-layer:not(.kpi-result)::before {
+      content: "";
+      position: absolute;
+      top: calc(var(--arrow-y) - 4px);
+      right: -18px;
+      width: 8px;
+      height: 8px;
+      border-top: 1px solid rgba(235,66,0,.62);
+      border-right: 1px solid rgba(235,66,0,.62);
+      transform: rotate(45deg);
+    }
+    .kpi-layer-head {
+      min-height: 56px;
+    }
+    .kpi-layer-num {
+      display: block;
+      margin-bottom: 7px;
+      color: rgba(255,255,255,.34);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 640;
+    }
+    .kpi-layer-title {
+      color: rgba(255,255,255,.9);
+      font-size: 18px;
+      line-height: 1.32;
+      font-weight: 610;
+    }
+    .kpi-token-field {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: 38px;
+      gap: 10px;
+    }
+    .kpi-token {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      height: 38px;
+      padding: 0 13px;
+      border-radius: 6px;
+      background: rgba(255,255,255,.045);
+      color: rgba(255,255,255,.13);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 520;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: background 260ms cubic-bezier(.22,.61,.36,1), color 260ms cubic-bezier(.22,.61,.36,1), opacity 260ms cubic-bezier(.22,.61,.36,1), transform 260ms cubic-bezier(.22,.61,.36,1);
+    }
+    .kpi-token.is-active {
+      background: #f2f2f2;
+      color: var(--ink);
+    }
+    .kpi-token.is-activating {
+      animation: kpiTokenIn 340ms cubic-bezier(.22,.61,.36,1) both;
+    }
+    @keyframes kpiTokenIn {
+      0% { opacity: .28; transform: translateY(6px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .kpi-result {
+      min-height: 338px;
+      padding: 26px 28px 24px;
+      border-radius: 8px;
+      background: #151515;
+    }
+    .kpi-result .kpi-layer-head {
+      min-height: auto;
+      margin-bottom: 15px;
+    }
+    .kpi-result .kpi-layer-num,
+    .kpi-result-label,
+    .kpi-output strong {
+      color: var(--ad);
+    }
+    .kpi-result-groups {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      min-height: 198px;
+    }
+    .kpi-result-group {
+      min-width: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 300ms cubic-bezier(.22,.61,.36,1), transform 300ms cubic-bezier(.22,.61,.36,1);
+    }
+    .kpi-result-group.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .kpi-result-label {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 640;
+    }
+    .kpi-result-list {
+      display: grid;
+      gap: 0;
+    }
+    .kpi-result-item {
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.075);
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+      line-height: 1.38;
+      font-weight: 520;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 280ms cubic-bezier(.22,.61,.36,1), transform 280ms cubic-bezier(.22,.61,.36,1);
+    }
+    .kpi-result-item:last-child {
+      border-bottom: 0;
+    }
+    .kpi-result-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .kpi-output {
+      margin-top: 14px;
+      color: rgba(255,255,255,.50);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 520;
+    }
+
+    .faq-next-section {
+      background: #f9f9f9;
+      padding: 112px 0 82px;
+    }
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: minmax(260px, .82fr) minmax(0, 1.45fr);
+      gap: 86px;
+      align-items: start;
+    }
+    .faq-copy {
+      position: sticky;
+      top: 34px;
+    }
+    .faq-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 24px;
+      padding: 0 11px;
+      border: 1px solid #e2e2e2;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      color: var(--ad);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .faq-title {
+      color: var(--ink);
+      font-size: clamp(32px, 3.15vw, 44px);
+      line-height: 1.18;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .faq-desc {
+      max-width: 330px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .faq-list {
+      border-top: 1px solid #e0e0e0;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+      background: transparent;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-question {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 28px;
+      gap: 22px;
+      align-items: center;
+      padding: 25px 0;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 540;
+    }
+    .faq-icon {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      transition: background 180ms ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 11px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #2d2d2d;
+      transform: translate(-50%, -50%);
+      transition: transform 220ms ease, background 180ms ease;
+    }
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .faq-item[open] .faq-icon {
+      background: rgba(235,66,0,.08);
+    }
+    .faq-item[open] .faq-icon::before,
+    .faq-item[open] .faq-icon::after {
+      background: var(--ad);
+    }
+    .faq-item[open] .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    .faq-answer {
+      max-width: 780px;
+      padding: 0 58px 26px 0;
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.82;
+      font-weight: 400;
+    }
+    .next-step-cta {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 158px minmax(0, 1fr) auto;
+      gap: 46px;
+      align-items: center;
+      margin-top: 94px;
+      min-height: 300px;
+      padding: 82px 64px;
+      border: 1px solid #151515;
+      border-radius: 8px;
+      background: #151515;
+      color: #fff;
+      box-shadow: 0 20px 54px rgba(0,0,0,.12);
+    }
+    .next-step-label {
+      display: grid;
+      gap: 9px;
+      align-content: start;
+    }
+    .next-step-label span {
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .next-step-label strong {
+      color: rgba(255,255,255,.48);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 520;
+    }
+    .next-step-copy h2 {
+      color: #fff;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.18;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .next-step-copy p {
+      max-width: 640px;
+      margin-top: 16px;
+      color: rgba(255,255,255,.72);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .next-step-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .next-step-btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 560;
+      transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+    }
+    .next-step-btn.primary {
+      border: 1px solid var(--ad);
+      background: var(--ad);
+      color: #fff;
+    }
+    .next-step-btn.primary::after {
+      content: "→";
+      font-size: 16px;
+      line-height: 1;
+    }
+    .next-step-btn.secondary {
+      border: 1px solid rgba(255,255,255,.36);
+      background: transparent;
+      color: #fff;
+    }
+    .next-step-btn:hover {
+      transform: translateY(-1px);
+    }
+    .next-step-btn.primary:hover {
+      background: #050505;
+      border-color: rgba(255,255,255,.72);
+    }
+    .next-step-btn.secondary:hover {
+      border-color: #fff;
+      background: #fff;
+      color: #151515;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brief-row-value,
+      .brief-sheet-progress span,
+      .kpi-token,
+      .kpi-result-group,
+      .kpi-result-item {
+        transition: none;
+      }
+      .brief-row-value.is-typing::after {
+        display: none;
+      }
+      .kpi-token.is-activating {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      :root { --pad: 22px; }
+      .nav__links a:not(.nav__cta) { display: none; }
+      .hero {
+        min-height: auto;
+        padding: 96px 0 58px;
+      }
+      .hero__copy {
+        width: min(100% - 44px, 720px);
+        padding: 78px 0 46px;
+      }
+      h1 {
+        font-size: clamp(42px, 11vw, 64px);
+      }
+      .task-section {
+        padding: 76px 0 86px;
+      }
+      .task-head {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .task-controls {
+        justify-content: flex-start;
+      }
+      .task-gallery {
+        grid-auto-columns: min(420px, 74vw);
+      }
+      .brief-section {
+        padding: 82px 0 92px;
+      }
+      .brief-showcase {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "copy"
+          "features"
+          "visual";
+        gap: 34px;
+        padding: 42px 28px;
+      }
+      .brief-copy h3,
+      .brief-copy p,
+      .brief-features {
+        max-width: none;
+      }
+      .kpi-section {
+        padding: 82px 0 94px;
+      }
+      .kpi-headline {
+        margin-bottom: 38px;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .kpi-layer:not(.kpi-result)::before,
+      .kpi-layer:not(.kpi-result)::after {
+        display: none;
+      }
+      .kpi-result {
+        grid-column: 1 / -1;
+      }
+      .faq-next-section {
+        padding: 82px 0 70px;
+      }
+      .faq-wrap {
+        grid-template-columns: 1fr;
+        gap: 46px;
+      }
+      .faq-copy {
+        position: static;
+      }
+      .faq-desc {
+        max-width: 520px;
+      }
+      .next-step-cta {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 72px;
+        min-height: 340px;
+        padding: 58px 34px;
+      }
+      .next-step-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav__inner { height: 62px; }
+      .brand { width: 96px; }
+      .hero {
+        min-height: 640px;
+        padding-top: 82px;
+      }
+      .hero__copy {
+        width: min(100% - 36px, 390px);
+        padding: 80px 0 36px;
+      }
+      .hero__index {
+        margin-bottom: 12px;
+        font-size: 15px;
+        color: rgba(255,255,255,.70);
+      }
+      h1 {
+        font-size: clamp(35px, 9.6vw, 40px);
+        line-height: 1.08;
+        white-space: nowrap;
+      }
+      .hero__subcopy {
+        margin-top: 20px;
+        color: rgba(255,255,255,.68);
+        font-size: 14px;
+        line-height: 1.72;
+        text-shadow: 0 10px 32px rgba(0,0,0,.32);
+      }
+      .task-section {
+        padding: 66px 0 76px;
+      }
+      .task-head {
+        margin-bottom: 32px;
+      }
+      .task-label {
+        margin-bottom: 18px;
+      }
+      .task-head h2 {
+        font-size: clamp(27px, 6.6vw, 30px);
+        line-height: 1.28;
+      }
+      .task-head p {
+        margin-top: 22px;
+        font-size: 15px;
+        line-height: 1.72;
+      }
+      .task-controls {
+        display: none;
+      }
+      .task-gallery-wrap {
+        width: calc(100% + 22px);
+      }
+      .task-gallery {
+        grid-auto-columns: calc(100vw - 62px);
+        gap: 12px;
+      }
+      .task-card {
+        border-radius: 8px;
+      }
+      .task-card::after {
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.14) 32%, rgba(0,0,0,.82) 68%, rgba(0,0,0,.98) 100%),
+          linear-gradient(90deg, rgba(0,0,0,.30), rgba(0,0,0,.08) 58%);
+      }
+      .task-card__content {
+        left: 17px;
+        right: 17px;
+        bottom: 17px;
+      }
+      .task-card__num {
+        margin-bottom: 6px;
+        font-size: 12px;
+      }
+      .task-card h3 {
+        font-size: 21px;
+        line-height: 1.22;
+      }
+      .task-card p {
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .task-progress {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 22px;
+      }
+      .task-help {
+        justify-content: flex-start;
+        align-items: flex-start;
+        white-space: normal;
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
+      .task-count {
+        min-width: 48px;
+        padding-top: 3px;
+        font-size: 12.5px;
+      }
+      .task-note {
+        margin-top: 34px;
+        text-align: left;
+        font-size: 15px;
+        line-height: 1.72;
+      }
+      .brief-section {
+        padding: 70px 0 82px;
+      }
+      .brief-headline {
+        margin-bottom: 34px;
+        text-align: left;
+      }
+      .brief-headline h2 {
+        font-size: clamp(27px, 6.6vw, 30px);
+        line-height: 1.23;
+      }
+      .brief-headline p {
+        margin-top: 19px;
+        font-size: 15px;
+        line-height: 1.72;
+      }
+      .brief-showcase {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        gap: 0;
+        align-items: stretch;
+      }
+      .brief-copy {
+        order: 1;
+        padding: 34px 18px 0;
+        border-radius: 8px 8px 0 0;
+        background: #f6f6f6;
+      }
+      .brief-kicker {
+        margin-bottom: 16px;
+      }
+      .brief-copy h3 {
+        font-size: 27px;
+        line-height: 1.28;
+      }
+      .brief-copy p {
+        margin-top: 17px;
+        font-size: 15px;
+        line-height: 1.72;
+      }
+      .brief-features {
+        order: 2;
+        padding: 28px 18px 24px;
+        border-radius: 0 0 8px 8px;
+        background: #f6f6f6;
+      }
+      .brief-visual {
+        order: 3;
+        width: calc(100vw - 12px);
+        margin: 34px 0 0 calc(50% - 50vw + 6px);
+        padding: 18px 8px 20px;
+        border-radius: 8px;
+        background: #f6f6f6;
+      }
+      .brief-sheet {
+        border-radius: 8px;
+      }
+      .brief-sheet-head {
+        padding: 24px 22px 17px;
+      }
+      .brief-sheet-progress {
+        gap: 6px;
+        padding: 0 22px 22px;
+      }
+      .brief-row {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        min-height: auto;
+        padding: 20px 22px 21px;
+      }
+      .brief-row.is-task {
+        min-height: auto;
+        padding-top: 21px;
+        padding-bottom: 22px;
+      }
+      .brief-row-value {
+        font-size: 18px;
+        line-height: 1.52;
+      }
+      .brief-row.is-task .brief-row-value {
+        font-size: 22px;
+        line-height: 1.34;
+      }
+      .brief-sheet-foot {
+        display: block;
+        padding: 17px 22px 21px;
+      }
+      .brief-sheet-foot strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .brief-feature {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 17px 0 18px;
+      }
+      .kpi-section {
+        padding: 72px 0 84px;
+      }
+      .kpi-headline {
+        margin-bottom: 34px;
+        text-align: left;
+      }
+      .kpi-label {
+        margin-bottom: 14px;
+      }
+      .kpi-headline h2 {
+        font-size: clamp(30px, 8.1vw, 35px);
+        line-height: 1.22;
+      }
+      .kpi-headline p {
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 1.76;
+      }
+      .kpi-board {
+        width: calc(100vw - 44px);
+        margin-left: calc(50% - 50vw + 22px);
+        padding: 26px 18px 20px;
+      }
+      .kpi-board-head {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+      .kpi-board-title {
+        font-size: 26px;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .kpi-layer {
+        min-height: auto;
+      }
+      .kpi-layer-head {
+        min-height: auto;
+        margin-bottom: 13px;
+      }
+      .kpi-token-field {
+        grid-auto-rows: 34px;
+      }
+      .kpi-token {
+        font-size: 12.5px;
+        padding: 0 10px;
+      }
+      .kpi-token:not([data-active="true"]) {
+        display: none;
+      }
+      .kpi-token[data-mobile-muted="true"] {
+        display: flex;
+        opacity: 1;
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 46%, rgba(0,0,0,.35) 66%, transparent 100%);
+        mask-image: linear-gradient(180deg, #000 0%, #000 46%, rgba(0,0,0,.35) 66%, transparent 100%);
+      }
+      .kpi-result {
+        min-height: auto;
+        padding: 20px 22px 20px;
+      }
+      .kpi-result-groups {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        min-height: auto;
+      }
+      .kpi-output {
+        margin-top: 18px;
+      }
+      .faq-title {
+        font-size: 34px;
+      }
+      .faq-desc {
+        font-size: 14px;
+      }
+      .faq-question {
+        grid-template-columns: 1fr 26px;
+        gap: 16px;
+        padding: 22px 0;
+        font-size: 16px;
+        line-height: 1.52;
+      }
+      .faq-icon {
+        width: 26px;
+        height: 26px;
+      }
+      .faq-answer {
+        padding-right: 10px;
+        font-size: 14px;
+        line-height: 1.78;
+      }
+      .next-step-copy p {
+        font-size: 14px;
+      }
+      .next-step-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .next-step-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Adtype">
+      <div class="wrap nav__inner">
+        <a class="brand" href="./adtype-for-brands.html" aria-label="Adtype 홈으로 이동">
+          <img src="./assets/adtype-logo-white-crop.png" alt="Adtype" />
+        </a>
+        <div class="nav__links">
+          <a href="./adtype-for-brands.html#technology">System</a>
+          <a href="./adtype-system-market-consumer-analysis.html">01</a>
+          <a class="nav__cta" href="./adtype-for-brands.html#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <video
+        class="hero__bg"
+        src="./assets/landing-page-assets/videos/field-creative-ooh-showcase.mp4"
+        poster="./assets/landing-page-assets/images/ooh-field/subway-wide-anime-creative.jpg"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+      <div class="hero__copy">
+        <span class="hero__index">02.</span>
+        <h1>캠페인 과제 도출</h1>
+        <p class="hero__subcopy">
+          이번 OOH 캠페인이 집중해야 할 과제와<br />
+          메시지 방향, KPI를 정리합니다.
+        </p>
+      </div>
+    </header>
+
+    <section class="task-section" aria-label="캠페인 과제 유형">
+      <div class="wrap">
+        <header class="task-head">
+          <div>
+            <span class="task-label">캠페인 과제 유형</span>
+            <h2>브랜드의 과제에 따라<br />OOH 캠페인의 역할은 달라집니다</h2>
+            <p>
+              인지도, 상기도, 브랜딩, 유입, 프로모션처럼<br />
+              이번 캠페인이 먼저 해결할 과제를 정리합니다.
+            </p>
+          </div>
+          <div class="task-controls" aria-label="카드 이동">
+            <button class="task-button" type="button" id="prevTask" aria-label="이전 카드">‹</button>
+            <button class="task-button" type="button" id="nextTask" aria-label="다음 카드">›</button>
+          </div>
+        </header>
+
+        <div class="task-gallery-wrap">
+          <div class="task-gallery" id="taskGallery" tabindex="0" aria-label="캠페인 과제 유형 카드">
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card01-awareness.png" alt="브랜드 인지도 확대 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">01</span>
+                <h3>브랜드 인지도 확대</h3>
+                <p>브랜드 이름과 제품을 더 많이 알립니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card02-leadership.jpg" alt="1등 인식과 대세감 강화를 위한 버스 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">02</span>
+                <h3>1등 인식·대세감 강화</h3>
+                <p>카테고리의 대표 선택지로 느껴지게 만듭니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card03-consideration.jpg" alt="구매 맥락 상기도 강화를 위한 지하철 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">03</span>
+                <h3>구매 맥락 상기도 강화</h3>
+                <p>구매를 고민하는 순간 브랜드가 떠오르게 만듭니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card04-branding.jpg" alt="브랜딩 강화를 위한 디지털 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">04</span>
+                <h3>브랜딩 강화</h3>
+                <p>브랜드의 이미지와 우리다움을 더 선명하게 전달합니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card05-promo.jpg" alt="신제품 프로모션 확산을 위한 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">05</span>
+                <h3>신제품·프로모션 확산</h3>
+                <p>신제품과 혜택을 짧은 기간 안에 알립니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card06-newusers.png" alt="신규 유저와 고객층 확대를 위한 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">06</span>
+                <h3>신규 유저·고객층 확대</h3>
+                <p>새로운 유저와 고객층에게 브랜드를 확장합니다.</p>
+              </div>
+            </article>
+            <article class="task-card">
+              <img src="./assets/landing-page-assets/images/campaign-task-types/card07-viral.png" alt="화제성 바이럴 캠페인을 위한 대형 OOH 캠페인 예시" />
+              <div class="task-card__content">
+                <span class="task-card__num">07</span>
+                <h3>화제성·바이럴 캠페인</h3>
+                <p>오프라인에서 회자될 새로운 장면을 만듭니다.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="task-progress" aria-hidden="true">
+          <div class="task-track">
+            <div class="task-thumb" id="taskThumb"></div>
+          </div>
+          <p class="task-help" aria-live="polite">
+            <span class="task-count" id="taskCount">01 / 07</span>
+          </p>
+        </div>
+
+        <p class="task-note">
+          선택한 과제는 다음 단계에서 <strong>메시지 방향, KPI, 공간 분석 기준</strong>으로 다시 정리됩니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="brief-section" aria-label="캠페인 기준화">
+      <div class="wrap">
+        <header class="brief-headline">
+          <h2>선택한 과제를<br />실행 가능한 캠페인 설계로 바꿉니다</h2>
+          <p>
+            캠페인 과제가 정해지면, 누구에게 어떤 메시지를 남길지와 어떤 기준으로 성과를 볼지 정리합니다.
+          </p>
+        </header>
+
+        <article class="brief-showcase">
+          <div class="brief-copy">
+            <div class="brief-kicker">
+              <span class="brief-index">01. 캠페인 브리프</span>
+              <span class="brief-system">Campaign Brief</span>
+            </div>
+            <h3>이번 캠페인이 집중할 과제를 좁힙니다</h3>
+            <p>
+              브랜드의 목표는 하나로 시작하지 않는 경우가 많습니다.
+              캠페인 브리프는 그중 이번 OOH 캠페인이 먼저 해결할 과제와 메시지 방향을 정합니다.
+            </p>
+          </div>
+
+          <div class="brief-visual">
+            <div class="brief-sheet">
+              <div class="brief-sheet-head">
+                <h4 class="brief-sheet-title">OOH 캠페인 브리프</h4>
+                <div class="brief-sheet-count" aria-label="현재 브리프">
+                  <span class="brief-current" data-brief-current>01</span>
+                  <span>/</span>
+                  <span>05</span>
+                </div>
+              </div>
+              <div class="brief-sheet-progress" aria-hidden="true">
+                <span class="is-active" data-brief-segment></span>
+                <span data-brief-segment></span>
+                <span data-brief-segment></span>
+                <span data-brief-segment></span>
+                <span data-brief-segment></span>
+              </div>
+              <div class="brief-sheet-body" aria-live="polite">
+                <div class="brief-row is-task">
+                  <div class="brief-row-label">과제</div>
+                  <div class="brief-row-value" data-brief-field="task">구매 맥락 상기도 강화</div>
+                </div>
+                <div class="brief-row">
+                  <div class="brief-row-label">타겟</div>
+                  <div class="brief-row-value" data-brief-field="target">구매 직전 경쟁 브랜드를 먼저 떠올리는 소비자</div>
+                </div>
+                <div class="brief-row">
+                  <div class="brief-row-label">메시지 방향</div>
+                  <div class="brief-row-value" data-brief-field="message">피부 고민이 생기는 순간 바로 떠올릴 수 있는 메시지</div>
+                </div>
+                <div class="brief-row">
+                  <div class="brief-row-label">플래닝 기준</div>
+                  <div class="brief-row-value" data-brief-field="planning">올리브영 인근 생활 동선과 주요 상권 진입 접점</div>
+                </div>
+              </div>
+              <div class="brief-sheet-foot">
+                <strong>OUTPUT</strong>
+                <span>브리프는 다음 단계의 성과 지표와 공간 분석 기준으로 이어집니다.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="brief-features" aria-label="캠페인 브리프 주요 기능">
+            <div class="brief-feature">
+              <strong>캠페인 과제 확정</strong>
+              <span>브랜드 목표를 이번 캠페인이 해결할 과제로 좁힙니다.</span>
+            </div>
+            <div class="brief-feature">
+              <strong>캠페인 타겟 설정</strong>
+              <span>이번 캠페인에서 먼저 공략할 소비자군을 정합니다.</span>
+            </div>
+            <div class="brief-feature">
+              <strong>핵심 메시지 정리</strong>
+              <span>OOH에서 보여줄 메시지 방향을 잡습니다.</span>
+            </div>
+            <div class="brief-feature">
+              <strong>플래닝 기준 설정</strong>
+              <span>공간 분석에서 우선 볼 지역, 동선, 접점 조건을 정합니다.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="kpi-section" aria-label="KPI 도출 프레임워크">
+      <div class="wrap">
+        <header class="kpi-headline">
+          <span class="kpi-label">02. KPI 도출 프레임워크</span>
+          <h2>목표를 기준으로,<br />캠페인 KPI를 역설계합니다</h2>
+          <p>
+            비즈니스 목표는 하나의 지표로 바로 내려오지 않습니다.<br />
+            애드타입은 매출, 시장점유율, 유저 획득 같은 목표에 맞춰 고객 행동, 브랜드 지표, 노출·도달 조건을 함께 조합합니다.
+          </p>
+        </header>
+
+        <article class="kpi-board" id="kpiMappingBoard">
+          <div class="kpi-board-head">
+            <div>
+              <p class="kpi-board-kicker">현재 과제</p>
+              <h3 class="kpi-board-title" data-kpi-title>시장점유율 확대</h3>
+            </div>
+            <div class="kpi-board-count"><strong data-kpi-index>01</strong> / 05</div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi-layer" data-kpi-layer="business">
+              <div class="kpi-layer-head">
+                <span class="kpi-layer-num">01</span>
+                <h4 class="kpi-layer-title">비즈니스 목표</h4>
+              </div>
+              <div class="kpi-token-field" data-kpi-tokens="business"></div>
+            </div>
+
+            <div class="kpi-layer" data-kpi-layer="behavior">
+              <div class="kpi-layer-head">
+                <span class="kpi-layer-num">02</span>
+                <h4 class="kpi-layer-title">고객 행동 신호</h4>
+              </div>
+              <div class="kpi-token-field" data-kpi-tokens="behavior"></div>
+            </div>
+
+            <div class="kpi-layer" data-kpi-layer="brand">
+              <div class="kpi-layer-head">
+                <span class="kpi-layer-num">03</span>
+                <h4 class="kpi-layer-title">브랜드 지표</h4>
+              </div>
+              <div class="kpi-token-field" data-kpi-tokens="brand"></div>
+            </div>
+
+            <div class="kpi-layer kpi-result" data-kpi-layer="result">
+              <div class="kpi-layer-head">
+                <span class="kpi-layer-num">04</span>
+                <h4 class="kpi-layer-title">노출·도달 KPI</h4>
+              </div>
+              <div class="kpi-result-groups" data-kpi-result></div>
+              <p class="kpi-output"><strong>OUTPUT</strong>&nbsp;&nbsp;공간 분석·미디어 플래닝 기준</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-next-section" id="faq" aria-label="캠페인 과제 도출 FAQ와 다음 단계">
+      <div class="wrap">
+        <div class="faq-wrap">
+          <div class="faq-copy">
+            <div class="faq-label">FAQ</div>
+            <h2 class="faq-title">자주 묻는 질문</h2>
+            <p class="faq-desc">
+              캠페인 과제와 KPI를 정리하기 전에 자주 묻는 질문입니다.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 우리 브랜드가 어떤 캠페인 과제에 해당하는지 먼저 알 수 있나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                네. 초도 상담에서 브랜드의 현재 상황과 캠페인 목적을 함께 확인합니다. 인지도 확대, 구매 맥락 상기도 강화, 신제품·프로모션 확산, 신규 고객층 확대처럼 여러 과제가 겹칠 수 있기 때문에, 먼저 이번 캠페인에서 가장 우선해야 할 과제를 좁힙니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 매출이 목표인데, 왜 인지도·상기도 같은 브랜드 지표를 함께 보나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                매출은 최종 결과에 가깝고, OOH 캠페인이 바로 움직이는 지표는 그 앞단에 있는 경우가 많습니다. 브랜드 검색, 구매 고려도, 최초상기도, 메시지 회상처럼 매출 전에 먼저 바뀌어야 할 지표를 함께 봐야 캠페인이 어떤 역할을 했는지 더 정확히 판단할 수 있습니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 캠페인 전에 KPI를 정하는 게 실제로 도움이 되나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                도움이 됩니다. OOH는 집행 후에 위치, 매체, 노출 조건을 쉽게 바꾸기 어렵기 때문에, 캠페인 전에 무엇을 성공 기준으로 볼지 먼저 맞추는 것이 중요합니다. 그래야 매체를 고른 뒤에 지표를 끼워 맞추는 것이 아니라, 목표에 맞는 공간과 노출 조건을 설계할 수 있습니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 보유 데이터가 많지 않은 브랜드도 과제와 KPI를 도출할 수 있나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                가능합니다. 보유 데이터가 많으면 더 정교하게 볼 수 있지만, 내부 데이터가 부족해도 검색 데이터, 소비자 반응, 카테고리 맥락, 경쟁 브랜드 상황, 기존 캠페인 정보 등을 함께 활용해 초기 가설을 세울 수 있습니다. 이후 필요하면 서베이나 사전 진단을 통해 부족한 부분을 보완합니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 이 단계에서 매체나 위치까지 정해지나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                이 단계에서는 매체를 바로 확정하기보다, 매체를 고르기 위한 기준을 먼저 정합니다. 어떤 타겟에게, 어떤 메시지를, 어떤 성과 기준으로 보여줄지 정리한 뒤 다음 단계에서 생활권, 동선, 상권, 접점 데이터를 기반으로 공간 분석과 미디어 플래닝을 진행합니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 여기서 정한 KPI는 사후 성과 분석까지 이어지나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                네. 캠페인 전에 정한 KPI는 사후 성과 분석의 기준이 됩니다. 예를 들어 브랜드 검색량, 광고 회상, 구매 고려도, 상기도, 유입, 가입, 방문, 매출 등 캠페인 목적에 맞는 지표를 미리 정해두면, 집행 후 어떤 변화가 있었는지 더 일관되게 볼 수 있습니다.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                <div class="faq-question">
+                  <span>Q. 이 과정은 누가, 어떻게 도와주나요?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                애드타입의 캠페인 컨설턴트가 초도 상담 단계에서 함께 정리합니다. 브랜드가 준비해야 할 내용을 복잡하게 요구하기보다, 현재 목표, 고민 중인 캠페인 방향, 주요 타겟, 기존 마케팅 상황을 대화로 확인하면서 과제와 KPI를 빠르게 좁혀갑니다. 처음부터 완성된 브리프를 준비하지 않아도 됩니다.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="next-step-cta" aria-label="다음 단계">
+          <div class="next-step-label">
+            <span>다음 단계</span>
+            <strong>03</strong>
+          </div>
+
+          <div class="next-step-copy">
+            <h2>공간 분석·미디어 플래닝</h2>
+            <p>
+              정리한 캠페인 과제와 KPI를 바탕으로 생활권, 동선, 상권, 접점 데이터를 분석해
+              OOH 캠페인이 집중해야 할 공간과 매체 조합을 설계합니다.
+            </p>
+          </div>
+
+          <div class="next-step-actions">
+            <a class="next-step-btn primary" href="./adtype-tech-media-planning.html">공간 분석·미디어 플래닝 보기</a>
+            <a class="next-step-btn secondary" href="./adtype-for-brands.html#contact">상담 요청하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const gallery = document.getElementById("taskGallery");
+      const thumb = document.getElementById("taskThumb");
+      const count = document.getElementById("taskCount");
+      const prev = document.getElementById("prevTask");
+      const next = document.getElementById("nextTask");
+      if (!gallery || !thumb) return;
+      const cards = Array.from(gallery.querySelectorAll(".task-card"));
+
+      const getStep = () => {
+        const card = gallery.querySelector(".task-card");
+        const gap = parseFloat(getComputedStyle(gallery).columnGap || "0");
+        return card ? card.getBoundingClientRect().width + gap : gallery.clientWidth * 0.8;
+      };
+
+      const updateProgress = () => {
+        const max = gallery.scrollWidth - gallery.clientWidth;
+        const activeIndex = cards.length
+          ? Math.min(cards.length - 1, Math.max(0, Math.round((max > 0 ? gallery.scrollLeft / max : 0) * (cards.length - 1))))
+          : 0;
+        const progress = cards.length ? ((activeIndex + 1) / cards.length) * 100 : 100;
+        if (count) {
+          count.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(cards.length || 1).padStart(2, "0")}`;
+        }
+        thumb.style.width = `${progress}%`;
+      };
+
+      prev?.addEventListener("click", () => {
+        gallery.scrollBy({ left: -getStep(), behavior: "smooth" });
+      });
+      next?.addEventListener("click", () => {
+        gallery.scrollBy({ left: getStep(), behavior: "smooth" });
+      });
+      gallery.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    })();
+
+    (() => {
+      const section = document.querySelector(".brief-section");
+      if (!section) return;
+
+      const briefs = [
+        {
+          task: "구매 맥락 상기도 강화",
+          target: "구매 직전 경쟁 브랜드를 먼저 떠올리는 소비자",
+          message: "피부 고민이 생기는 순간 바로 떠올릴 수 있는 메시지",
+          planning: "올리브영 인근 생활 동선과 주요 상권 진입 접점"
+        },
+        {
+          task: "브랜드 인지도 확대",
+          target: "카테고리는 알고 있지만 브랜드를 아직 모르는 신규 소비자",
+          message: "브랜드 이름과 대표 제품을 빠르게 인지시키는 메시지",
+          planning: "유동이 많고 반복 노출이 가능한 출퇴근·상권 접점"
+        },
+        {
+          task: "1등 인식·대세감 강화",
+          target: "여러 브랜드를 비교하며 대표 선택지를 찾는 소비자",
+          message: "많이 선택받는 브랜드라는 인식을 강화하는 메시지",
+          planning: "대형 매체와 핵심 상권 중심의 고가시성 접점"
+        },
+        {
+          task: "신제품·프로모션 확산",
+          target: "신제품과 혜택에 빠르게 반응하는 카테고리 관심 소비자",
+          message: "출시 소식과 구매 혜택을 짧고 명확하게 알리는 메시지",
+          planning: "구매 접점 인근 상권과 단기 집중 노출이 가능한 매체"
+        },
+        {
+          task: "화제성·바이럴 캠페인",
+          target: "새로운 브랜드 장면을 발견하고 공유하는 소비자",
+          message: "사진을 찍고 공유하고 싶게 만드는 오프라인 장면",
+          planning: "체류와 촬영이 일어나는 상권, 광장, 대형 디지털 접점"
+        }
+      ];
+
+      const fields = Array.from(section.querySelectorAll("[data-brief-field]"));
+      const current = section.querySelector("[data-brief-current]");
+      const segments = Array.from(section.querySelectorAll("[data-brief-segment]"));
+      const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+      let index = 0;
+      let timers = [];
+
+      const typeSpeed = 9;
+      const fieldStagger = 64;
+      const outDelay = 90;
+      const holdDelay = 950;
+
+      const setTimer = (callback, delay) => {
+        const timer = window.setTimeout(callback, delay);
+        timers.push(timer);
+        return timer;
+      };
+
+      const clearTimers = () => {
+        timers.forEach((timer) => window.clearTimeout(timer));
+        timers = [];
+      };
+
+      const updateStatus = (nextIndex) => {
+        if (current) current.textContent = String(nextIndex + 1).padStart(2, "0");
+        segments.forEach((segment, segmentIndex) => {
+          segment.classList.toggle("is-active", segmentIndex === nextIndex);
+        });
+      };
+
+      const typeText = (field, value, delay) => {
+        if (!field) return 0;
+        if (reduceMotion) {
+          field.textContent = value;
+          return 0;
+        }
+
+        setTimer(() => {
+          field.classList.add("is-out");
+          setTimer(() => {
+            let letter = 0;
+            field.textContent = "";
+            field.classList.remove("is-out");
+            field.classList.add("is-typing");
+
+            const tick = () => {
+              field.textContent = value.slice(0, letter);
+              if (letter < value.length) {
+                letter += 1;
+                setTimer(tick, typeSpeed);
+              } else {
+                field.classList.remove("is-typing");
+              }
+            };
+
+            tick();
+          }, outDelay);
+        }, delay);
+
+        return delay + outDelay + (value.length * typeSpeed);
+      };
+
+      const render = (nextIndex) => {
+        const next = briefs[nextIndex];
+        let longest = 0;
+        updateStatus(nextIndex);
+
+        fields.forEach((field, fieldIndex) => {
+          const key = field.getAttribute("data-brief-field");
+          const duration = typeText(field, next[key], fieldIndex * fieldStagger);
+          longest = Math.max(longest, duration);
+        });
+
+        return longest;
+      };
+
+      const scheduleNext = (delay) => {
+        setTimer(() => {
+          clearTimers();
+          index = (index + 1) % briefs.length;
+          const duration = render(index);
+          scheduleNext(duration + holdDelay);
+        }, delay);
+      };
+
+      scheduleNext(1000);
+    })();
+
+    (() => {
+      const board = document.getElementById("kpiMappingBoard");
+      if (!board) return;
+
+      const scenarios = [
+        {
+          title: "시장점유율 확대",
+          business: ["시장점유율", "대표 브랜드"],
+          behavior: ["브랜드 검색", "비교 탐색", "채널 유입", "경쟁 탐색"],
+          brand: ["최초상기도", "구매 고려도", "대표 인식", "선호도"],
+          result: {
+            "도달 범위": ["핵심 구매층 도달", "관심 생활권 커버", "경쟁 접점 인접 공간"],
+            "반복 빈도": ["주 3~5회 반복 가능", "출퇴근·생활 동선 반복"],
+            "노출 맥락": ["대표 광고 가시성 접점", "대형 공간 노출"]
+          }
+        },
+        {
+          title: "신규 유저·고객층 확보",
+          business: ["신규 유저", "회원가입"],
+          behavior: ["브랜드 검색", "앱 설치", "가입 방문", "첫 이용"],
+          brand: ["브랜드 인지도", "서비스 이해", "가입 의향", "구매 고려도"],
+          result: {
+            "도달 범위": ["신규 타깃 도달", "2030 생활권 커버", "이동 전환 생활권"],
+            "반복 빈도": ["주 2~4회 반복 가능", "출퇴근 동선 반복"],
+            "노출 맥락": ["행동 전환 접점", "생활권 중심 매체"]
+          }
+        },
+        {
+          title: "구매 맥락 상기도 강화",
+          business: ["리테일 판매", "구매 전환"],
+          behavior: ["제품명 검색", "구매 접점", "채널 유입", "구매 검색"],
+          brand: ["구매 상기도", "구매 고려도", "메시지 회상", "카테고리 적합"],
+          result: {
+            "도달 범위": ["구매 접점 인접 도달", "올리브영 생활권", "주요 상권 진입 동선"],
+            "반복 빈도": ["주 3회 이상 반복 가능", "구매 직전 접점 반복"],
+            "노출 맥락": ["진입 전 고가시성", "카테고리 관련 상권"]
+          }
+        },
+        {
+          title: "신제품·프로모션 확산",
+          business: ["신제품 판매", "프로모션 반응"],
+          behavior: ["제품명 검색", "쿠폰 확인", "채널 유입", "프로모션 방문"],
+          brand: ["신제품 인지", "광고 회상", "구매 의향", "혜택 인식"],
+          result: {
+            "도달 범위": ["단기 집중 도달", "구매 접점 커버", "고유동 상권 도달"],
+            "반복 빈도": ["기간 내 고빈도 노출", "집중 기간 반복 노출"],
+            "노출 맥락": ["즉시 메시지 적합 매체", "접점 접근 고가시성"]
+          }
+        },
+        {
+          title: "화제성·바이럴 캠페인",
+          business: ["캠페인 화제성", "브랜드 관심"],
+          behavior: ["SNS 언급", "콘텐츠 공유", "브랜드 검색", "현장 촬영"],
+          brand: ["캠페인 인지", "광고 회상", "새로운 인식", "인상감"],
+          result: {
+            "도달 범위": ["핵심 상권 집중 도달", "랜드마크 접점", "대형 유동 인구 도달"],
+            "반복 빈도": ["집중 기간 고빈도 노출", "화제 시점 전후 반복"],
+            "노출 맥락": ["촬영 가능한 접점", "체류 발생 공간", "대형 스케일 노출"]
+          }
+        }
+      ];
+
+      const pools = {
+        business: [
+          "시장점유율", "대표 브랜드", "신규 유저", "회원가입", "리테일 판매", "구매 전환",
+          "신제품 판매", "프로모션 반응", "캠페인 화제성", "브랜드 관심", "매출 확대", "초기 판매"
+        ],
+        behavior: [
+          "브랜드 검색", "비교 탐색", "채널 유입", "경쟁 탐색", "앱 설치", "가입 방문",
+          "첫 이용", "제품명 검색", "구매 접점", "구매 검색", "쿠폰 확인", "프로모션 방문",
+          "SNS 언급", "콘텐츠 공유", "현장 촬영", "매장 방문"
+        ],
+        brand: [
+          "최초상기도", "구매 고려도", "대표 인식", "선호도", "브랜드 인지도", "서비스 이해",
+          "가입 의향", "구매 상기도", "메시지 회상", "카테고리 적합", "신제품 인지",
+          "광고 회상", "구매 의향", "혜택 인식", "캠페인 인지", "새로운 인식"
+        ]
+      };
+
+      const titleEl = board.querySelector("[data-kpi-title]");
+      const indexEl = board.querySelector("[data-kpi-index]");
+      const tokenEls = {
+        business: board.querySelector('[data-kpi-tokens="business"]'),
+        behavior: board.querySelector('[data-kpi-tokens="behavior"]'),
+        brand: board.querySelector('[data-kpi-tokens="brand"]')
+      };
+      const resultEl = board.querySelector("[data-kpi-result]");
+      const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+      let current = 0;
+      let interval = null;
+      let timeouts = [];
+
+      const setLater = (callback, delay) => {
+        const timeout = window.setTimeout(callback, delay);
+        timeouts.push(timeout);
+      };
+
+      const clearLater = () => {
+        timeouts.forEach((timeout) => window.clearTimeout(timeout));
+        timeouts = [];
+      };
+
+      const ordered = (pool, active) => {
+        const activeSet = new Set(active);
+        const rest = pool.filter((item) => !activeSet.has(item));
+        return [...active, ...rest].slice(0, 10);
+      };
+
+      const renderTokens = (container, pool, active) => {
+        const activeSet = new Set(active);
+        container.innerHTML = "";
+        let mutedCount = 0;
+
+        ordered(pool, active).forEach((label, index) => {
+          const token = document.createElement("span");
+          token.className = "kpi-token";
+          token.textContent = label;
+
+          if (activeSet.has(label)) {
+            token.dataset.active = "true";
+          } else if (mutedCount < 2) {
+            token.dataset.mobileMuted = "true";
+            mutedCount += 1;
+          }
+
+          container.appendChild(token);
+        });
+      };
+
+      const activateTokens = (container, delay) => {
+        const tokens = Array.from(container.querySelectorAll('[data-active="true"]'));
+        tokens.forEach((token, tokenIndex) => {
+          setLater(() => {
+            token.classList.add("is-active", "is-activating");
+          }, reduceMotion ? 0 : delay + tokenIndex * 72);
+        });
+      };
+
+      const renderResults = (result, delay) => {
+        resultEl.innerHTML = "";
+
+        Object.entries(result).forEach(([label, values], groupIndex) => {
+          const group = document.createElement("div");
+          group.className = "kpi-result-group";
+
+          const groupLabel = document.createElement("div");
+          groupLabel.className = "kpi-result-label";
+          groupLabel.textContent = label;
+
+          const list = document.createElement("div");
+          list.className = "kpi-result-list";
+
+          values.forEach((value) => {
+            const item = document.createElement("div");
+            item.className = "kpi-result-item";
+            item.textContent = value;
+            list.appendChild(item);
+          });
+
+          group.appendChild(groupLabel);
+          group.appendChild(list);
+          resultEl.appendChild(group);
+
+          const baseDelay = reduceMotion ? 0 : delay + groupIndex * 190;
+          setLater(() => group.classList.add("is-visible"), baseDelay);
+
+          Array.from(list.children).forEach((item, itemIndex) => {
+            setLater(() => item.classList.add("is-visible"), baseDelay + 90 + itemIndex * 55);
+          });
+        });
+      };
+
+      const render = () => {
+        clearLater();
+        const scenario = scenarios[current];
+        titleEl.textContent = scenario.title;
+        indexEl.textContent = String(current + 1).padStart(2, "0");
+
+        renderTokens(tokenEls.business, pools.business, scenario.business);
+        renderTokens(tokenEls.behavior, pools.behavior, scenario.behavior);
+        renderTokens(tokenEls.brand, pools.brand, scenario.brand);
+
+        activateTokens(tokenEls.business, 120);
+        activateTokens(tokenEls.behavior, 420);
+        activateTokens(tokenEls.brand, 720);
+        renderResults(scenario.result, 1060);
+      };
+
+      const next = () => {
+        current = (current + 1) % scenarios.length;
+        render();
+      };
+
+      render();
+      interval = window.setInterval(next, 4300);
+
+      document.addEventListener("visibilitychange", () => {
+        window.clearInterval(interval);
+        clearLater();
+        if (!document.hidden) {
+          render();
+          interval = window.setInterval(next, 4300);
+        }
+      });
+    })();
+
+    (() => {
+      const items = Array.from(document.querySelectorAll(".faq-item"));
+      if (!items.length) return;
+
+      items.forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (!item.open) return;
+          items.forEach((other) => {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

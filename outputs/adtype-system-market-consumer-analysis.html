@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>시장·소비자 분석 | Adtype OOH Growth System</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+    :root {
+      --ad: #eb4200;
+      --ink: #151515;
+      --ink-2: #343434;
+      --muted: #6f747b;
+      --faint: #a5abb3;
+      --line: #e2e2e2;
+      --paper: #f7f7f7;
+      --white: #ffffff;
+      --max: 1280px;
+      --pad: 32px;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); }
+    body {
+      color: var(--ink);
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+    img, video { display: block; max-width: 100%; }
+
+    .page {
+      min-height: 80vh;
+      overflow-x: hidden;
+      background: var(--paper);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - (var(--pad) * 2)));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      background: transparent;
+      border-bottom: 0;
+      backdrop-filter: none;
+    }
+    .nav__inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      width: 106px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .brand img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav__cta {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: var(--radius);
+      padding: 0 14px;
+      color: #fff;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px 0 64px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: #080808;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: auto;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.54) 0%, rgba(0,0,0,.68) 48%, rgba(0,0,0,.76) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.28), rgba(0,0,0,.16), rgba(0,0,0,.28));
+      pointer-events: none;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 48%;
+      filter: saturate(.98) contrast(1.02);
+    }
+    .hero__copy {
+      position: relative;
+      z-index: 2;
+      width: min(1040px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 24px;
+      text-align: center;
+    }
+    .hero__index {
+      display: block;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,.76);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 520;
+      letter-spacing: .02em;
+      text-shadow: 0 12px 36px rgba(0,0,0,.34);
+    }
+    .eyebrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.84);
+      font-size: 15px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 4px;
+      height: 1px;
+      background: currentColor;
+      opacity: .7;
+    }
+    h1 {
+      max-width: none;
+      margin-top: 0;
+      color: #fff;
+      font-size: clamp(42px, 4.5vw, 64px);
+      line-height: 1.05;
+      font-weight: 560;
+      letter-spacing: 0;
+      text-shadow: 0 18px 58px rgba(0,0,0,.42);
+    }
+    .hero__subcopy {
+      max-width: 1040px;
+      margin: 24px auto 0;
+      color: rgba(255,255,255,.88);
+      font-size: clamp(16px, 1.18vw, 18px);
+      line-height: 1.66;
+      font-weight: 400;
+      text-shadow: 0 12px 42px rgba(0,0,0,.36);
+    }
+    .brand-alignment {
+      background: var(--white);
+      padding: 90px 0 104px;
+    }
+    .section-center {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+    .section-center h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 2.7vw, 44px);
+      line-height: 1.22;
+      font-weight: 520;
+      letter-spacing: 0;
+    }
+    .section-center .lead {
+      margin-top: 24px;
+      color: var(--ad);
+      font-size: clamp(17px, 1.35vw, 21px);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .section-center .desc {
+      max-width: 650px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.68;
+      font-weight: 400;
+    }
+    .alignment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .alignment-card {
+      overflow: hidden;
+      border: 0;
+      border-radius: 8px;
+      background: #f6f6f6;
+    }
+    .alignment-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .alignment-card__body {
+      min-height: 160px;
+      padding: 24px 24px 28px;
+      text-align: center;
+    }
+    .alignment-card__eyebrow {
+      color: var(--ad);
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 560;
+    }
+    .alignment-card h3 {
+      margin-top: 10px;
+      color: var(--ink);
+      font-size: 21px;
+      line-height: 1.34;
+      font-weight: 520;
+      letter-spacing: 0;
+    }
+    .alignment-card p {
+      margin-top: 14px;
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.66;
+      font-weight: 400;
+    }
+    .analysis-matrix {
+      background: #f6f6f6;
+      padding: 92px 0 108px;
+    }
+    .analysis-matrix__head {
+      max-width: 780px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+    .analysis-matrix__head h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 2.7vw, 44px);
+      line-height: 1.24;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .analysis-matrix__head p {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: var(--ink-2);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .matrix-stage {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+    .matrix-scenario {
+      width: fit-content;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 auto 18px;
+      padding: 0 18px;
+      border: 1px solid #151515;
+      border-radius: 999px;
+      background: #151515;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 560;
+      white-space: nowrap;
+    }
+    .matrix-scenario__number {
+      color: var(--ad);
+      opacity: 1;
+    }
+    .matrix-scenario__title {
+      min-width: 0;
+      color: #fff;
+      text-align: center;
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+    .matrix-scenario__title.is-changing {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    .matrix-board {
+      display: grid;
+      gap: 10px;
+    }
+    .matrix-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 118px repeat(5, minmax(0, 1fr));
+      min-height: 58px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 7px;
+      background: #151515;
+    }
+    .matrix-selector {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      z-index: 0;
+      width: 0;
+      height: calc(100% - 14px);
+      border: 0;
+      border-radius: 6px;
+      background: var(--ad);
+      transform: translateX(0);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.14),
+        0 0 0 1px rgba(235,66,0,.26);
+      transition:
+        transform 740ms cubic-bezier(.22,.72,.16,1),
+        width 740ms cubic-bezier(.22,.72,.16,1);
+    }
+    .matrix-label,
+    .matrix-cell {
+      position: relative;
+      z-index: 1;
+      min-height: 58px;
+      display: grid;
+      place-items: center;
+      padding: 10px 12px;
+      color: rgba(255,255,255,.5);
+      font-size: 15px;
+      line-height: 1.32;
+      font-weight: 500;
+    }
+    .matrix-label {
+      justify-content: start;
+      padding-left: 20px;
+      border-right: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      color: rgba(255,255,255,.86);
+      font-size: 13px;
+      font-weight: 520;
+    }
+    .matrix-cell {
+      border-right: 1px solid rgba(255,255,255,.075);
+      transition: color 260ms ease, font-weight 260ms ease, opacity 260ms ease;
+    }
+    .matrix-cell:last-child {
+      border-right: 0;
+    }
+    .matrix-cell:not(.is-active) {
+      opacity: .78;
+    }
+    .matrix-cell.is-active {
+      color: #fff;
+      font-weight: 580;
+      opacity: 1;
+    }
+    .analysis-matrix__bottom {
+      max-width: 720px;
+      margin: 42px auto 0;
+      color: var(--ink-2);
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.74;
+      font-weight: 400;
+    }
+    .analysis-matrix__cta {
+      width: max-content;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px auto 0;
+      padding: 0 28px;
+      border: 1px solid var(--ad);
+      border-radius: var(--radius);
+      background: var(--ad);
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 560;
+      transition: background 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+    }
+    .analysis-matrix__cta::after {
+      content: "→";
+      font-size: 16px;
+      line-height: 1;
+    }
+    .analysis-matrix__cta:hover {
+      background: #151515;
+      border-color: #151515;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .product-showcase-section {
+      background: var(--white);
+      padding: 92px 0 108px;
+    }
+    .product-showcase-head {
+      max-width: 780px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+    .product-showcase-head h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 3vw, 46px);
+      line-height: 1.22;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .product-showcase-head p {
+      max-width: 660px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .product-showcase-list {
+      display: grid;
+      gap: 48px;
+    }
+    .product-showcase-item {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: 48px;
+      align-items: center;
+      min-height: 520px;
+      padding: 52px 44px;
+      border: 0;
+      border-radius: 8px;
+      background: #f6f6f6;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 620ms cubic-bezier(.22,.72,.16,1), transform 620ms cubic-bezier(.22,.72,.16,1), border-color 180ms ease;
+    }
+    .product-showcase-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .product-showcase-item.is-reverse {
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+    }
+    .product-showcase-item.is-reverse .product-showcase-copy { order: 2; }
+    .product-showcase-item.is-reverse .product-showcase-media { order: 1; }
+    .product-showcase-index {
+      display: block;
+      margin-bottom: 17px;
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 580;
+      letter-spacing: .02em;
+    }
+    .product-showcase-view {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.38;
+      font-weight: 540;
+    }
+    .product-showcase-name {
+      margin: 0 0 22px;
+      color: var(--faint);
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .product-showcase-copy h3 {
+      color: var(--ink);
+      font-size: clamp(24px, 2.25vw, 30px);
+      line-height: 1.28;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .product-showcase-desc {
+      margin-top: 17px;
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .product-showcase-features {
+      display: grid;
+      gap: 10px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .product-showcase-features li {
+      display: grid;
+      grid-template-columns: 6px 1fr;
+      gap: 10px;
+      align-items: baseline;
+      color: #2f2f2f;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 450;
+    }
+    .product-showcase-features li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--ad);
+      transform: translateY(-1px);
+    }
+    .product-showcase-decision {
+      margin-top: 26px;
+      padding-top: 17px;
+      border-top: 1px solid #dedede;
+    }
+    .product-showcase-decision span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--faint);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 560;
+    }
+    .product-showcase-decision p {
+      color: var(--ad);
+      font-size: 15px;
+      line-height: 1.56;
+      font-weight: 540;
+    }
+    .product-showcase-video-shell {
+      overflow: hidden;
+      border: 0;
+      border-radius: 8px;
+      background: #f6f6f6;
+      box-shadow: 0 18px 42px rgba(0,0,0,.045);
+    }
+    .product-showcase-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #f6f6f6;
+      transform: scale(1.026);
+      transform-origin: center;
+    }
+    .product-showcase-video.is-survey {
+      transform: scale(1.038) translateY(.4%);
+    }
+    .product-showcase-video.is-review {
+      transform: scale(1.034);
+    }
+    .product-showcase-caption {
+      margin: 12px 2px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    .product-showcase-note {
+      max-width: 760px;
+      margin: 68px auto 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink-2);
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.82;
+      font-weight: 400;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 640ms cubic-bezier(.22,.72,.16,1), transform 640ms cubic-bezier(.22,.72,.16,1);
+    }
+    .product-showcase-note.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .product-showcase-note strong {
+      color: var(--ad);
+      font-weight: 560;
+    }
+
+    .faq-next-section {
+      background: #f9f9f9;
+      padding: 112px 0 82px;
+    }
+    .faq-wrap {
+      display: grid;
+      grid-template-columns: minmax(260px, .82fr) minmax(0, 1.45fr);
+      gap: 86px;
+      align-items: start;
+    }
+    .faq-copy {
+      position: sticky;
+      top: 34px;
+    }
+    .faq-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin-bottom: 24px;
+      padding: 0 11px;
+      border: 1px solid #e2e2e2;
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      color: var(--ad);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .faq-title {
+      color: var(--ink);
+      font-size: clamp(32px, 3.15vw, 44px);
+      line-height: 1.18;
+      font-weight: 540;
+      letter-spacing: 0;
+    }
+    .faq-desc {
+      max-width: 330px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .faq-list {
+      border-top: 1px solid #e0e0e0;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .faq-button {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 28px;
+      gap: 22px;
+      align-items: center;
+      padding: 25px 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq-question {
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 540;
+    }
+    .faq-icon {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      transition: background 180ms ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 11px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #2d2d2d;
+      transform: translate(-50%, -50%);
+      transition: transform 220ms ease, background 180ms ease;
+    }
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .faq-item.is-open .faq-icon {
+      background: rgba(235,66,0,.08);
+    }
+    .faq-item.is-open .faq-icon::before,
+    .faq-item.is-open .faq-icon::after {
+      background: var(--ad);
+    }
+    .faq-item.is-open .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    .faq-answer {
+      height: 0;
+      overflow: hidden;
+      transition: height 260ms cubic-bezier(.22,.72,.16,1);
+    }
+    .faq-answer-inner {
+      padding: 0 58px 26px 0;
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.82;
+      font-weight: 400;
+    }
+    .faq-answer-inner p + p {
+      margin-top: 12px;
+    }
+    .next-step-cta {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 158px minmax(0, 1fr) auto;
+      gap: 46px;
+      align-items: center;
+      margin-top: 94px;
+      min-height: 300px;
+      padding: 82px 64px;
+      border: 1px solid #151515;
+      border-radius: 8px;
+      background: #151515;
+      color: #fff;
+      box-shadow: 0 20px 54px rgba(0,0,0,.12);
+    }
+    .next-step-label {
+      display: grid;
+      gap: 9px;
+      align-content: start;
+    }
+    .next-step-label span {
+      color: var(--ad);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 580;
+    }
+    .next-step-label strong {
+      color: rgba(255,255,255,.48);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 520;
+    }
+    .next-step-copy h2 {
+      color: #fff;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.18;
+      font-weight: 540;
+    }
+    .next-step-copy p {
+      max-width: 640px;
+      margin-top: 16px;
+      color: rgba(255,255,255,.72);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    .next-step-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .next-step-btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 560;
+      transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+    }
+    .next-step-btn.primary {
+      border: 1px solid var(--ad);
+      background: var(--ad);
+      color: #fff;
+    }
+    .next-step-btn.primary::after {
+      content: "→";
+      font-size: 16px;
+      line-height: 1;
+    }
+    .next-step-btn.secondary {
+      border: 1px solid rgba(255,255,255,.36);
+      background: transparent;
+      color: #fff;
+    }
+    .next-step-btn:hover {
+      transform: translateY(-1px);
+    }
+    .next-step-btn.primary:hover {
+      background: #050505;
+      border-color: rgba(255,255,255,.72);
+    }
+    .next-step-btn.secondary:hover {
+      border-color: #fff;
+      background: #fff;
+      color: #151515;
+    }
+
+    @media (max-width: 980px) {
+      :root { --pad: 22px; }
+      .nav__links a:not(.nav__cta) { display: none; }
+      .hero {
+        min-height: auto;
+        padding: 96px 0 58px;
+      }
+      .hero__copy {
+        width: min(100% - 44px, 720px);
+        padding: 78px 0 46px;
+      }
+      h1 {
+        font-size: clamp(42px, 11vw, 64px);
+      }
+      .alignment-grid { grid-template-columns: 1fr; }
+      .brand-alignment { padding: 72px 0 84px; }
+      .analysis-matrix { padding: 72px 0 86px; }
+      .product-showcase-section { padding: 78px 0 92px; }
+      .faq-next-section { padding: 82px 0 70px; }
+      .faq-wrap {
+        grid-template-columns: 1fr;
+        gap: 46px;
+      }
+      .faq-copy {
+        position: static;
+      }
+      .faq-desc {
+        max-width: 520px;
+      }
+      .next-step-cta {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 72px;
+        min-height: 340px;
+        padding: 58px 34px;
+      }
+      .next-step-actions {
+        flex-wrap: wrap;
+      }
+      .product-showcase-head { margin-bottom: 44px; }
+      .product-showcase-item,
+      .product-showcase-item.is-reverse {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        min-height: auto;
+        padding: 38px 28px;
+      }
+      .product-showcase-copy {
+        display: contents;
+      }
+      .product-showcase-intro {
+        order: 1;
+      }
+      .product-showcase-media,
+      .product-showcase-item.is-reverse .product-showcase-media {
+        order: 2;
+      }
+      .product-showcase-features {
+        order: 3;
+        margin-top: 0;
+      }
+      .product-showcase-decision {
+        order: 4;
+        margin-top: 0;
+      }
+      .matrix-stage { padding: 0; }
+      .matrix-row {
+        display: block;
+        min-height: 88px;
+        border-radius: 7px;
+      }
+      .matrix-row::before,
+      .matrix-row::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 4;
+        width: 54px;
+        pointer-events: none;
+      }
+      .matrix-row::before {
+        left: 0;
+        background: linear-gradient(90deg, #151515 4%, rgba(21,21,21,0));
+      }
+      .matrix-row::after {
+        right: 0;
+        background: linear-gradient(270deg, #151515 4%, rgba(21,21,21,0));
+      }
+      .matrix-selector { display: none; }
+      .matrix-label {
+        position: absolute;
+        top: 11px;
+        left: 50%;
+        z-index: 3;
+        min-height: auto;
+        display: block;
+        padding: 0;
+        border-right: 0;
+        border-bottom: 0;
+        background: transparent;
+        color: rgba(255,255,255,.82);
+        font-size: 11px;
+        line-height: 1;
+        text-align: center;
+        transform: translateX(-50%);
+      }
+      .matrix-cell {
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        z-index: 1;
+        width: max-content;
+        min-width: 138px;
+        min-height: 36px;
+        padding: 0 18px;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 5px;
+        color: rgba(255,255,255,.64);
+        font-size: 15px;
+        white-space: nowrap;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: opacity 360ms ease, transform 680ms cubic-bezier(.22,.72,.16,1), filter 360ms ease;
+      }
+      .matrix-cell:last-child { border-bottom: 0; }
+      .matrix-cell.is-before,
+      .matrix-cell.is-after {
+        opacity: .48;
+        filter: blur(.35px);
+      }
+      .matrix-cell.is-before {
+        transform: translateX(calc(-50% - 166px)) scale(.96);
+      }
+      .matrix-cell.is-after {
+        transform: translateX(calc(-50% + 166px)) scale(.96);
+      }
+      .matrix-cell.is-active {
+        z-index: 3;
+        min-width: 158px;
+        min-height: 40px;
+        outline: 0;
+        background: var(--ad);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 580;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav__inner { height: 62px; }
+      .brand { width: 96px; }
+      .hero { min-height: 640px; padding-top: 82px; }
+      .hero__copy {
+        width: min(100% - 36px, 390px);
+        padding: 80px 0 36px;
+      }
+      .hero__index {
+        margin-bottom: 12px;
+        font-size: 15px;
+        color: rgba(255,255,255,.70);
+      }
+      h1 {
+        font-size: clamp(35px, 9.6vw, 40px);
+        line-height: 1.08;
+        white-space: nowrap;
+      }
+      .hero__subcopy {
+        margin-top: 20px;
+        color: rgba(255,255,255,.68);
+        font-size: 14px;
+        line-height: 1.72;
+        text-shadow: 0 10px 32px rgba(0,0,0,.32);
+      }
+      .section-center { text-align: left; margin-bottom: 34px; }
+      .section-center .lead,
+      .section-center .desc { margin-left: 0; margin-right: 0; }
+      .alignment-card__body { min-height: auto; text-align: left; }
+      .analysis-matrix__head { text-align: left; margin-bottom: 34px; }
+      .analysis-matrix__head p { margin-left: 0; margin-right: 0; }
+      .product-showcase-head { text-align: left; }
+      .product-showcase-head p { margin-left: 0; margin-right: 0; }
+      .faq-title { font-size: 34px; }
+      .faq-desc { font-size: 14px; }
+      .faq-button {
+        grid-template-columns: 1fr 26px;
+        gap: 16px;
+        padding: 22px 0;
+      }
+      .faq-question {
+        font-size: 16px;
+        line-height: 1.52;
+      }
+      .faq-answer-inner {
+        padding-right: 10px;
+        font-size: 14px;
+        line-height: 1.78;
+      }
+      .next-step-copy p {
+        font-size: 14px;
+      }
+      .next-step-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .next-step-btn {
+        width: 100%;
+      }
+      .product-showcase-list { gap: 34px; }
+      .product-showcase-item,
+      .product-showcase-item.is-reverse {
+        padding: 34px 18px;
+      }
+      .product-showcase-name { margin-bottom: 18px; }
+      .product-showcase-desc { font-size: 14px; line-height: 1.68; }
+      .product-showcase-features { gap: 9px; }
+      .product-showcase-decision { padding-top: 16px; }
+      .product-showcase-video,
+      .product-showcase-video.is-survey,
+      .product-showcase-video.is-review {
+        transform: none;
+      }
+      .product-showcase-note {
+        margin-top: 46px;
+        padding: 24px 18px;
+        border-radius: 8px;
+        background: #f6f6f6;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.76;
+      }
+      .matrix-scenario { max-width: 100%; justify-content: center; }
+      .matrix-scenario__title { min-width: 0; text-align: center; }
+      .matrix-row { min-height: 84px; }
+      .matrix-row::before,
+      .matrix-row::after {
+        width: 46px;
+      }
+      .matrix-cell {
+        top: 34px;
+        min-width: 124px;
+        min-height: 34px;
+        padding: 0 15px;
+        font-size: 14px;
+      }
+      .matrix-cell.is-before {
+        transform: translateX(calc(-50% - 126px)) scale(.96);
+      }
+      .matrix-cell.is-after {
+        transform: translateX(calc(-50% + 126px)) scale(.96);
+      }
+      .matrix-cell.is-active {
+        min-width: 138px;
+        min-height: 38px;
+        font-size: 15px;
+      }
+      .analysis-matrix__bottom { text-align: left; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Adtype">
+      <div class="wrap nav__inner">
+        <a class="brand" href="./adtype-for-brands.html" aria-label="Adtype 홈으로 이동">
+          <img src="./assets/adtype-logo-white-crop.png" alt="Adtype" />
+        </a>
+        <div class="nav__links">
+          <a href="./adtype-for-brands.html#technology">System</a>
+          <a href="#brand-alignment">Process</a>
+          <a class="nav__cta" href="./adtype-for-brands.html#contact">문의하기</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <video
+        class="hero__bg"
+        src="./assets/landing-page-assets/videos/product-survey-review-radar.mp4"
+        poster="./assets/landing-page-assets/images/product-ui/survey-radar-overview-hero.png"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+      <div class="hero__copy">
+        <span class="hero__index">01.</span>
+        <h1>시장·소비자 분석</h1>
+        <p class="hero__subcopy">
+          브랜드의 성장 방향을 소비자 데이터로 확인하고,<br />
+          OOH 캠페인이 집중해야 할 과제와 메시지 기회를 찾습니다.
+        </p>
+      </div>
+    </header>
+
+    <section class="brand-alignment" id="brand-alignment">
+      <div class="wrap">
+        <div class="section-center">
+          <h2>분석은 브랜드의 방향을<br />이해하는 것에서 시작합니다</h2>
+          <p class="lead">소비자 데이터를 읽기 전에, 브랜드가 향하는 기준을 먼저 맞춥니다.</p>
+          <p class="desc">성장 목표와 보유 자산, 캠페인 맥락을 정리해야 소비자 데이터가 단순한 리포트가 아니라<br />이번 OOH 캠페인이 해결해야 할 질문으로 이어집니다.</p>
+        </div>
+
+        <div class="alignment-grid">
+          <article class="alignment-card">
+            <img src="./assets/landing-page-assets/images/brand-alignment/01-growth-goal.png" alt="성장 목표를 정리하는 회의 장면" />
+            <div class="alignment-card__body">
+              <span class="alignment-card__eyebrow">01</span>
+              <h3>성장 목표</h3>
+              <p>이번 캠페인을 통해 브랜드가 만들고 싶은 변화와 성장 방향을 먼저 확인합니다.</p>
+            </div>
+          </article>
+
+          <article class="alignment-card">
+            <img src="./assets/landing-page-assets/images/brand-alignment/02-brand-assets.png" alt="브랜드 자산을 검토하는 기획 장면" />
+            <div class="alignment-card__body">
+              <span class="alignment-card__eyebrow">02</span>
+              <h3>브랜드 자산</h3>
+              <p>이미 보유한 인지도, 메시지, 제품 강점, 캠페인 히스토리를 함께 살펴봅니다.</p>
+            </div>
+          </article>
+
+          <article class="alignment-card">
+            <img src="./assets/landing-page-assets/images/brand-alignment/03-campaign-context.png" alt="캠페인 맥락과 매체 지도를 검토하는 장면" />
+            <div class="alignment-card__body">
+              <span class="alignment-card__eyebrow">03</span>
+              <h3>캠페인 맥락</h3>
+              <p>출시, 리브랜딩, 시즌, 유통 확장, 경쟁 대응 등 OOH가 필요한 이유를 정리합니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="analysis-matrix" id="analysis-matrix" aria-label="시장·소비자 분석 조합">
+      <div class="wrap">
+        <div class="analysis-matrix__head">
+          <h2>OOH 캠페인의 방향,<br />더 선명하게 잡고 싶으신가요?</h2>
+          <p>
+            브랜드가 처한 상황에 따라 먼저 봐야 할 데이터와<br />
+            도출해야 할 판단은 달라집니다.<br /><br />
+            애드타입은 목표, 데이터, 산출물을 연결해<br />
+            이번 캠페인이 먼저 답해야 할 질문을 정리합니다.
+          </p>
+        </div>
+
+        <div class="matrix-stage">
+          <div class="matrix-scenario" aria-live="polite">
+            <span class="matrix-scenario__number">조합 01</span>
+            <span class="matrix-scenario__title">신규 런칭·인지 확장형</span>
+          </div>
+
+          <div class="matrix-board">
+            <div class="matrix-row" data-row="0">
+              <span class="matrix-selector" aria-hidden="true"></span>
+              <div class="matrix-label">분석 초점</div>
+              <div class="matrix-cell">브랜드 이해</div>
+              <div class="matrix-cell">소비자 맥락</div>
+              <div class="matrix-cell">브랜드 위치</div>
+              <div class="matrix-cell">구매 이유</div>
+              <div class="matrix-cell">과제·KPI</div>
+            </div>
+            <div class="matrix-row" data-row="1">
+              <span class="matrix-selector" aria-hidden="true"></span>
+              <div class="matrix-label">캠페인 상황</div>
+              <div class="matrix-cell">구매 고려</div>
+              <div class="matrix-cell">리브랜딩</div>
+              <div class="matrix-cell">인지도</div>
+              <div class="matrix-cell">유통 확장</div>
+              <div class="matrix-cell">구매 전환</div>
+            </div>
+            <div class="matrix-row" data-row="2">
+              <span class="matrix-selector" aria-hidden="true"></span>
+              <div class="matrix-label">활용 데이터</div>
+              <div class="matrix-cell">경쟁 인식</div>
+              <div class="matrix-cell">리뷰 데이터</div>
+              <div class="matrix-cell">캠페인 히스토리</div>
+              <div class="matrix-cell">설문 데이터</div>
+              <div class="matrix-cell">검색·언급</div>
+            </div>
+            <div class="matrix-row" data-row="3">
+              <span class="matrix-selector" aria-hidden="true"></span>
+              <div class="matrix-label">도출 결과</div>
+              <div class="matrix-cell">카피 단서</div>
+              <div class="matrix-cell">성과 지표</div>
+              <div class="matrix-cell">메시지 방향</div>
+              <div class="matrix-cell">타깃 정리</div>
+              <div class="matrix-cell">OOH 매체</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="analysis-matrix__bottom">
+          브랜드의 성장 목표와 소비자의 실제 신호를 연결해,<br />
+          OOH 캠페인이 누구에게 어떤 인식을 남겨야 하는지 정의합니다.
+        </p>
+        <a class="analysis-matrix__cta" href="./adtype-for-brands.html#contact">분석 상담하기</a>
+      </div>
+    </section>
+
+    <section class="product-showcase-section" id="product-showcase" aria-label="시장·소비자 분석 시스템">
+      <div class="wrap">
+        <header class="product-showcase-head">
+          <h2>소비자 맥락, 브랜드 위치,<br />구매 언어를 함께 봅니다</h2>
+          <p>
+            브랜드가 떠올라야 할 상황, 시장 안에서의 위치,<br />
+            구매자가 실제로 말하는 선택 이유를 함께 확인합니다.
+          </p>
+        </header>
+
+        <div class="product-showcase-list">
+          <article class="product-showcase-item">
+            <div class="product-showcase-copy">
+              <div class="product-showcase-intro">
+                <span class="product-showcase-index">01</span>
+                <p class="product-showcase-view">소비자 맥락</p>
+                <p class="product-showcase-name">Mental Market</p>
+                <h3>브랜드가 떠올라야 할 상황을 찾습니다</h3>
+                <p class="product-showcase-desc">
+                  검색과 언급 신호를 연결해 소비자가 어떤 문제, 관심사, 생활 맥락 속에서 카테고리와 브랜드를 인식하는지 확인합니다.
+                  OOH 캠페인이 반복해서 남겨야 할 상황과 메시지 기회를 정리합니다.
+                </p>
+              </div>
+
+              <ul class="product-showcase-features">
+                <li>검색·언급 데이터에서 소비자 관심사 확인</li>
+                <li>브랜드가 들어갈 수 있는 상황 맥락 정리</li>
+                <li>카테고리를 떠올리는 진입 상황 탐색</li>
+                <li>OOH에서 반복 노출할 메시지 기회 도출</li>
+              </ul>
+
+              <div class="product-showcase-decision">
+                <span>캠페인 판단</span>
+                <p>OOH에서 반복 노출할 상황, 관심사, 메시지 기회</p>
+              </div>
+            </div>
+
+            <div class="product-showcase-media">
+              <div class="product-showcase-video-shell">
+                <video class="product-showcase-video" src="./assets/landing-page-assets/videos/product-mental-market-clip.mp4" muted loop playsinline preload="metadata"></video>
+              </div>
+              <p class="product-showcase-caption">검색·언급 데이터로 소비자 관심사와 상황 맥락을 확인합니다.</p>
+            </div>
+          </article>
+
+          <article class="product-showcase-item is-reverse">
+            <div class="product-showcase-copy">
+              <div class="product-showcase-intro">
+                <span class="product-showcase-index">02</span>
+                <p class="product-showcase-view">브랜드 위치</p>
+                <p class="product-showcase-name">SurveyRadar</p>
+                <h3>브랜드가 지금 어디에 있는지 진단합니다</h3>
+                <p class="product-showcase-desc">
+                  서베이 응답을 인지도, 퍼널, CEP, 구매행동, 광고성과, 소비자군, 이미지 프레임으로 다시 읽습니다.
+                  경쟁 브랜드 대비 현재 위치와 이번 OOH 캠페인이 움직여야 할 지표를 정리합니다.
+                </p>
+              </div>
+
+              <ul class="product-showcase-features">
+                <li>7개 분석 프레임으로 응답 재구성</li>
+                <li>기준 브랜드와 경쟁 브랜드 위치 비교</li>
+                <li>퍼널·CEP·오디언스별 성장 기회 확인</li>
+                <li>교차 분석 결과에서 원문 근거까지 드릴다운</li>
+              </ul>
+
+              <div class="product-showcase-decision">
+                <span>캠페인 판단</span>
+                <p>이번 캠페인이 개선해야 할 브랜드 지표와 핵심 타깃</p>
+              </div>
+            </div>
+
+            <div class="product-showcase-media">
+              <div class="product-showcase-video-shell">
+                <video class="product-showcase-video is-survey" src="./assets/landing-page-assets/videos/recording-survey-radar-walkthrough.mp4" muted loop playsinline preload="metadata"></video>
+              </div>
+              <p class="product-showcase-caption">서베이 응답을 7개 프레임으로 재구성합니다.</p>
+            </div>
+          </article>
+
+          <article class="product-showcase-item">
+            <div class="product-showcase-copy">
+              <div class="product-showcase-intro">
+                <span class="product-showcase-index">03</span>
+                <p class="product-showcase-view">구매 언어</p>
+                <p class="product-showcase-name">ReviewRadar</p>
+                <h3>구매자가 실제로 말한 선택 이유를 찾습니다</h3>
+                <p class="product-showcase-desc">
+                  리뷰 속 구매 동기, 결정 요인, 만족·불만 요인, 사용 상황을 구조화합니다.
+                  카피와 비주얼로 전환할 수 있는 메시지 단서를 원문 근거와 함께 확인합니다.
+                </p>
+              </div>
+
+              <ul class="product-showcase-features">
+                <li>리뷰 한 건에서 17개 속성 추출</li>
+                <li>만족·불만 요인을 측면별로 분리</li>
+                <li>페르소나 군집과 제품·채널별 차이 비교</li>
+                <li>숫자를 만든 원문 근거와 신뢰도 확인</li>
+              </ul>
+
+              <div class="product-showcase-decision">
+                <span>캠페인 판단</span>
+                <p>카피와 비주얼로 전환할 구매 언어</p>
+              </div>
+            </div>
+
+            <div class="product-showcase-media">
+              <div class="product-showcase-video-shell">
+                <video class="product-showcase-video is-review" src="./assets/landing-page-assets/videos/recording-review-radar-walkthrough.mp4" muted loop playsinline preload="metadata"></video>
+              </div>
+              <p class="product-showcase-caption">리뷰 속 구매 이유와 불만 요인을 원문 근거로 확인합니다.</p>
+            </div>
+          </article>
+        </div>
+
+        <p class="product-showcase-note">
+          브랜드의 성장 목표와 소비자의 실제 신호를 연결해,<br />
+          <strong>OOH 캠페인이 누구에게 어떤 인식을 남겨야 하는지</strong> 정의합니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq-next-section" id="faq" aria-label="시장·소비자 분석 FAQ와 다음 단계">
+      <div class="wrap">
+        <div class="faq-wrap">
+          <div class="faq-copy">
+            <div class="faq-label">FAQ</div>
+            <h2 class="faq-title">자주 묻는 질문</h2>
+            <p class="faq-desc">
+              시장·소비자 분석을 시작하기 전에 자주 묻는 질문입니다.
+            </p>
+          </div>
+
+          <div class="faq-list" id="faq-list">
+            <div class="faq-item is-open">
+              <button class="faq-button" type="button" aria-expanded="true">
+                <span class="faq-question">Q. 왜 OOH 캠페인을 바로 집행하지 않고 시장·소비자 분석부터 하나요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    OOH는 일정 기간 같은 메시지가 반복 노출되는 매체입니다. 온라인 광고처럼 소액으로 빠르게 Lean Test를 하거나,
+                    소재별 A/B 테스트를 반복하면서 알고리즘이 자동으로 최적화해주는 방식과는 다릅니다.
+                  </p>
+                  <p>
+                    그래서 집행 전에는 브랜드가 달성하려는 목표를 기준으로 누구에게, 언제, 어디에서, 무엇을 말해야 하는지 먼저 좁혀야 합니다.
+                    시장·소비자 분석은 OOH 예산을 낭비하지 않기 위해 캠페인의 방향을 선명하게 만드는 과정입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-button" type="button" aria-expanded="false">
+                <span class="faq-question">Q. 이미 내부에서 타깃과 메시지가 정해져 있어도 필요한가요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    필요할 수 있습니다. 내부 가설이 있더라도 실제 소비자가 브랜드를 떠올리는 상황, 구매를 망설이는 이유,
+                    반복해서 쓰는 표현은 다를 수 있습니다.
+                  </p>
+                  <p>
+                    애드타입은 내부 가설을 부정하기보다, 집행 전에 소비자 데이터로 확인하고 보완하는 데 초점을 둡니다.
+                    이미 방향이 정해져 있다면 그 방향이 OOH 캠페인에서 충분히 설득력 있는지 함께 검토합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-button" type="button" aria-expanded="false">
+                <span class="faq-question">Q. 보유한 서베이나 리뷰 데이터가 없어도 가능한가요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    가능합니다. 보유 데이터가 있으면 더 빠르게 분석할 수 있지만, 없더라도 검색·언급 데이터,
+                    공개 리뷰, 별도 서베이 설계 등을 통해 필요한 소비자 신호를 확인할 수 있습니다.
+                  </p>
+                  <p>
+                    브랜드가 이미 가진 자료와 현재 캠페인 목표를 기준으로, 어떤 데이터를 먼저 봐야 할지부터 정리합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-button" type="button" aria-expanded="false">
+                <span class="faq-question">Q. 분석에는 어떤 자료가 필요한가요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    브랜드 목표, 제품 정보, 기존 캠페인 자료, 경쟁 브랜드, 보유한 서베이·리뷰 데이터가 있으면 좋습니다.
+                  </p>
+                  <p>
+                    자료가 충분하지 않아도 괜찮습니다. 초기 상담 과정에서 브랜드가 달성하려는 목표, 현재 고민,
+                    캠페인 배경을 먼저 확인하고 필요한 분석 범위를 함께 정리합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-button" type="button" aria-expanded="false">
+                <span class="faq-question">Q. 분석 결과는 어떤 형태로 제공되나요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    소비자 맥락, 브랜드 위치, 구매 이유, 메시지 기회, 다음 단계에서 검토할 캠페인 질문 형태로 정리됩니다.
+                  </p>
+                  <p>
+                    이 결과는 단순 리포트로 끝나는 것이 아니라, 다음 단계인 캠페인 과제 도출에서
+                    OOH 캠페인이 해결해야 할 과제와 KPI로 구체화됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-button" type="button" aria-expanded="false">
+                <span class="faq-question">Q. 시장·소비자 분석만 별도로 진행할 수 있나요?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>
+                    시장·소비자 분석은 별도 판매 상품이라기보다, 애드타입의 OOH 캠페인 상담과 기획 과정에 포함되는 사전 진단에 가깝습니다.
+                  </p>
+                  <p>
+                    상담 후 OOH가 현재 브랜드 상황에 적합하지 않다고 판단되어 캠페인을 진행하지 않는 것은 가능합니다.
+                    다만 분석 결과가 캠페인 과제, 미디어 플래닝, 크리에이티브, 집행, 성과 분석까지 이어질 수 있도록 전체 흐름 안에서 함께 설계합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-step-cta" aria-label="다음 단계">
+          <div class="next-step-label">
+            <span>다음 단계</span>
+            <strong>02</strong>
+          </div>
+
+          <div class="next-step-copy">
+            <h2>캠페인 과제 도출</h2>
+            <p>
+              확인한 소비자 맥락, 브랜드 위치, 구매 언어를 바탕으로
+              이번 OOH 캠페인이 해결해야 할 과제와 KPI를 정리합니다.
+            </p>
+          </div>
+
+          <div class="next-step-actions">
+            <a class="next-step-btn primary" href="./adtype-for-brands.html#technology">캠페인 과제 도출 보기</a>
+            <a class="next-step-btn secondary" href="./adtype-for-brands.html#contact">상담 요청하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const section = document.querySelector(".analysis-matrix");
+      if (!section) return;
+
+      const combinations = [
+        {
+          number: "조합 01",
+          title: "신규 런칭·인지 확장형",
+          active: [0, 2, 4, 3]
+        },
+        {
+          number: "조합 02",
+          title: "구매 고려·메시지 정교화형",
+          active: [1, 0, 3, 2]
+        },
+        {
+          number: "조합 03",
+          title: "구매 전환·카피 발굴형",
+          active: [3, 4, 1, 0]
+        },
+        {
+          number: "조합 04",
+          title: "리브랜딩·경쟁 대응형",
+          active: [2, 1, 0, 4]
+        },
+        {
+          number: "조합 05",
+          title: "유통 확장·성과 관리형",
+          active: [4, 3, 2, 1]
+        }
+      ];
+
+      const rows = [...section.querySelectorAll(".matrix-row")];
+      const numberEl = section.querySelector(".matrix-scenario__number");
+      const titleEl = section.querySelector(".matrix-scenario__title");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let current = 0;
+      let timer = null;
+
+      function update(index) {
+        const combo = combinations[index];
+        numberEl.textContent = combo.number;
+        titleEl.textContent = combo.title;
+
+        rows.forEach((row, rowIndex) => {
+          const cells = [...row.querySelectorAll(".matrix-cell")];
+          const activeIndex = combo.active[rowIndex];
+          cells.forEach((cell, cellIndex) => {
+            const beforeIndex = (activeIndex - 1 + cells.length) % cells.length;
+            const afterIndex = (activeIndex + 1) % cells.length;
+            cell.classList.toggle("is-active", cellIndex === activeIndex);
+            cell.classList.toggle("is-before", cellIndex === beforeIndex);
+            cell.classList.toggle("is-after", cellIndex === afterIndex);
+          });
+
+          const selector = row.querySelector(".matrix-selector");
+          const activeCell = cells[activeIndex];
+          if (selector && activeCell && window.innerWidth > 980) {
+            const rowRect = row.getBoundingClientRect();
+            const cellRect = activeCell.getBoundingClientRect();
+            selector.style.width = `${Math.max(0, cellRect.width - 12)}px`;
+            selector.style.transform = `translateX(${cellRect.left - rowRect.left + 6}px)`;
+          }
+        });
+
+      }
+
+      function next() {
+        current = (current + 1) % combinations.length;
+        titleEl.classList.add("is-changing");
+        window.setTimeout(() => {
+          update(current);
+          titleEl.classList.remove("is-changing");
+        }, 160);
+      }
+
+      function start() {
+        update(current);
+        if (!reduceMotion && !timer) {
+          timer = window.setInterval(next, 2200);
+        }
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) start();
+      }, { threshold: 0.35 });
+
+      update(current);
+      observer.observe(section);
+      window.addEventListener("resize", () => update(current));
+    })();
+
+    (() => {
+      const items = [...document.querySelectorAll(".product-showcase-item")];
+      const videos = [...document.querySelectorAll(".product-showcase-video")];
+      const note = document.querySelector(".product-showcase-note");
+      if (!items.length) return;
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+
+      items.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 70}ms`;
+        revealObserver.observe(item);
+      });
+      if (note) {
+        note.style.transitionDelay = "80ms";
+        revealObserver.observe(note);
+      }
+
+      if (reduceMotion || !videos.length) {
+        if (note) note.classList.add("is-visible");
+        videos.forEach((video) => video.pause());
+        return;
+      }
+
+      const videoVisibility = new Map();
+      const playMostVisibleVideo = () => {
+        const visible = [...videoVisibility.entries()]
+          .filter(([, ratio]) => ratio >= 0.34)
+          .sort((a, b) => b[1] - a[1]);
+        const active = visible.length ? visible[0][0] : null;
+
+        videos.forEach((video) => {
+          if (video === active) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      };
+
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          videoVisibility.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0);
+        });
+        playMostVisibleVideo();
+      }, { threshold: [0, 0.34, 0.5, 0.7, 0.9] });
+
+      videos.forEach((video) => {
+        video.pause();
+        videoObserver.observe(video);
+      });
+    })();
+
+    (() => {
+      const faqItems = [...document.querySelectorAll(".faq-item")];
+      if (!faqItems.length) return;
+
+      const setAnswerHeight = (item) => {
+        const answer = item.querySelector(".faq-answer");
+        const inner = item.querySelector(".faq-answer-inner");
+        if (!answer || !inner) return;
+        answer.style.height = item.classList.contains("is-open") ? `${inner.offsetHeight}px` : "0px";
+      };
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-button");
+        setAnswerHeight(item);
+        if (!button) return;
+
+        button.addEventListener("click", () => {
+          const willOpen = !item.classList.contains("is-open");
+
+          faqItems.forEach((other) => {
+            other.classList.remove("is-open");
+            other.querySelector(".faq-button")?.setAttribute("aria-expanded", "false");
+            setAnswerHeight(other);
+          });
+
+          if (willOpen) {
+            item.classList.add("is-open");
+            button.setAttribute("aria-expanded", "true");
+            setAnswerHeight(item);
+          }
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        faqItems.forEach(setAnswerHeight);
+      });
+    })();
+  </script>
+</body>
+</html>
